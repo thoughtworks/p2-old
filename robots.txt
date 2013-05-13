@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://distributedlife.github.io/magazine_style/sitemap.xml 

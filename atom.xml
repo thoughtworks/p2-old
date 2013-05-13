@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Magazine Style]]></title>
+  <link href="http://distributedlife.github.io/magazine_style/atom.xml" rel="self"/>
+  <link href="http://distributedlife.github.io/magazine_style/"/>
+  <updated>2013-05-13T16:30:00+10:00</updated>
+  <id>http://distributedlife.github.io/magazine_style/</id>
+  <author>
+    <name><![CDATA[Your Name]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The first article]]></title>
+    <link href="http://distributedlife.github.io/magazine_style/blog/2013/05/11/the-first-article/"/>
+    <updated>2013-05-11T10:17:00+10:00</updated>
+    <id>http://distributedlife.github.io/magazine_style/blog/2013/05/11/the-first-article</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>

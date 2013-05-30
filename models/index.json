@@ -51,7 +51,7 @@
 			"subtitle"	: "'I don't know where Dinn may be,' said the Mock Turtle, 'but if you've  seen them so often, of course you know what they're like.' 'I believe so,' Alice replied thoughtfully.",
 			"icon"		: "mike-avatar.jpg",
 			"number"	: "o5",
-			"url"		: "#article-4",
+			"url"		: "/puzzle",
 			"author"	:	{
 					"name"		: "The P2 Elves",
 					"twitter"	: "@gardym"

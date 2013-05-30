@@ -1,0 +1,22 @@
+{
+	"authors": [
+		{
+			"name"		: "by The P2 Elves",
+			"twitter"	: "",
+			"avatar"	: "pdp11-avatar.jpg"
+		}
+	], 
+  "title": "Puzzle",
+  "subtitle": "Finally...",
+  "byline": "The P2 Elves",
+  "paragraphs": [
+    "This month's coding challenge visits us from the land of Java. What we have is a question of execution order. The first person to respond with the correct answer and why gets their name in the winners circle for next issue.",
+    "Exhibit A",
+  "What is the result of this function?",
+  "<pre style='font-family: monospace; border: 0' class='prettyprint'>public int deliverBusinessValue() {\n  int value = 10;\n    \n  try {\n    value = 20;\n    throw new NotEnoughValueDeliveredException();\n  } catch (Exception e) {\n    value = 30;\n    return value; \n  } finally {\n    value = 50;\n  }\n}\n</pre>",
+    "Exhibit A",
+    "What is the value of 'value' after this function is executed?",
+    "<pre style='font-family: monospace; border:0 ' class='prettyprint'>class MarketEdge {\n  int value;\n}\n\npublic MarketEdge deliverBusinessValue() {\n  MarketEdge marketEdge = new MarketEdge();\n  try {\n    marketEdge.value = 20;\n    throw new NotEnoughValueDeliveredException();\n  } catch (Exception e) {\n    marketEdge.value = 30;\n    return realised;\n  } finally {\n    marketEdge.value = 50;\n  }\n}\n\n</pre>",
+      "Send your answers to <a href=\"mailto:p2@thoughtworks.com\">p2@thoughtworks.com</a>"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+	"title": "Article",
+	"modelDate": "Issue 02, FEBRUARY 2013",
+	"articles": [
+		{
+			"title"		: "'One, indeed!' said the Dormouse indignantly. However, he consented to",
+			"subtitle"	: "'I don't know where Dinn may be,' said the Mock Turtle, 'but if you've  seen them so often, of course you know what they're like.' 'I believe so,' Alice replied thoughtfully.",
+			"icon"		: "stew-avatar.jpg",
+			"number"	: "o1",
+			"url"		: "#article-1",
+			"author":	{
+					"name"		: "Stewart Gleadow",
+					"twitter"	: "@gardym"
+			}
+		},
+		{
+			"title"		: "While the Frenchman's boats, then, were engaged in towing the ship one way",
+			"subtitle"	: "Presently a breeze sprang up; Stubb feigned to cast off from the whale; hoisting his boats, the Frenchman soon increased his distance, while the Pequod slid in between him and Stubb's whale.",
+			"icon"	: "andrew-avatar.jpg",
+			"number"	: "o2",
+			"url"		: "#article-2",
+			"author":	{
+					"name"		: "Andrew Carr",
+					"twitter"	: "@2metres"
+			}
+		},
+		{
+			"title"		: "It was only after a long search that Passepartout discovered a native dealer",
+			"subtitle"	: "It was only after a long search that Passepartout discovered a native dealer in old clothes, to whom he applied for an exchange.  The man liked the European costume.",
+			"icon"		: "ryan-avatar.jpg",
+			"number"	: "o3",
+			"url"		: "#article-3",
+			"author":	{
+					"name"		: "Ryan Boucher",
+					"twitter"	: "@distributedlife"
+			}
+		},
+		{
+			"title"		: "'One, indeed!' said the Dormouse indignantly. However, he consented to  go on",
+			"subtitle"	: "'I don't know where Dinn may be,' said the Mock Turtle, 'but if you've  seen them so often, of course you know what they're like.' 'I believe so,' Alice replied thoughtfully.",
+			"icon"		: "mike-avatar.jpg",
+			"number"	: "o4",
+			"url"		: "#article-4",
+			"author"	:	{
+					"name"		: "Mike Gardiner",
+					"twitter"	: "@gardym"
+			}
+		}
+	]
+}

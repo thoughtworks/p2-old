@@ -9,6 +9,7 @@
   "title": "The King Is Dead, Long Live The King",
   "subtitle": "A cautionary tale",
   "byline": "Ryan Boucher",
+  "prev": "big-data",
   "paragraphs": [
 "I stood in front of the board, asking unpopular questions. “When was the last time we stopped offering a service that was losing money? Do we even know which ones make money?”   I could see confusion and anger on the faces of the board members. It’s not a pleasant feeling standing in a hostile room telling people that they should stop offering services that now, because of me, no longer exist.",
 "My name is Sam and to understand what I was talking about and how I ended up in the boardroom I have to go back 2 years to the very start of project Reboot. The project was an 84-million dollar effort to rewrite our core systems. The original system had a lots of bugs in it and there were no automated tests. We had over 300 systems covering generations of technology. Like ancient rock, we had layers: Mainframes, Visual Basic, .NET 1, 2, 3 and 4 – all integrated through a tangle of service buses and queues. ",

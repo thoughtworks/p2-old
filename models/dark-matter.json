@@ -3,7 +3,7 @@
 		{
 			"name"		: "Jen Smith",
 			"twitter"	: "@jennifersmithco",
-			"avatar"	: "jen-avatar.jpg"
+			"avatar"	: "jen-avatar.png"
 		}
 	], 
   "title": "Uncovering Your Data's Dark Matter",
@@ -17,15 +17,12 @@
 "This is a common problem. When choosing a database technology and structure we – quite reasonably – make our decision based on the best fit for the application. Unfortunately the choices we make can later constrain our ability to analyse and explore the data. So we decided that we had to break the data out of its existing structure and model it in a new way.",
 "As a proof-of-concept, we loaded two years of data into a graph database. We didn't spend a long developing a mature Extract-Transform-Load (ETL) process. It was more important to us to get feedback quickly on whether our approach was working.",
 "Graph databases store data as graphs of nodes and relationships. For example, if you were analysing data from an online record store, you might model an album purchase as follows:",
-
-" jen bough selected ambient works performed by aphexTwin ",
+"<img style=\"width: 100%\" src=\"/assets/img/dark-matter/1.png\" />",
 "As it stands, this resembles the original, relational database structure. Users, albums and artists, originally stored as tables, are now represented as nodes. Likewise, purchase information and links between albums and artists are now named, directed relationships between these nodes. ",
 "Things start to get interesting when you start to infer new relationships from the existing data and overlay them on the graph. For example, you could infer that I like Aphex Twin if I have bought two of his albums:",
-"jen bought select ambient works and classics performed by aphextTwin so she's a fan",
-
+"<img style=\"width: 100%\" src=\"/assets/img/dark-matter/2.png\" />",
 "Now from a simple database of music purchases, you can build up a graph of users and their preferred artists. You can start to use this information to start recommending music to me that I might enjoy:",
-
-"jen is a fan of aphexTwin and so is bob who's a fan of squarePusher and jen's a friend of bob",
+"<img style=\"width: 60%; margin-left: 15%\" src=\"/assets/img/dark-matter/3.png\" />",
 "Perhaps I would enjoy Squarepusher too as my friend Bob - a fellow Aphex Twin enthusiast - is a fan. ",
 "Graph database show their strength when you introduce graph theory. The shortest path between Aphex Twin and Squarepusher can indicate their musical similarity. You can cluster artists by their fan’s tastes or calculate the clustering coefficient to measure whether users purchase a broad range of genres or they are all really into Drill n' Bass.",
 "The graph database allowed us to traverse relationships in our data that were hard to access in the original structure. This solved our initial problem, but more excitingly than that, simply changing the way we stored our data opened up a wealth of new ideas and possibilities that we had not thought of before.",

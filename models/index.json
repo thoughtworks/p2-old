@@ -29,7 +29,7 @@
 			"subtitle"	: "It was only after a long search that Passepartout discovered a native dealer in old clothes, to whom he applied for an exchange.  The man liked the European costume.",
 			"icon"		: "ryan-avatar.jpg",
 			"number"	: "o3",
-			"url"		: "#article-3",
+			"url"		: "/the-king-is-dead",
 			"author":	{
 					"name"		: "Ryan Boucher",
 					"twitter"	: "@distributedlife"

@@ -380,14 +380,25 @@ body bi {
 .table-of-contents .article-number {
   font-family: "Roboto Slab", serif;
   font-style: italic;
-  font-size: 36px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75em;
+  color: #ccc;
 }
 .table-of-contents .summary {
   display: block;
-  padding: 0px 0 20px 0;
+  padding: 0px 0 8px 0;
 }
 .table-of-contents .summary h3, .table-of-contents .summary p {
+  font-size: 12px;
   margin: 0.3333333em 0 0.3333333em 0;
+}
+.table-of-contents .summary h3 .title, .table-of-contents .summary p .title {
+  text-transform: uppercase;
+}
+.table-of-contents .summary h3 .author, .table-of-contents .summary p .author {
+  color: #bbb;
 }
 .table-of-contents .summary h3 a, .table-of-contents .summary p a {
   text-decoration: none;
@@ -398,7 +409,7 @@ body bi {
   text-align: center;
 }
 .left-column .author {
-  padding: 0.875em;
+  padding: 0.625em;
   margin: 0;
 }
 .left-column .author-avatar {
@@ -427,6 +438,12 @@ article footer img {
   width: 2em;
   margin-right: 0.75em;
   vertical-align: middle;
+}
+
+article .byline {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #bbb;
 }
 
 .paginate {
@@ -513,7 +530,7 @@ article footer img {
     text-align: left;
   }
   .table-of-contents .summary {
-    margin-left: 7em;
+    margin-left: 2.25em;
   }
   .table-of-contents .author-avatar {
     display: none;
@@ -522,12 +539,6 @@ article footer img {
     top: 50%;
     width: 100%;
     margin-top: -2.25em;
-  }
-  .table-of-contents .article-number {
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 4em;
   }
 
   .cover {

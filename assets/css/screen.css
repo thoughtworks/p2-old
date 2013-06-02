@@ -715,6 +715,25 @@ footer {
     width: 36px;
     font-size: 18px;
   }
+  .paginate a.prev {
+    left: 0;
+    margin-left: 20px;
+    padding-right: 4px;
+  }
+  .paginate a.next {
+    right: 0;
+    margin-right: 20px;
+    padding-left: 4px;
+  }
+  .paginate a:hover {
+    background-color: #00cc88;
+  }
+  .paginate a:hover.prev {
+    left: 0;
+  }
+  .paginate a:hover.next {
+    right: 0;
+  }
 }
 @media print {
   @page {

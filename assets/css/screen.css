@@ -535,6 +535,14 @@ article .byline {
   padding: 0;
 }
 
+.gist {
+  font-size: 0.8em;
+}
+
+.gist-meta {
+  display: none;
+}
+
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 @media screen and (max-width: 47.9375em) {

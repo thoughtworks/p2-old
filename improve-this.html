@@ -12,10 +12,10 @@
     <body class="wrapper">
             <nav class="paginate">
   
-    <a href="improve-this.html" class="prev">&#9664;</a>
+    <a href="the-king-is-dead.html" class="prev">&#9664;</a>
   
   
-    <a href="credits.html" class="next">&#9654;</a>
+    <a href="puzzle.html" class="next">&#9654;</a>
   
 </nav>
 
@@ -26,14 +26,14 @@
 	<ul class="clearfix">
 		<li class="active"><a href="/">Issue 01, June 2013</a>
 		<!-- <li class="pull-right"><a href="#">Older Issues</a>-->
-    <li class="pull-right">Page 5 / 6</li>
+    <li class="pull-right">Page 4 / 6</li>
 	</ul>
 </nav>
 
   <article>
        <header>
-       <h1>Puzzle</h1>
-       <h3>Finally...</h3>
+       <h1>Improve This</h1>
+       <h3>Cucumber</h3>
        </header>
        <div class="article-body">
        
@@ -42,19 +42,61 @@
          
        
          
-           <p>Exhibit A &mdash; What is the result of this function?</p>
+           <p>Exhibit A</p>
          
        
          
-           <p><script src='https://gist.github.com/distributedlife/5692366.js'></script></p>
+           <p>What is the result of this function?</p>
          
        
          
-           <p>Exhibit B &mdash; What is the value of 'value' after this function is executed?</p>
+           <p><script src='https://gist.github.com/distributedlife/5692345.js'></script></p>
          
        
          
-           <p><script src='https://gist.github.com/distributedlife/5692369.js'></script></p>
+           <p><pre style='font-family: monospace; border: 0' class='prettyprint'>public int deliverBusinessValue() {
+  int value = 10;
+    
+  try {
+    value = 20;
+    throw new NotEnoughValueDeliveredException();
+  } catch (Exception e) {
+    value = 30;
+    return value; 
+  } finally {
+    value = 50;
+  }
+}
+</pre></p>
+         
+       
+         
+           <p>Exhibit A</p>
+         
+       
+         
+           <p>What is the value of 'value' after this function is executed?</p>
+         
+       
+         
+           <p><pre style='font-family: monospace; border:0 ' class='prettyprint'>class MarketEdge {
+  int value;
+}
+
+public MarketEdge deliverBusinessValue() {
+  MarketEdge marketEdge = new MarketEdge();
+  try {
+    marketEdge.value = 20;
+    throw new NotEnoughValueDeliveredException();
+  } catch (Exception e) {
+    marketEdge.value = 30;
+    return realised;
+  } finally {
+    marketEdge.value = 50;
+  }
+}
+
+</pre></p>
          
        
          

@@ -1,0 +1,29 @@
+{
+  "authors": [
+    {
+    "name"		: "by The P2 Elves",
+    "twitter"	: "",
+    "avatar"	: "pdp11-avatar.jpg"
+  }
+  ], 
+  "title": "Credits",
+  "subtitle": "Who are the elves?",
+  "byline": "The P2 Elves",
+  "page": "6",
+  "prev": "puzzle",
+  "next": "/",
+  "paragraphs": [
+    "Editorial Committee:",
+    "Ryan Boucher, Mike Gardiner, Rachel Laycock, Rebecca Parsons, Nick Thorpe",
+    "Writers:",
+    "Ryan Boucher, Mike Gardiner, Jen Smith",
+    "Drawing:",
+    "Greg Skinner",
+    "Website Design:",
+    "Andrew Carr, Mike Gardiner",
+    "Photo Credit:",
+    "Adam Scott",
+    "Special Thanks to:",
+    "Anand Bagmar, Dave Coombes"
+  ]
+}

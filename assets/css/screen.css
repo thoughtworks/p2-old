@@ -447,7 +447,7 @@ article .byline {
 }
 
 .paginate {
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: all 500ms ease;
   -moz-transition: all 500ms ease;
   -ms-transition: all 500ms ease;
@@ -502,8 +502,71 @@ article .byline {
   float: left;
 }
 
+#title {
+  color: #fff;
+  font-size: 10em;
+  margin: 0;
+  font-weight: bold;
+  line-height: 130px;
+  margin-left: 0.01em;
+  text-align: center;
+}
+
+#subtitle {
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  margin: 0;
+}
+
+#corp {
+  color: #fff;
+  font-size: 1.79em;
+  margin: 0;
+  text-align: center;
+}
+
+.logo {
+  position: fixed;
+  top: 26px;
+  left: 10px;
+  z-index: 1;
+  padding: 0;
+}
+
 /* ::Media queries */
 /* ------------------------------------------------------------ */
+@media screen and (max-width: 47.9375em) {
+  .logo {
+    position: static;
+    top: 0;
+    left: 0;
+    text-align: left;
+  }
+
+  #title {
+    color: #bbb;
+    font-size: 2em;
+    display: inline-block;
+    line-height: 1.0em;
+    padding-bottom: 0;
+  }
+
+  #subtitle {
+    color: #bbb;
+    font-size: 2em;
+    display: inline-block;
+    line-height: 1.0em;
+  }
+
+  #corp {
+    color: #bbb;
+    font-size: 1em;
+    line-height: 1.0em;
+    text-align: left;
+  }
+}
 @media screen and (min-width: 30em) {
   .container {
     width: 80%;
@@ -627,6 +690,18 @@ article .byline {
 @media screen and (min-width: 76.25em) {
   .paginate {
     opacity: 1;
+  }
+  .paginate a {
+    position: fixed;
+  }
+}
+@media screen and (max-width: 76.25em) {
+  .paginate a {
+    position: absolute;
+    top: 40px;
+    line-height: 36px;
+    width: 36px;
+    font-size: 18px;
   }
 }
 @media print {

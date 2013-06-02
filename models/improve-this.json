@@ -56,7 +56,8 @@
     "<script src='https://gist.github.com/distributedlife/5692540.js'></script>",
       "Done.",
     "The main things we covered were around domain language and removing the implementation from the notifications. We removed lots of incidental detail and clarified some behaviour around state transition and who is authorised to do what.",
-    "Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'>p2@thoughtworks.com</a>."
+    "Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'>p2@thoughtworks.com</a>.",
+    "<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>"
   ]
 }
 

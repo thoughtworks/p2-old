@@ -308,7 +308,7 @@ h1, h2, h3 {
 
 body {
   font-family: "Open Sans", sans-serif;
-  margin: 1.375em 0.6875em 1.375em 0.6875em;
+  margin: 0.5em 0.6875em 1.375em 0.6875em;
   font-weight: 300;
 }
 body b, body strong {
@@ -343,7 +343,7 @@ body bi {
 
 .issues {
   background: white;
-  padding: 20px 0 0 0;
+  padding: 32px 0 0 0;
 }
 .issues ul {
   border-bottom: 1px #e6e6e6 solid;

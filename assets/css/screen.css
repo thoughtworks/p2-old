@@ -597,6 +597,10 @@ footer {
   }
 }
 @media screen and (min-width: 47.9375em) {
+  #bottom-pages {
+    display: block;
+  }
+
   body {
     margin: 0 0.6875em 1.375em 0.6875em;
   }
@@ -718,6 +722,10 @@ footer {
     position: fixed;
   }
 }
+#bottom-pages {
+  display: none;
+}
+
 @media screen and (max-width: 64em) {
   .paginate a {
     position: absolute;
@@ -744,6 +752,26 @@ footer {
   }
   .paginate a:hover.next {
     right: 0;
+  }
+
+  #bottom-pages {
+    margin-top: -110px;
+    display: block;
+  }
+  #bottom-pages .paginate {
+    text-align: center;
+  }
+  #bottom-pages .paginate a {
+    position: inherit;
+    font-size: 18px;
+    line-height: 36px;
+    width: 36px;
+  }
+  #bottom-pages .paginate a.prev {
+    float: left;
+  }
+  #bottom-pages .paginate a.next {
+    float: right;
   }
 }
 @media print {

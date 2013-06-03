@@ -417,7 +417,6 @@ body bi {
 }
 
 .author-avatar {
-  margin-right: 1.25em;
   background-color: whitesmoke;
   -webkit-mask-image: url(../img/circle-img-mask.png);
   -webkit-mask-size: 100% 100%;

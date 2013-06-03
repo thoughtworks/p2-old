@@ -7,13 +7,12 @@
 		}
 	], 
   "title": "Improve This",
-  "subtitle": "Cucumber",
   "byline": "The P2 Elves",
   "page": "4",
   "next": "puzzle",
   "prev": "the-king-is-dead",
   "paragraphs": [
-    "In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and refactor it, explaining what we did as we went.",
+    "In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.",
     "In this issue Anand has sent us a cucumber test that he’s asked us to improve.",
     "<script src='https://gist.github.com/distributedlife/5692407.js'></script>",
     "First up some incidental detail. “Given I or anyone else is, has or will log in” is the most ubiquitous waste of time that exists in the land of cucumber. Unless you're testing user authentication, delete it.",
@@ -56,6 +55,7 @@
     "<script src='https://gist.github.com/distributedlife/5692540.js'></script>",
       "Done.",
     "The main things we covered were around domain language and removing the implementation from the notifications. We removed lots of incidental detail and clarified some behaviour around state transition and who is authorised to do what.",
+    "We’ve made a lot of assumptions about how this system works and how the cucumber file is used. We’ve ignored how the cucumber file got to where it is today and followed a simple rule: if someone can’t understand how it works from reading it, then it needs improvement.",
     "Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'>p2@thoughtworks.com</a>.",
     "<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>"
   ]

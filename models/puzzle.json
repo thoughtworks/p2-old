@@ -15,9 +15,9 @@
   "paragraphs": [
     "This month's coding challenge visits us from the land of Java. What we have is a question of execution order. The first person to respond with the correct answer and why gets their name in the winners circle for next issue.",
     "Exhibit A &mdash; What is the result of this function?",
-    "<script src='https://gist.github.com/distributedlife/5692366.js'></script>",
+    "<div class='normal-gist'><script src='https://gist.github.com/distributedlife/5692366.js'></script></div>",
     "Exhibit B &mdash; What is the value of 'value' after this function is executed?",
-    "<script src='https://gist.github.com/distributedlife/5692369.js'></script>",
+    "<div class='normal-gist'><script src='https://gist.github.com/distributedlife/5692369.js'></script></div>",
     "Send your answers to <a href=\"mailto:p2@thoughtworks.com\">p2@thoughtworks.com</a>",
     "<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>"
   ]

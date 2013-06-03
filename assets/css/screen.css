@@ -539,6 +539,14 @@ article .byline {
   font-size: 0.8em;
 }
 
+pre.line-pre {
+  white-space: normal !important;
+}
+
+div.normal-gist pre.line-pre {
+  white-space: pre !important;
+}
+
 .gist-meta {
   display: none;
 }

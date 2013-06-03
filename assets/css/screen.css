@@ -320,11 +320,7 @@ body bi {
 }
 
 .cover {
-  -webkit-transition: width 500ms ease-in-out;
-  -moz-transition: width 500ms ease-in-out;
-  -ms-transition: width 500ms ease-in-out;
-  -o-transition: width 500ms ease-in-out;
-  transition: width 500ms ease-in-out;
+  /*@include animation(width, 500ms, ease-in-out);*/
   background: #efefef url(../img/issue_1_cover.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;

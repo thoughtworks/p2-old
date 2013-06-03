@@ -325,7 +325,7 @@ body bi {
   -ms-transition: width 500ms ease-in-out;
   -o-transition: width 500ms ease-in-out;
   transition: width 500ms ease-in-out;
-  background: #efefef url(../img/issue_1_cover.jpg) no-repeat -500px -140px fixed;
+  background: #efefef url(../img/issue_1_cover.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -586,6 +586,10 @@ footer {
     line-height: 1.0em;
     text-align: left;
   }
+
+  #start-reading {
+    display: none;
+  }
 }
 @media screen and (min-width: 30em) {
   .container {
@@ -706,8 +710,7 @@ footer {
   .container {
     width: 48em;
   }
-}
-@media screen and (min-width: 76.25em) {
+
   .paginate {
     opacity: 1;
   }
@@ -715,7 +718,7 @@ footer {
     position: fixed;
   }
 }
-@media screen and (max-width: 76.25em) {
+@media screen and (max-width: 64em) {
   .paginate a {
     position: absolute;
     top: 40px;

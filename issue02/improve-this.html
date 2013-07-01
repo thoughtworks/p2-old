@@ -41,7 +41,7 @@
        <div class="article-body">
        
          
-           <p>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</p>
+           <p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
          
        
          
@@ -61,7 +61,7 @@
          
        
          
-           <p>1. The mongo dependency isn't used<br />2. There is no error handling around inserting records into the database.</p>
+           <p>1. The <span class='inline-code'>mongo</span> dependency isn't used<br />2. There is no error handling around inserting records into the database.</p>
          
        
          
@@ -77,15 +77,15 @@
          
        
          
-           <p>1. map_tweet_to_event seems to have an unnecessary callback.  This should be an easy fix.</p>
+           <p>1. <span class='inline-code'>map_tweet_to_event</span> seems to have an unnecessary callback.  This <em>should</em> be an easy fix.</p>
          
        
          
-           <p>2. tweet.coordinates is both null-checked and uses magic numbers.  This isn't a problem; but, data structures with optional nulls are easy to trip on in normal use and complicate testing.</p>
+           <p>2. <span class='inline-code'>tweet.coordinates</span> is both null-checked and uses magic numbers.  This isn't a problem; but, data structures with optional nulls are easy to trip on in normal use and complicate testing.</p>
          
        
          
-           <p>3. start_streaming is a set of deeply nested callbacks.  This one is four levels deep. Not a serious offence by Javascript standards; but, we can do better.</p>
+           <p>3. <span class='inline-code'>start_streaming</span> is a set of deeply nested callbacks.  This one is four levels deep. Not a serious offence by Javascript standards; but, we can do better.</p>
          
        
          
@@ -105,7 +105,7 @@
          
        
          
-           <p>First, we collapse the map_tweet_to_event callback.</p>
+           <p>First, we collapse the <span class='inline-code'>map_tweet_to_event</span> callback.</p>
          
        
          
@@ -113,7 +113,7 @@
          
        
          
-           <p>Second, we split up start_streaming up by responsibility. Those responsibilities— right now— are:</p>
+           <p>Second, we split up <span class='inline-code'>start_streaming</span> up by responsibility. Those responsibilities— right now— are:</p>
          
        
          
@@ -125,7 +125,7 @@
          
        
          
-           <p>We create a stream_tweets function:</p>
+           <p>We create a <span class='inline-code'>stream_tweets</span> function:</p>
          
        
          
@@ -133,11 +133,11 @@
          
        
          
-           <p>Notice we inline the params object that was previously initialized in track_current_user because it is only used by the Twitter.stream method.</p>
+           <p>Notice we inline the <span class='inline-code'>params</span> object that was previously initialized in <span class='inline-code'>track_current_user</span> because it is only used by the <span class='inline-code'>Twitter.stream</span> method.</p>
          
        
          
-           <p>Then, we create a record_tweet function:</p>
+           <p>Then, we create a <span class='inline-code'>record_tweet</span> function:</p>
          
        
          
@@ -145,11 +145,11 @@
          
        
          
-           <p>This function returns the callback function, but keeps the db in scope.</p>
+           <p>This function returns the callback function, but keeps the <span class='inline-code'>db</span> in scope.</p>
          
        
          
-           <p>Finally, we update track_current_user:</p>
+           <p>Finally, we update <span class='inline-code'>track_current_user</span>:</p>
          
        
          
@@ -161,7 +161,7 @@
          
        
          
-           <p>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'>p2@thoughtworks.com</a>.</p>
+           <p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'>p2@thoughtworks.com</a>.</em></p>
          
        
          

@@ -559,6 +559,10 @@ footer {
   display: inline-block;
 }
 
+.computer {
+  font-family: "courier new";
+}
+
 /* ::Media queries */
 /* ------------------------------------------------------------ */
 @media screen and (max-width: 47.9375em) {

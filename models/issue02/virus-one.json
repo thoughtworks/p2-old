@@ -1,18 +1,18 @@
 {
-	"authors": [
-		{
-			"name"		: "Nick Thorpe",
-			"twitter"	: "@agileboardhacks",
-			"avatar"	: "nick-avatar.png"
-		},
+  "authors": [
     {
-			"name"		: "John Stojanovski",
-      "twitter" : "@Jotsnhoj",
-			"avatar"	: "john-avatar.jpg"
-		}
-	],
+    "name"		: "John Stojanovski",
+    "twitter" : "@Jotsnhoj",
+    "avatar"	: "john-avatar.jpg"
+  },
+  {
+    "name"		: "Nick Thorpe",
+    "twitter"	: "@agileboardhacks",
+    "avatar"	: "nick-avatar.png"
+  }
+  ],
   "title": "First DOS Virus",
-  "subtitle": "John Stojanovski brings us a history of the arms race between virus writers and anti-virus ?. In this first instalment: a first-person account of a personal encounter with the first DOS virus.",
+  "subtitle": "John Stojanovski brings us a history of the arms race between virus engineers and anti-virus reverse-engineers. In this first instalment: a first-person account of a personal encounter with the first DOS virus.",
   "byline": "Nick Thorpe",
   "issue": "Issue 02, July 2013",
   "issuelink": "index",
@@ -24,14 +24,18 @@
     "It’s 1990. I’m in year 8, and as I’m walking across the dismal asphalt quadrangle toward the ash-grey public-school building I can see something is wrong. Shane Cooper is yelling something at me and laughing. He’s shouting to be heard: whatever it is he’s telling me, he wants everyone to know.",
     "“You’re Infected! You’re infected! A Virus.”",
     "He’s taunting me. I can feel the faces of the schoolyard swivelling toward me.",
-    "1990. This is back before public internet existed. Before ISP’s. Shane, and a  few others of of us at school were swapping pirated floppy discs. 5 and a ¼ inches of excitement. We’re mates. Spacequest, stuff like that. I run it on my x86 at home.",
-    "As geeks,  we’re largely invisible in the overall social structure, but I'm big news in geekland.  I know stuff about computers that isn’t general knowledge.  I can write BASIC.  I've hex-edited my name into the copyright strings of my command interpreter, by editing the disk sectors with DiskEdit.  ",
-    "At home, I got hold of my first antivirus software: virus scan for DOS. The x86 had no permanent storage at all. No hard disc. That fact changed my life. The virus had been transmitted through my entire collection of 5 ¼” discs.",
-      "I disinfected all my 5 and a ¼ inch floppy discs.",
-    "Well, all except one. To this day I don’t know why I did it. I had a floppy disc storage box - like an index card file system. And at the very back, I left one infected disc. Like an unexploded landmine. This is the moment is where it all started with me and security testing. The moment I quietly slid that dull grey object into the back of my filing box. Curiosity, hooking me in.",
+    "1990. This is back before public internet existed. Before ISP’s. Shane, and a  few others of us at school were swapping pirated floppy discs. 5 and a ¼ inches of excitement. We’re mates. Spacequest, stuff like that. I run it on my x86 at home.",
+    "As geeks,  we’re largely invisible in the overall social structure, but I'm big news in geekland.  I know stuff about computers that isn’t general knowledge.  I can write BASIC.  I've hex-edited my name into the copyright strings of my command interpreter, by editing the disk sectors with DiskEdit.",
+    "At home, get my first piece of antivirus software: virus scan for DOS. The x86 had no permanent storage at all. No hard disc. That fact changed my life. The virus had been transmitted through my entire collection of 5 ¼” discs.",
+    "I disinfected all my 5 and a ¼ inch floppy discs.",
+    "Well, all except one. To this day I don’t know why I did it. I had a floppy disc storage box - like an index card file system. And at the very back, I left one infected disc. Like an unexploded landmine.",
+    "Looking back,  now I realise this is one in a series of events that changed my life.  Because my 8086 had no permanent storage at all.  No hard disc.   It meant I was never afraid to 'trash' my computer, since a 'trashing' was never persistent.  I could simply toss the trashed floppy disk, reboot clean, and go again.",
+    "This is the moment is where it all started with me and security testing. The moment I quietly slid that dull grey object into the back of my filing box. Curiosity, hooking me in.",
     "It sat there for a while. I don’t know. Weeks, Months. Until, feeling the pull of curiosity, one morning I pulled it out again. I had been turning the problem over in my mind. I thought the virus must live in the boot sector somewhere.",
-      "I ran Norton DiscEdit and paged through the hex of the boot sector, no longer just a computer user. Looking for something malevolent. I didn’t know what. Norton DiscEdit gives you two panes: In the centre: 16 columns of pure hex. And on the right, the ASCII equivalent. Black on white like the movies.",
-        "There. I couldn’t believe it. Right there, on the right-hand side:",
-    "<pre>Welcome to the Dungeon<br/>© 1986 Basit & Amjad (pvt) LTD<br/>Brain Computer Services<br/>730 Nizam Block Allama<br/>Iqbal Town<br/>Lahore<br/>Pakistan<br/>Ph: 430971, 443248, 280530<br/>Beware of this VIRUS.... <br/>Contact us for vaccination...<br/></pre>"
+    "I run PCTools Deluxe DiskEdit and paged through the hex of the boot sector, no longer just a computer user. Looking for something malevolent. I don’t know what. DiscEdit gives you two panes: In the centre: 16 columns of pure hex. And on the right, the ASCII equivalent. Black on white, like in the movies.",
+    "There. I couldn’t believe it. Right there, on the right-hand side:",
+    "<pre class='computer'>Welcome to the Dungeon<br/>© 1986 Basit & Amjad (pvt) LTD<br/>Brain Computer Services<br/>730 Nizam Block Allama<br/>Iqbal Town<br/>Lahore<br/>Pakistan<br/>Ph: 430971, 443248, 280530<br/>Beware of this VIRUS.... <br/>Contact us for vaccination...<br/></pre>",
+    "A message from the authors... From Pakistan!   In a time before internet, this piece of self-replicating code had taken four years to jump from floppy disk, to floppy disk.  Probably hitching rides with people in cars.  Buses.  Trains.  Planes.  All the way to the middle-class suburbs of Geelong.  My bedroom.  These guys had reached around from the edges of the world, and were talking to me.",
+    "What I didn’t know then, that I know now: The brothers in Lahore had started two industries: the virus industry and the antivirus industry. And the arms race between them had begun."
   ]
 }

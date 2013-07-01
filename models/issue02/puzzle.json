@@ -25,9 +25,8 @@
     "<h3>Last Issue’s Puzzle</h3>",
     "The Java Finally puzzle has joint-winners: Anand Krishnaswamy and Alex Ong. Alex SMS’d his answer within minutes of the issue being published but didn’t provide the why. Shortly afterwards Anand sent us this answer explaing why but didn’t tell us the answer.",
     "<em class='snippet'>The spec says that all returns will attempt to return control to caller. So in the catch block the return attempts to return control by copying the to-be-returned value to the stack & the proceeds to execute finally (if found). The finally doesn't return anything. It merely sets the value of a local variable (which is a primitive type) which has no impact on the value copied on to the activation record. Hence, if the returned value is a primitive type or immutable (string) then there is no impact to alterations done in the finally.<br/><br/>In the 2nd example, the return type is a user defined type & hence the reference is set on the AR before the finally is attempted. The finally alters the contents of the reference [and] hence that is reflected in the caller. To verify this, alter the finally in the 2nd example as follows:",
-    "<pre>finally {<br/>  marketEdge = new MarketEdge();<br/>  marketEdge.value = 99;<br/>}</pre></em>",
-
-    "Since the reference is altered from the one on the AR, changes are not reflected in the object being returned",
-    "congratulations to Anand and Alex. You’re prize is a free copy of <em>What You Need to Know About Dates and Times in Computing</em>. Thanks to everyone else who responded."
+    "<pre>finally {<br/>  marketEdge = new MarketEdge();<br/>  marketEdge.value = 99;<br/>}</pre>",
+    "Since the reference is altered from the one on the AR, changes are not reflected in the object being returned.</em>",
+    "Congratulations to Anand and Alex. You’re prize is a free copy of <em>What You Need to Know About Dates and Times in Computing</em>. Thanks to everyone else who responded."
   ]
 }

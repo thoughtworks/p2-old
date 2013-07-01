@@ -1,5 +1,6 @@
 {
 	"title": "Magazine",
 	"modelDate": "Issue 01, June 2013",
-  "next": "/p2/issue01/dark-matter"
+  "issuelink": "/issue02",
+  "next": "dark-matter"
 }

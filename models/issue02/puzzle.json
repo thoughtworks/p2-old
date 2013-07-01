@@ -17,7 +17,7 @@
   "next": "credits",
   "paragraphs": [
     "Consider a city where there train network has two zones. Zones impact the cost of a journey. The more zones crossed the more the journey costs. Each passenger has to swipe their ticket to indicate the end of their journey. Within this network there is a station that gets quite busy at the end of the day.",
-    "Here is a sketch of our train station:",
+    "Here is a sketch of our train station (the dark triangles are the ticket readers):",
     "<img style=\"width: 100%\" src=\"/assets/img/improve-this/train-station.png\" />",
     "The trouble is that this particular station sits in an increasingly popular area. As each month goes by the number of passengers alighting here goes up.",
     "The question is: by changing only one thing how can we maximise the throughput of the alighting passengers?",

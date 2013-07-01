@@ -2,5 +2,6 @@
 	"title": "Magazine",
 	"modelDate": "Issue 02, July 2013",
   "issuelink": "index",
+  "lastIssue": "/issue01/index",
   "next": "virus-one"
 }

@@ -1,0 +1,26 @@
+{
+	"authors": [
+		{
+			"name"		: "Ryan Boucher",
+			"twitter"	: "@distributedlife",
+			"avatar"	: "ryan-avatar.jpg"
+		},
+    {
+			"name"		: "Stewart Gleadow",
+			"twitter"	: "@",
+			"avatar"	: "stewart-avatar.jpg"
+		}
+	], 
+  "title": "The next killer app is not an app",
+  "subtitle": "Stewart Gleadow explains his strategy for dealing with uncertainty in mobile projects",
+  "byline": "Ryan Boucher",
+  "issue": "Issue 02, June 2013",
+  "issuelink": "/p2/issue02",
+  "page": "2",
+  "pagetotal": "7",
+  "prev": "virus-one",
+  "next": "factory",
+  "paragraphs": [
+    "add content when finalised"
+  ]
+}

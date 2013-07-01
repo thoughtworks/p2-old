@@ -1,0 +1,31 @@
+{
+  "authors": [
+    {
+    "name"		: "Ryan Boucher",
+    "twitter"	: "@distributedlife",
+    "avatar"	: "ryan-avatar.jpg"
+  },
+  {
+    "name"		: "Mike Gardiner",
+    "twitter"	: "@gardym",
+    "avatar"	: "mike-avatar.jpg"
+  },
+  {
+    "name"		: "Andrew Carr",
+    "twitter"	: "@gardym",
+    "avatar"	: "andrew-avatar.jpg"
+  }
+  ], 
+  "title": "Continuous Design and the NoPSD movement",
+  "subtitle": "",
+  "byline": "Ryan Boucher and Mike Gardiner",
+  "issue": "Issue 02, June 2013",
+  "issuelink": "/p2/issue02",
+  "page": "4",
+  "pagetotal": "7",
+  "prev": "factory",
+  "next": "improve-this",
+  "paragraphs": [
+    "add content once finalised"
+  ]
+}

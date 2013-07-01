@@ -1,0 +1,11 @@
+{
+	"title": "Article",
+	"modelDate": "Issue 02, FEBRUARY 2013",
+	"authors": [
+		{
+			"name"		: "Ryan Boucher",
+			"twitter"	: "@distributedlife",
+			"avatar"	: "ryan-avatar.jpg"
+		}
+	] 
+}

@@ -1,0 +1,52 @@
+{
+	"authors": [
+		{
+			"name"		: "by The P2 Elves",
+			"twitter"	: "",
+			"avatar"	: "pdp11-avatar.jpg"
+		}
+	], 
+  "title": "Improve This",
+  "byline": "The dashing Scott Robinson and the P2 Elves",
+  "issue": "Issue 01, June 2013",
+  "issuelink": "index",
+  "page": "5",
+  "pagetotal": "7",
+  "next": "puzzle",
+  "prev": "continuous-design",
+  "paragraphs": [
+    "In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.",
+    "In this issue, Mike sent a link to an <a href='https://github.com/gardym/spacecubed-projectrjs/blob/master/lib/streamers/twitter_stream_source.js' target='_blank'>event source to a realtime social media visualization.</a>",
+    "Before we ever apply brainpower, let's apply computer power. JSLint and JSHint are both tools to find mistakes and oversights.",
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/721358c7f65836737415.js'></script></div>",
+    "The implied globals are all OK. The unused variables are not. We see immediately that:",
+    "1. The mongo dependency isn't used<br />2. There is no error handling around inserting records into the database.",
+    "The first problem is easily solved. The second problem we'll report and ignore, because it appears throughout the rest of the program:",
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/7866987a3e0dfe1cae22.js'></script></div>",
+    "Let's apply brainpower. Three things stand out:",
+    "1. map_tweet_to_event seems to have an unnecessary callback.  This should be an easy fix.",
+    "2. tweet.coordinates is both null-checked and uses magic numbers.  This isn't a problem; but, data structures with optional nulls are easy to trip on in normal use and complicate testing.",
+    "3. start_streaming is a set of deeply nested callbacks.  This one is four levels deep. Not a serious offence by Javascript standards; but, we can do better.",
+    "Sadly, this code came with no tests. We write a characterization test to give confidence that we won't break anything. The bottom of nested callbacks are good places to find expected behaviors:",
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/65dfdfd385020f6b8a0d.js'></script></div>",
+    "We flesh out the test guided by the test failures.",
+    "Now, we can refactor with (more) confidence:",
+    "First, we collapse the map_tweet_to_event callback.",
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/14adb21c2f800ec16908.js'></script></div>",
+    "Second, we split up start_streaming up by responsibility. Those responsibilities— right now— are:",
+    "1. Streaming tweets.<br />2. Logging.<br />3. Filtering tweets.<br />4. Saving raw tweets.<br />5. Saving events (processed tweets).",
+    "1 through 3 involve the Twitter stream. 4 and 5 involve the database.",
+    "We create a stream_tweets function:" ,
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/ff2d4371a7b429e00de1.js'></script></div>",
+    "Notice we inline the params object that was previously initialized in track_current_user because it is only used by the Twitter.stream method.",
+    "Then, we create a record_tweet function:",
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/e4c1d8372458c10795c9.js'></script></div>",
+    "This function returns the callback function, but keeps the db in scope.",
+    "Finally, we update track_current_user:",
+    "<div class='normal-gist'><script src='https://gist.github.com/gardym/b9a1a696c09805bbcd01.js'></script></div>",
+    "The tests pass! That means it works, right? ;-)",
+    "Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'>p2@thoughtworks.com</a>.",
+    "<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>"
+  ]
+}
+

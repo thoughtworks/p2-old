@@ -22,9 +22,9 @@
   "issue": "Issue 02, July 2013",
   "issuelink": "index",
   "page": "4",
-  "pagetotal": "6",
+  "pagetotal": "7",
   "prev": "factory",
-  "next": "puzzle",
+  "next": "improve-this",
   "paragraphs": [
     "I’m skyping with Andrew Carr when tells me about the NoPSD movement. A quick Google yields zero results. I could be onto something new here, or he could be another crackpot pushing GNU Hurd. This movement is using the pinnacle of graphics editing programs to push a new agenda in software design. Lately, Andrew finds that most of the styling he would normally do in Photoshop can be done using CSS3. It’s not the file format that’s the problem but what it represents: change is hard, so get it right the first time.",
     "There is a legacy process that sits behind the design methods we apply to software creation; most of it comes from traditional marketing and design.  It's an approach that's worked for creative agencies: magazines, TV advertisements, advertising campaigns – all these things are planned meticulously up front. In some cases, it's necessary – after all, it's harder to change an advertisement that's aired, or a magazine that's been printed then it is to change software.",

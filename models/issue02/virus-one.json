@@ -7,17 +7,18 @@
 		},
     {
 			"name"		: "John Stojanovski",
-			"avatar"	: "john-avatar.png"
+      "twitter" : "@Jotsnhoj",
+			"avatar"	: "john-avatar.jpg"
 		}
 	],
   "title": "First DOS Virus",
   "subtitle": "John Stojanovski brings us a history of the arms race between virus writers and anti-virus ?. In this first instalment: a first-person account of a personal encounter with the first DOS virus.",
   "byline": "Nick Thorpe",
-  "issue": "Issue 02, June 2013",
-  "issuelink": "../issue02",
+  "issue": "Issue 02, July 2013",
+  "issuelink": "../issue02/index",
   "page": "1",
   "pagetotal": "7",
-  "prev": "../issue02",
+  "prev": "../issue02/index",
   "next": "mobile",
   "paragraphs": [
     "It’s 1990. I’m in year 8, and as I’m walking across the dismal asphalt quadrangle toward the ash-grey public-school building I can see something is wrong. Shane Cooper is yelling something at me and laughing. He’s shouting to be heard: whatever it is he’s telling me, he wants everyone to know.",

@@ -1,0 +1,32 @@
+{
+  "authors": [
+    {
+    "name"		: "by The P2 Elves",
+    "twitter"	: "",
+    "avatar"	: "pdp11-avatar.jpg"
+  }
+  ], 
+  "title": "Credits",
+  "subtitle": "Who are the elves?",
+  "byline": "The P2 Elves",
+  "issue": "Issue 02, July 2013",
+  "issuelink": "/p2/issue01",
+  "page": "7",
+  "pagetotal": "7",
+  "prev": "puzzle",
+  "next": "/p2/issue02",
+  "paragraphs": [
+    "<strong>Editorial Committee</strong>",
+    "Ryan Boucher, Mike Gardiner, Rachel Laycock, Rebecca Parsons, Nick Thorpe",
+    "<strong>Writers</strong>",
+    "Ryan Boucher, Nick Thorpe, Mike Gardiner",
+    "<strong>Art</strong>",
+    "Greg Skinner",
+    "<strong>Site Design</strong>",
+    "Andrew Carr, Mike Gardiner, Ryan Boucher",
+    "<strong>Photo Credit</strong>",
+    "The cover photo is of Yangshuo in Guangxi province taken by Adam Scott during his twelve month transfer to ThoughtWorks China",
+    "<strong>Special Thanks</strong>",
+    "Andrew Carr, Stewart Gleadow, John Stojanovski, Mike Gardiner"
+  ]
+}

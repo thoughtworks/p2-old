@@ -1,0 +1,197 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Improve This</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    <a id="prev" href="/p2/issue02/continuous-design/" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="/p2/issue02/puzzle/" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue02/index/">Issue 02, July 2013</a></li>
+        <li class="pull-right">Page 5 / 7 </li>
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Improve This</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by The P2 Elves
+        </p>
+    </header>
+    <div class="article-body"><p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
+
+<p>In this issue, Mike sent a link to an <a href='https://github.com/gardym/spacecubed-projectrjs/blob/master/lib/streamers/twitter_stream_source.js' target='_blank'>event source to a realtime social media visualization.</a></p>
+
+<p>Before we ever apply brainpower, let&rsquo;s apply computer power. JSLint and JSHint are both tools to find mistakes and oversights.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/721358c7f65836737415.js'></script></div>
+
+
+<p>The implied globals are all OK. The unused variables are not. We see immediately that:</p>
+
+<ol>
+<li>The <span class='inline-code'>mongo</span> dependency isn&rsquo;t used<br />2. There is no error handling around inserting records into the database.</li>
+</ol>
+
+
+<p>The first problem is easily solved. The second problem we&rsquo;ll report and ignore, because it appears throughout the rest of the program:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/7866987a3e0dfe1cae22.js'></script></div>
+
+
+<p>Let&rsquo;s apply brainpower. Three things stand out:</p>
+
+<ol>
+<li><p><span class='inline-code'>map_tweet_to_event</span> seems to have an unnecessary callback.  This <em>should</em> be an easy fix.</p></li>
+<li><p><span class='inline-code'>tweet.coordinates</span> is both null-checked and uses magic numbers.  This isn&rsquo;t a problem; but, data structures with optional nulls are easy to trip on in normal use and complicate testing.</p></li>
+<li><p><span class='inline-code'>start_streaming</span> is a set of deeply nested callbacks.  This one is four levels deep. Not a serious offence by Javascript standards; but, we can do better.</p></li>
+</ol>
+
+
+<p>Sadly, this code came with no tests. We write a characterization test to give confidence that we won&rsquo;t break anything. The bottom of nested callbacks are good places to find expected behaviors:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/65dfdfd385020f6b8a0d.js'></script></div>
+
+
+<p>We flesh out the test guided by the test failures.</p>
+
+<p>Now, we can refactor with (more) confidence:</p>
+
+<p>First, we collapse the <span class='inline-code'>map_tweet_to_event</span> callback.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/14adb21c2f800ec16908.js'></script></div>
+
+
+<p>Second, we split up <span class='inline-code'>start_streaming</span> up by responsibility. Those responsibilities— right now— are:</p>
+
+<ol>
+<li>Streaming tweets.<br />2. Logging.<br />3. Filtering tweets.<br />4. Saving raw tweets.<br />5. Saving events (processed tweets).</li>
+</ol>
+
+
+<p>1 through 3 involve the Twitter stream. 4 and 5 involve the database.</p>
+
+<p>We create a <span class='inline-code'>stream_tweets</span> function:&ldquo; ,</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/ff2d4371a7b429e00de1.js'></script></div>
+
+
+<p>Notice we inline the <span class='inline-code'>params</span> object that was previously initialized in <span class='inline-code'>track_current_user</span> because it is only used by the <span class='inline-code'>Twitter.stream</span> method.</p>
+
+<p>Then, we create a <span class='inline-code'>record_tweet</span> function:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/e4c1d8372458c10795c9.js'></script></div>
+
+
+<p>This function returns the callback function, but keeps the <span class='inline-code'>db</span> in scope.
+Finally, we update <span class='inline-code'>track_current_user</span>:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/b9a1a696c09805bbcd01.js'></script></div>
+
+
+<p>The tests pass! That means it works, right? ;&ndash;)</p>
+
+<p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#109;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x70;&#x32;&#64;&#x74;&#x68;&#111;&#x75;&#x67;&#104;&#116;&#119;&#111;&#114;&#x6b;&#115;&#x2e;&#99;&#111;&#x6d;">&#x70;&#50;&#x40;&#116;&#x68;&#x6f;&#x75;&#103;&#x68;&#x74;&#119;&#x6f;&#114;&#x6b;&#x73;&#46;&#x63;&#x6f;&#x6d;</a></a>.</em></p>
+
+<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
+
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/pdp11-avatar.jpg"/>
+         </a>
+         <div>by The P2 Elves</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    <a id="prev" href="/p2/issue02/continuous-design/" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="/p2/issue02/puzzle/" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

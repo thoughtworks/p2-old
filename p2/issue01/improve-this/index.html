@@ -1,0 +1,228 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Improve This</title>
+<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+<link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="../assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    <a id="prev" href="the-king-is-dead" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="puzzle" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="index">Issue 01, June 2013</a></li>
+        <li class="pull-right">Page 4 / 6 </li>
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Improve This</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by The P2 Elves
+        </p>
+    </header>
+    <div class="article-body"><p>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</p>
+
+<p>In this issue Anand has sent us a cucumber test that he’s asked us to improve.</p>
+
+<script src='https://gist.github.com/distributedlife/5692407.js'></script>
+
+
+<p>First up some incidental detail. “Given I or anyone else is, has or will log in” is the most ubiquitous waste of time that exists in the land of cucumber. Unless you&rsquo;re testing user authentication, delete it.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/distributedlife/5692415.js'></script></div>
+
+
+<p>The usernames and passwords are not required here. The roles are potentially useful but having buyer_1 and buyer_2 as unique values for a ‘role’ – that represents a classification – is a smell. Who they ‘bid on behalf of’ for is never mentioned again so that is also incidental detail.</p>
+
+<script src='https://gist.github.com/distributedlife/5692421.js'></script>
+
+
+<p>‘Created’ can be implied from the fact you are publishing it and as the automatic run assignment is never mentioned so it might be incidental too. I’m inclined to delete it.</p>
+
+<p>Next.</p>
+
+<script src='https://gist.github.com/distributedlife/5692423.js'></script>
+
+
+<p>Ok. Although I would ignore how they get added to the Live Sale. And as listings seem to be of little consequence through the rest of the script I would delete this line entirely.</p>
+
+<p>Next.</p>
+
+<script src='https://gist.github.com/distributedlife/5692452.js'></script>
+
+
+<p>The &lsquo;before Preview Start Time&rsquo; refers to a state that a sale exists in. Implying state is bad because you end up referring to it in roundabout ways. Make it a first class part of your system. I&rsquo;m not sure what this state is but it might be something like preparation. We also need to consider whether anyone “cannot” suspend the live sale or if only the admin cannot suspend the live sale. I suspect it’s anyone cannot suspend it. So let’s remove the admin reference.</p>
+
+<script src='https://gist.github.com/distributedlife/5692457.js'></script>
+
+
+<p>Next.</p>
+
+<script src='https://gist.github.com/distributedlife/5692489.js'></script>
+
+
+<p>Ok, now we can suspend the auction as it has started. So we should make this a separate test rather than a flow. Here we have an admin suspending an auction. Do we need tests for other roles not having the ability to suspend auctions?</p>
+
+<script src='https://gist.github.com/distributedlife/5692492.js'></script>
+
+
+<p>Next.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/distributedlife/5692495.js'></script></div>
+
+
+<p>Ok, so now we have some behavior where logged-in users are shown a message when a sale is suspended. It&rsquo;s not clear why buyer_2 does not see get notified. I can&rsquo;t see any buyer_1 steps earlier on, that don&rsquo;t include buyer_2.</p>
+
+<p>I don&rsquo;t like implementation detail in tests. This test implies that only users online now, will be notified of the Live Sale suspension.</p>
+
+<script src='https://gist.github.com/distributedlife/5692506.js'></script>
+
+
+<p>We test that we notify users of the suspension but not how they are notified.</p>
+
+<p>Next.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/distributedlife/5692513.js'></script></div>
+
+
+<p>Here we are testing for the absence of something. Do any users see the popup? If not, how can we test for something that was never built. Deleted.</p>
+
+<p>Next.</p>
+
+<script src='https://gist.github.com/distributedlife/5692519.js'></script>
+
+
+<p>The auction starts with an initial bid. However it&rsquo;s not clear if we are testing that only an auctioneer can set the starting bid or, if setting the start bid starts the auction. I’m inclined to say the latter.</p>
+
+<script src='https://gist.github.com/distributedlife/5692521.js'></script>
+
+
+<p>Next.</p>
+
+<script src='https://gist.github.com/distributedlife/5692524.js'></script>
+
+
+<p>Ok, buyer 1 and 2 have both bid now. Then the auctioneer does a Sell and then a No Sale on the listing. What is a listing? It has only been mentioned once before on the second line of the script.</p>
+
+<p>The last verification suggests that sales can be suspended but only if it is in the No Sale state. However there is no guarantee of this. I’m not sure what ‘No Sale’ means exactly. It’s a strange name for a state but i’ll let it pass but would no called it a ‘No Sale auction’ but a ‘No Sale’.</p>
+
+<script src='https://gist.github.com/distributedlife/5692528.js'></script>
+
+
+<p>Next.</p>
+
+<script src='https://gist.github.com/distributedlife/5692539.js'></script>
+
+
+<p>Listings are back and they can run. The important thing here is that the auctioneer ends the auction after the listings have run. Not that having the listings finish running automatically ends the auction. I see listings as not important.</p>
+
+<script src='https://gist.github.com/distributedlife/5692540.js'></script>
+
+
+<p>Done.</p>
+
+<p>The main things we covered were around domain language and removing the implementation from the notifications. We removed lots of incidental detail and clarified some behaviour around state transition and who is authorised to do what.</p>
+
+<p>We’ve made a lot of assumptions about how this system works and how the cucumber file is used. We’ve ignored how the cucumber file got to where it is today and followed a simple rule: if someone can’t understand how it works from reading it, then it needs improvement.</p>
+
+<p>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#112;&#50;&#x40;&#x74;&#104;&#x6f;&#117;&#103;&#104;&#x74;&#119;&#x6f;&#114;&#107;&#115;&#46;&#x63;&#111;&#109;">&#x70;&#50;&#64;&#116;&#x68;&#111;&#x75;&#103;&#x68;&#116;&#x77;&#111;&#114;&#107;&#x73;&#46;&#99;&#x6f;&#109;</a></a>.</p>
+
+<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
+
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="../images/pdp11-avatar.jpg"/>
+         </a>
+         <div>by The P2 Elves</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    <a id="prev" href="the-king-is-dead" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="puzzle" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

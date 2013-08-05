@@ -1,0 +1,164 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | The Arms Race Continues: Encryption</title>
+<link rel="shortcut icon" type="image/png" href="/favicon.png" />
+<link href="../stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="../assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    <a id="prev" href="velocityraptors" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="user-group" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="index">Issue 03, August 2013</a></li>
+        <li class="pull-right">Page 3 / 9 </li>
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>The Arms Race Continues: Encryption</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by John Stojanovski and Nick Thorpe
+        </p>
+    </header>
+    <div class="article-body"><p><em>1998. Malvern. I&rsquo;m in the fishbowl. My head is on the desk. I&rsquo;m doing tech support, talking to Joe the Baker or Bob the Builder over the phone with my dinky headset on, my head on the desk, without hope. Going &ldquo;Oh my God. I can&rsquo;t do this any more.&rdquo;</em></p>
+
+<p><em>I&rsquo;m working  tech support for VET antivirus. The tech support guys are in one of those glassed-in areas. We call it the fishbowl. Eventually, after 9 months at VET, falling slowly, my head is on the desk. I can&rsquo;t go on.</em></p>
+
+<p>I got the job because I had this underlying fundamental knowledge of computers. I remember vividly in the interview, them saying &ldquo;can you describe how a computer boots up?&rdquo;</p>
+
+<p>Me, blinking at them: &ldquo;How much detail do you want?&rdquo;  A moment of silence.</p>
+
+<p>&ldquo;It does a power-on self test. It starts from the 16th byte from the top of memory. It then loads the master boot record of a hard disk, or a boot sector of a floppy disc at location 0:7C00 in memory. The processor at this stage is in real mode. The master boot record starts with FA33C0 usually, ends in  55AA.&rdquo; All sorts of crazy shit like that. My head swam with these pieces of information.</p>
+
+<p>I had always been writing assembly on the side.  I had an interest in all things low-level. Or trying to. I had signed up for it at Uni, but nobody else did. So they cancelled the class.</p>
+
+<blockquote><p>Since then, I never stopped wanting to understand assembly code, but I couldn&rsquo;t do it, for some reason. The way I actually started learning it was by cracking software. By cracking copy-protection on software.  I spent a lot of time in soft ice, the debugger.</p></blockquote>
+
+<p>Since then, I never stopped wanting to understand assembly code&hellip; The way I actually started learning it was by cracking software.</p>
+
+<p>One way to crack was, you could do a &ldquo;deadlisting&rdquo;. Thats where you bring up the tool – still the central tool on both sides of the virus arms race –  called IDA, and you look for strings. When  a copy protection violation has been detected, it usually gives you a message. &ldquo;This key is no longer valid&rdquo;. You find that message, and you find where that is being referenced, in code. And with the disassembler, you backtrack through the code, looking to invert the jump to where that check is. It&rsquo;s usually a boolean check: true or false. You invert the jump to say its valid, when its not. &ldquo;Jump when invalid&rdquo; becomes &ldquo;jump when valid&rdquo;. That&rsquo;s called a &ldquo;hard crack&rdquo;. Not recommended, because the software can easily detect it has been changed, and take action.</p>
+
+<p>The soft crack, that&rsquo;s the best way.  Thats when you go through and understand the logic of how the keys are generated, and you generate your own valid keys. You&rsquo;re not modifying the software at all.</p>
+
+<p><em>To stay sane, to get my head up off that desk, I&rsquo;m teaching myself to crack software, while I&rsquo;m working at a company whose business it is to beat crackers.  I&rsquo;m learning from the research and analysis guys.  I see an opening there. The most brilliant, and socially inept human I have ever met has left his job to take up horticulture, leaving a hole in the organisation. A way out of the fishbowl.</em></p>
+
+<p>The exam, to get the job: write your name using DOS interrupts. Now using BIOS interrupts. Now I write it using  no interrupts at all.  Directly addressing the video buffers. Blasting bits up onto the screen.  I get the job: virus researcher. My boss, Kaminsky, gives me this disc with the GWAR virus on it. I&rsquo;m hooked.</p>
+
+<p>After a while the viruses I saw changed. They became more complex. Multi-partite, which means boot sector and file.  Next came encryption. What encryption did for viruses: you couldn&rsquo;t just run it through the disassembler to see what it did, because it was encrypted using a secret code. What you needed to do do first is decrypt it.</p>
+
+<p>How do you do that? You manually decrypt it, or you write a script, or&hellip;</p>
+
+<blockquote><p>You create a goat machine.</p></blockquote>
+
+<p>You create a <strong>goat machine</strong>.  It&rsquo;s a sacrificial machine. You segregate it, and wait for it to get infected. You wait for the virus to get in memory. When it&rsquo;s in memory, its decrypted. It has to be. So you dump the processor memory space, and then run it through the disassembler.  After a while, encrypted viruses were easy for us to detect.</p>
+
+<p>All this was before modern worms, which replicate and travel over networks.   After a while, the bad guys started to increment the encryption with each new infection. In the antivirus industry, we beat that one too. But beating the next threat represented a whole new way of thinking: polymorphism was coming.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="../images/john-avatar.jpg"/>
+         </a>
+         <div>John Stojanovski</div>
+         
+         <a href="http://twitter.com/jotsnhoj">@jotsnhoj</a>
+         
+      </div>
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="../images/nick-avatar.png"/>
+         </a>
+         <div>Nick Thorpe</div>
+         
+         <a href="http://twitter.com/agileboardhacks">@agileboardhacks</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    <a id="prev" href="velocityraptors" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="user-group" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

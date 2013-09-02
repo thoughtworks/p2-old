@@ -1,0 +1,146 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | A well rounded bias</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    <a id="prev" href="/p2/issue04/testing-hard/" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="/p2/issue04/deployment-options/" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue04/index/">Issue 04, September 2013</a></li>
+        <li class="pull-right">Page 6 / 10 </li>
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>A well rounded bias</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Ryan Boucher
+        </p>
+    </header>
+    <div class="article-body"><p>I was on a project with another ThoughtWorker called Neil Craven. We stood next to a computer with a few other people on the team. Neil was the analyst: the one setting the scene for this new story. He mentioned that we needed to round a number to two decimal places. I was being a smart-arse and asked how he would like that rounded -as if there was more than one way to round a number. Neil responded with “<em>Round half to even</em>, of course”.</p>
+
+<blockquote><p>&ldquo;I was being a smart-arse&rdquo;</p></blockquote>
+
+<p>I was dumbfounded. I had never heard of this before and we fell into a Wikipedia hole. When we resurfaced we now knew that there are different strategies for tie-breaking. A tie-break strategy is required when you end up with 0.5 as the final digit because the number is split exactly between the two numbers we could round to. Round Half to Even is one strategy and the is IEEE standard for rounding. The idea is to round the number to the nearest even number.</p>
+
+<p><strong>22.5 rounds down to 22</strong></p>
+
+<p><strong>23.5 rounds up to 24</strong></p>
+
+<p>Neil had grown up in Scotland where he learned it at school. I had grown up in Australia and had learnt <em>Round Half Up</em>.</p>
+
+<p><strong>22.5 rounds up to 23</strong></p>
+
+<p><strong>23.5 rounds up to 24</strong></p>
+
+<p>The reason that multiple rounding strategies exist is to deal with bias. <em>Round Half Up</em> has a positive bias. This bias become a problem when do statistical analysis on large datasets. If you always rounded up, then the average would be higher than it should be. If you were making important decisions based on these numbers then there could be a problem. <em>Round Half to Even</em> tries to avoid this positive bias. It succeeds but at the cost of introducing a different bias: a bias towards even numbers.</p>
+
+<p>We could <em>Round Half Down</em>, and take a negative bias and <em>Round Half to Odd</em> to introduce –my favourite bias: an odd bias. There are other strategies such as <em>Stochastic Rounding</em> and <em>Alternate Tie-Breaking</em> that just about succeed in removing bias. <em>Stochastic Rounding</em>, however is non-deterministic and <em>Alternate Tie-Breaking</em> will, on odd-frequencies have a tiny positive or negative bias. As you will see, removing all bias wasn&rsquo;t our goal.</p>
+
+<p>The question that needs answering is what do we need to care about? In our case, we were rounding a number that was not related to money. So <em>Round Half to Even</em> was <strong>good enough</strong>. Had it been related to money, then within Australia the Taxation Department requires that for all tie-breaks we <em>Round Half Up</em>.</p>
+
+<p>As exciting as rounding numbers and tie-breaking is. This story should remind us of the assumptions that we carry with us without knowing it. Our own personal biases. There are strategies for dealing with bias in rounding errors, do you have a strategy for dealing with the biases in your thinking?</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/ryan-avatar.jpg"/>
+         </a>
+         <div>Ryan Boucher</div>
+         
+         <a href="http://twitter.com/distributedlife">@distributedlife</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    <a id="prev" href="/p2/issue04/testing-hard/" class="prev">&#9664;</a>
+    <script type="text/javascript">
+      key('left', function() {
+        window.open($("#prev")[0].href, '_self', false);
+      });
+    </script>
+  
+  
+    <a id="next" href="/p2/issue04/deployment-options/" class="next">&#9654;</a>
+    <script type="text/javascript">
+      key('right', function(){
+        window.open($("#next")[0].href, '_self', false);
+      });
+    </script>
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

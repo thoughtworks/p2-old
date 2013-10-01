@@ -1,0 +1,337 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Improve This</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue04/rounded-bias/" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue04/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue04/index">issue04, September 2013</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            	7 / 9
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Improve This</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by The P2 Elves
+        </p>
+    </header>
+    <div class="article-body"><p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
+
+<p>In this issue we have with two tiny partials of code. It’s some ASPX/HTML madness</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/distributedlife/6411769.js'></script></div>
+
+
+<p>The first thing we should do is try and remove the conditional logic and the editable properties out. This behaviour should be in the controller. The controller logic should be ‘If the user has insufficient privileges to edit but can see the record’, redirect the user to the view-only resource.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411783.js"></script></div>
+
+
+<p>The goal of the conditional <span class='inline-code'>(isCurrentUser || isAdminUser)</span> is to not show the personal email address unless a user is looking at their own account or an admin is looking. There are couple of ways we can handle this.</p>
+
+<h3>Keep the view logic.</h3>
+
+<p>If you want to keep the view logic, then the next step would be to collapse the conditional down to one branch.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411798.js"></script></div>
+
+
+<p>The personalEmailIsVisible property is set on the controller.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411809.js"></script></div>
+
+
+<p>With fewer code paths our testing becomes simpler.</p>
+
+<h3>Remove the view logic and mask the property</h3>
+
+<p>Here change the view to always render the personal email address:</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411817.js"></script></div>
+
+
+<p>What we do in the controller is mask the value for users who should not see that data.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411821.js"></script></div>
+
+
+<h3>Remove the view logic and make a new domain object</h3>
+
+<p>I would trend towards making new domain objects as the view fractures with conditionals. Let’s call it a <span class='inline-code'>PublicPerson</span>. There is no personal email address on this model so the conditional logic is no longer required. I would use an adapter to turn the <span class='inline-code'>PrivatePerson</span> object into a <span class='inline-code'>PublicPerson</span>. The challenge with object oriented programming is more logic you have, the muddier your domain model becomes.</p>
+
+<p>Here is our view and controller</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411828.js"></script></div>
+
+
+<h3>Minor Model Changes and some CSS</h3>
+
+<p>I would rename the model from Model to something that was more meaningful like <span class='inline-code'>Person</span>. This changes <span class='inline-code'>Model.StreetAddress</span> to <span class='inline-code'>Person.HomeAddress</span>. It’s a bit mixed in places as there is <span class='inline-code'>HomeAddress.StreetAddress</span>, <span class='inline-code'>StreetAddress</span>, <span class='inline-code'>Model.StreetAddress</span>. As there is only one line for the street and there appears to be only one address (home) all this relates to a person. so <span class='inline-code'>Person.HomeAddress</span> is a good name.</p>
+
+<p>I’d also make the <span class='inline-code'>AlternateEmail</span> and <span class='inline-code'>PersonalEmail</span> consistent. It should be one or the other, using both terms makes it feel like the domain model is not fully understood. I’d also remove the cols and rows properties and move them into CSS as height and width. The span elements in the second paragraph are probably there for formatting. Remove them and style them using CSS.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411842.js"></script></div>
+
+
+<h3>The Sucker Punch</h3>
+
+<p>The final improvement is easy to miss and by the longest margin: the most important. It’s the reason why this code snippet was put up for review. Neither the address or the email address have had the values encoded. This meant that arbitrary javascript was inserted into the fields and executed as the page is rendered. The fix is quite simple.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411852.js"></script></div>
+
+
+<p><em>Do you have something you want improved? Send it to p2@thoughtworks.com.</em></p>
+
+<p>&nbsp;</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/pdp11-avatar.jpg"/>
+         </a>
+         <div>by The P2 Elves</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue04/rounded-bias/" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue04/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

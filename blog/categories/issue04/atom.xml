@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: issue04 | P2 Magazine]]></title>
+  <link href="http://thoughtworks.github.io/p2/blog/categories/issue04/atom.xml" rel="self"/>
+  <link href="http://thoughtworks.github.io/p2/"/>
+  <updated>2013-10-01T07:59:26+02:00</updated>
+  <id>http://thoughtworks.github.io/p2/</id>
+  <author>
+    <name><![CDATA[The P2 Elves]]></name>
+    <email><![CDATA[p2@thoughtworks.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Credits]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue04/credits/"/>
+    <updated>2013-09-11T00:00:00+02:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue04/credits</id>
+    <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
+
+<p>Ryan Boucher, Rachel Laycock, Rebecca Parsons, Nick Thorpe</p>
+
+<p><strong>Writers</strong></p>
+
+<p>Ryan Boucher, Sarah Howe, Rachel Laycock, Paige Mulholland, Scott Robinson, Nick Thorpe</p>
+
+<p><strong>Art</strong></p>
+
+<p>Pennueng Chemsripong</p>
+
+<p><strong>Site Design</strong></p>
+
+<p>Ryan Boucher, Andrew Carr, Mike Gardiner</p>
+
+<p><strong>Photo Credit</strong></p>
+
+<p>The desert outside of Lima as seen from a bus &ndash; Ryan Boucher</p>
+
+<p><strong>Special Thanks</strong></p>
+
+<p>Neil Craven, Mike Gardiner, Patrick Kua, Alex Ong, James Pierce, Scott Robinson, Fiona Siseman, Darren Smith, John Stojanovski</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue04/puzzle/"/>
+    <updated>2013-09-10T00:00:00+02:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue04/puzzle</id>
+    <content type="html"><![CDATA[<p>This month’s puzzle starts with four numbers and one blank: 2, 4, 6, 8, _. The four numbers represent part of a sequence. Your challenge is to work out what that sequence is.</p>
+
+<p>You can suggest potential numbers for the blanks and those candidates will either be ‘not in the sequence’ in which case the blank is not filled, or is ‘in the sequence’. In the latter case the sequence is extended to include that new number and a new blank is created.</p>
+
+<p>As this is not an interactive puzzle –the P2 elves are very busy at all times of the year, I’d like you to work out what your guess is, and then based on the outcome, what the sequence <strong>could</strong> be. The first person with the fewest amount of guesses to prove the correct sequence is in their set of potential sequences, wins.</p>
+
+<p><em>Submit your completed answers to <a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#112;&#50;&#64;&#116;&#x68;&#x6f;&#117;&#103;&#104;&#x74;&#119;&#111;&#114;&#107;&#115;&#46;&#99;&#x6f;&#x6d;">&#x70;&#50;&#64;&#x74;&#104;&#x6f;&#x75;&#103;&#104;&#x74;&#x77;&#111;&#x72;&#x6b;&#115;&#x2e;&#x63;&#x6f;&#x6d;</a> and the first correct answer wins a prize.</em></p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>Ok, so let’s look at last month’s puzzle. We had a great set of answers and a bug in the puzzle. We had missed a single clue that meant that for the first few days there were two possible answers to the deployment frequency. We elves had indicated that quarterly, monthly and weekly deployment frequencies existed. Based on the answers I got most people <strong>assumed</strong> the missing frequency was either daily or yearly.</p>
+
+<p>We published an updated that set it to daily. We regret doing that, as it was fascinating to see how people approached the uncertainty. It was <em>John Napier</em> who pointed out we missed a vital clue and he gave us two answers based on whether the missing clue was &lsquo;more than weekly&rsquo; or &lsquo;less than quarterly&rsquo;. Unfortunately both of his answers were slightly off. He still gets a prize for making us aware of the problem and trying to cater for it. <em>Wamika Singh</em> also gets a prize for the first correct answer.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/0a0b8b9189908806a93f.js"></script></div>
+
+
+<p>This month’s prize is: <em>The Retrospective Handbook</em> by Pat Kua.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Improve This]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue04/improve-this/"/>
+    <updated>2013-09-09T00:00:00+02:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue04/improve-this</id>
+    <content type="html"><![CDATA[<p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
+
+<p>In this issue we have with two tiny partials of code. It’s some ASPX/HTML madness</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/distributedlife/6411769.js'></script></div>
+
+
+<p>The first thing we should do is try and remove the conditional logic and the editable properties out. This behaviour should be in the controller. The controller logic should be ‘If the user has insufficient privileges to edit but can see the record’, redirect the user to the view-only resource.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411783.js"></script></div>
+
+
+<p>The goal of the conditional <span class='inline-code'>(isCurrentUser || isAdminUser)</span> is to not show the personal email address unless a user is looking at their own account or an admin is looking. There are couple of ways we can handle this.</p>
+
+<h3>Keep the view logic.</h3>
+
+<p>If you want to keep the view logic, then the next step would be to collapse the conditional down to one branch.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411798.js"></script></div>
+
+
+<p>The personalEmailIsVisible property is set on the controller.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411809.js"></script></div>
+
+
+<p>With fewer code paths our testing becomes simpler.</p>
+
+<h3>Remove the view logic and mask the property</h3>
+
+<p>Here change the view to always render the personal email address:</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411817.js"></script></div>
+
+
+<p>What we do in the controller is mask the value for users who should not see that data.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411821.js"></script></div>
+
+
+<h3>Remove the view logic and make a new domain object</h3>
+
+<p>I would trend towards making new domain objects as the view fractures with conditionals. Let’s call it a <span class='inline-code'>PublicPerson</span>. There is no personal email address on this model so the conditional logic is no longer required. I would use an adapter to turn the <span class='inline-code'>PrivatePerson</span> object into a <span class='inline-code'>PublicPerson</span>. The challenge with object oriented programming is more logic you have, the muddier your domain model becomes.</p>
+
+<p>Here is our view and controller</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411828.js"></script></div>
+
+
+<h3>Minor Model Changes and some CSS</h3>
+
+<p>I would rename the model from Model to something that was more meaningful like <span class='inline-code'>Person</span>. This changes <span class='inline-code'>Model.StreetAddress</span> to <span class='inline-code'>Person.HomeAddress</span>. It’s a bit mixed in places as there is <span class='inline-code'>HomeAddress.StreetAddress</span>, <span class='inline-code'>StreetAddress</span>, <span class='inline-code'>Model.StreetAddress</span>. As there is only one line for the street and there appears to be only one address (home) all this relates to a person. so <span class='inline-code'>Person.HomeAddress</span> is a good name.</p>
+
+<p>I’d also make the <span class='inline-code'>AlternateEmail</span> and <span class='inline-code'>PersonalEmail</span> consistent. It should be one or the other, using both terms makes it feel like the domain model is not fully understood. I’d also remove the cols and rows properties and move them into CSS as height and width. The span elements in the second paragraph are probably there for formatting. Remove them and style them using CSS.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411842.js"></script></div>
+
+
+<h3>The Sucker Punch</h3>
+
+<p>The final improvement is easy to miss and by the longest margin: the most important. It’s the reason why this code snippet was put up for review. Neither the address or the email address have had the values encoded. This meant that arbitrary javascript was inserted into the fields and executed as the page is rendered. The fix is quite simple.</p>
+
+<div class='normal-gist'><script src="https://gist.github.com/distributedlife/6411852.js"></script></div>
+
+
+<p><em>Do you have something you want improved? Send it to p2@thoughtworks.com.</em></p>
+
+<p>&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A well rounded bias]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue04/rounded-bias/"/>
+    <updated>2013-09-07T00:00:00+02:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue04/rounded-bias</id>
+    <content type="html"><![CDATA[<p>I was on a project with another ThoughtWorker called Neil Craven. We stood next to a computer with a few other people on the team. Neil was the analyst: the one setting the scene for this new story. He mentioned that we needed to round a number to two decimal places. I was being a smart-arse and asked how he would like that rounded -as if there was more than one way to round a number. Neil responded with “<em>Round half to even</em>, of course”.</p>
+
+<blockquote><p>&ldquo;I was being a smart-arse&rdquo;</p></blockquote>
+
+<p>I was dumbfounded. I had never heard of this before and we fell into a Wikipedia hole. When we resurfaced we now knew that there are different strategies for tie-breaking. A tie-break strategy is required when you end up with 0.5 as the final digit because the number is split exactly between the two numbers we could round to. Round Half to Even is one strategy and the is IEEE standard for rounding. The idea is to round the number to the nearest even number.</p>
+
+<p><strong>22.5 rounds down to 22</strong></p>
+
+<p><strong>23.5 rounds up to 24</strong></p>
+
+<p>Neil had grown up in Scotland where he learned it at school. I had grown up in Australia and had learnt <em>Round Half Up</em>.</p>
+
+<p><strong>22.5 rounds up to 23</strong></p>
+
+<p><strong>23.5 rounds up to 24</strong></p>
+
+<p>The reason that multiple rounding strategies exist is to deal with bias. <em>Round Half Up</em> has a positive bias. This bias become a problem when do statistical analysis on large datasets. If you always rounded up, then the average would be higher than it should be. If you were making important decisions based on these numbers then there could be a problem. <em>Round Half to Even</em> tries to avoid this positive bias. It succeeds but at the cost of introducing a different bias: a bias towards even numbers.</p>
+
+<p>We could <em>Round Half Down</em>, and take a negative bias and <em>Round Half to Odd</em> to introduce –my favourite bias: an odd bias. There are other strategies such as <em>Stochastic Rounding</em> and <em>Alternate Tie-Breaking</em> that just about succeed in removing bias. <em>Stochastic Rounding</em>, however is non-deterministic and <em>Alternate Tie-Breaking</em> will, on odd-frequencies have a tiny positive or negative bias. As you will see, removing all bias wasn&rsquo;t our goal.</p>
+
+<p>The question that needs answering is what do we need to care about? In our case, we were rounding a number that was not related to money. So <em>Round Half to Even</em> was <strong>good enough</strong>. Had it been related to money, then within Australia the Taxation Department requires that for all tie-breaks we <em>Round Half Up</em>.</p>
+
+<p>As exciting as rounding numbers and tie-breaking is. This story should remind us of the assumptions that we carry with us without knowing it. Our own personal biases. There are strategies for dealing with bias in rounding errors, do you have a strategy for dealing with the biases in your thinking?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Testing makes it hard to test]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue04/testing-hard/"/>
+    <updated>2013-09-06T00:00:00+02:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue04/testing-hard</id>
+    <content type="html"><![CDATA[<p>Mike was working on an old, heavily customised, oversized, off-the-shelf content management system. Because it was an off the shelf product, it wasn’t unit-tested. And the organisation didn’t feel they could effectively unit test their modifications to it. So they decided to test higher up the testing pyramid; they chose functional level tests. A couple of consultants were brought in to show the team how. Which they did and as they were very capable developers they wrote lots of tests, fast. Soon they had covered most of the essential flows through the system. Because those consultants had written a lot of tests fast, these tests were reinforced as <strong>the</strong> way to write tests for this system.</p>
+
+<blockquote><p>The act of exclusively doing unit testing had made it harder for me to test my system at a higher level.</p></blockquote>
+
+<p>This had some flow on effects. The first was that new code was not test-driven. All the functional tests were written after the code. When you do that you don’t get the other benefits you get from test-driven code: less code and a well-factored design. The code became complex and making changes began to take longer.</p>
+
+<p>Unit tests execute faster than functional tests. It is true that the existing code was going to be hard to unit test –it had never been designed with testing in mind. The new code wasn’t unit tested because “Why go to the effort of unit testing it, when it’s super easy to write a functional test?”. Their test suite slowed down and their effort switched to making it run faster.</p>
+
+<p>So here we have the well known saga of higher level tests taking a long time to run. When the testing suite takes too long teams waste energy trying to parallelise the build, prune their test suite, or avoiding writing as many tests. A common consultant answer is to write more unit tests. With that comes our second story.</p>
+
+<p>One of my hobbies is the design of games: board, card or computer. I was trying to turn a card game I’d made into a computer game. I was writing it in JavaScript and through the use of RequireJS it was executing entirely on the client. As a tester and strong quality advocate I had unit tested this quite heavily.</p>
+
+<p>But, there came a point where I wanted to run some integration tests to exercise the various options the player could do at different times. I ran into a problem. My game relied on an uncertainty mechanic: a set of shuffled decks. When it came to unit testing it was trivial to test the behaviour but from an integration perspective, I hadn’t left any way for me to create deterministic behaviour. The act of exclusively doing unit testing had made it harder for me to test my system at a higher level.</p>
+
+<p>I’m now a strong proponent of outside-in-testing and why all the layers in the testing pyramid are important. Testing should be done at each level. The deeper down you go the more code design benefits you get, the higher you go the easier it is to test integration behaviour. But it’s not an exclusive thing. A well factored design exists at each layer within the application and across applications. Integration happens as soon as we have two functions interacting. It continues as we zoom out to our unit, then to clusters of units, clusters of clusters –we might call these packages or modules; we keep pulling out to our application, multiple applications interacting with each other and with people and clusters of people interacting with each other.</p>
+]]></content>
+  </entry>
+  
+</feed>

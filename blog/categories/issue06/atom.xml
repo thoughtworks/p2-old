@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue06 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue06/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2013-11-05T00:22:57+11:00</updated>
+  <updated>2013-11-05T20:03:37+11:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -73,15 +73,15 @@
 <div class='normal-gist'><code id="gist-7301907" data-file="1.py"></code></div>
 
 
-<p>The for loop makes use of 3 global variables: the length, width and number of stones in each slot. The length and width control how much looping is done. The two cases for the number of stones catered for here are 2 and 3.</p>
+<p>The for loop makes use of 3 global variables: the <span class="inline-code">length</span>, <span class="inline-code">width</span> and number of <span class="inline-code">stones</span> in each slot. The <span class="inline-code">length</span> and <span class="inline-code">width</span> control how much looping is done. The two cases for the number of stones catered for here are 2 and 3.</p>
 
 <p>Executing this code will give rise to a structure like this:</p>
 
 <p><img src="/p2/images/improve-this/ncuva.png" alt="Ncuva Board Layout" /></p>
 
-<p>As you can see from the figure displayed above, there is a pattern at work here. The pattern screams out: there are two many 2&rsquo;s! We gather that we do not have to loop through all of a to know how many stones to place in each slot.</p>
+<p>As you can see from the figure displayed above, there is a pattern at work here. The pattern screams out: there are too many 2&rsquo;s! We gather that we do not have to loop through all of <span class="inline-code">a</span> to know how many stones to place in each slot.</p>
 
-<p>On having noticed the pattern, we go ahead and fill a with 2 or 3 stones according to the user&rsquo;s choice. How many corrections would we have to do if we filled a with 2&rsquo;s? Would this approach provide any savings? 6 (at best 4) corrections are better than 4x10x5 (at worst 4x10x7) checks.</p>
+<p>On having noticed the pattern, we go ahead and fill <span class="inline-code">a</span> with 2 or 3 stones according to the user&rsquo;s choice. How many corrections would we have to do if we filled <span class="inline-code">a</span> with 2&rsquo;s? Would this approach provide any savings? 6 (at best 4) corrections are better than 4x10x5 (at worst 4x10x7) checks.</p>
 
 <p>For the time being we leave out all the if statements.</p>
 
@@ -97,24 +97,24 @@
 <div class='normal-gist'><code id="gist-7301907" data-file="4.py"></code></div>
 
 
-<p>Since Python has the ability to count from the end of a list going backwards, we can replace the calculation width &ndash; some_number with the negative of some_number. In fact, we do not need the if as a will not be changed incorrectly for stones = 2 or stones = 3.</p>
+<p>Since Python has the ability to count from the end of a list going backwards, we can replace the calculation width &ndash; some_number with the negative of some_number. In fact, we do not need the <span class="inline-code">if</span> as <span class="inline-code">a</span> will not be changed incorrectly for stones = 2 or stones = 3.</p>
 
 <div class='normal-gist'><code id="gist-7301907" data-file="5.py"></code></div>
 
 
-<p>We now introduce a method so that a can be populated whenever needed and not just once when the game starts. set_board_up takes length, width and stones as input. This means we can get rid of these three lines:</p>
+<p>We now introduce a method so that a can be populated whenever needed and not just once when the game starts. <span class="inline-code">set_board_up</span> takes length, width and stones as input. This means we can get rid of these three lines:</p>
 
 <div class='normal-gist'><code id="gist-7301907" data-file="6.py"></code></div>
 
 
 <p>Comments and global variables are a sign of bad design.</p>
 
-<p>We have given the method a meaningful name and so now we rename the variable a to board. We could probably guess that a is an array but we would never know where, when or how it is used. At the very least, the name board gives a hint.</p>
+<p>We have given the method a meaningful name and so now we rename the variable <span class="inline-code">a</span> to board. We could probably guess that <span class="inline-code">a</span> is an array but we would never know where, when or how it is used. At the very least, the name board gives a hint.</p>
 
 <div class='normal-gist'><code id="gist-7301907" data-file="7.py"></code></div>
 
 
-<p>In the method, we make other small naming changes. We change width to breadth to adhere to naming conventions when working with rectangles. In the same vein, ncuva players don&rsquo;t only use stones as their tokens, they can use makanyi (morula fruit) or timongo (dry morula fruit), so we use the more generic term: tincuva.</p>
+<p>In the method, we make other small naming changes. We change <span class="inline-code">width</span> to <span class="inline-code">breadth</span> to adhere to naming conventions when working with rectangles. In the same vein, ncuva players don&rsquo;t only use stones as their tokens, they can use makanyi (morula fruit) or timongo (dry morula fruit), so we use the more generic term: tincuva.</p>
 
 <p>Another small refactoring we can do to make the method shorter is make use of destructuring assignment to make multiple variable assignments on the same line. I made the judgment call of multiply assigning slots with the same value for readability. I could have done it on a per row basis.</p>
 

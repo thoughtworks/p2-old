@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue05 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue05/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2013-11-25T11:36:43+11:00</updated>
+  <updated>2013-11-25T11:38:27+11:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -184,7 +184,7 @@
 
 <p>One thing you may note is that the implementation of <span class='inline-code'>MessageCopier</span> is quite thin. It only has a new bit of behaviour in it. Everything that isn’t relevant is elsewhere; a separation of concerns. As the consumers of the <span class='inline-code'>MessageSender</span> interface get their implementations from a factory you can now add in new behaviour incrementally with minimal rework. As the behaviour is constrained you can test behaviour in isolation, more easily.</p>
 
-<p><em>That was this month’s pattern fun fact. Do you have a pattern fun fact you would like to share? Send it to us at <a href="&#109;&#97;&#105;&#108;&#116;&#x6f;&#58;&#112;&#x32;&#64;&#116;&#x68;&#111;&#117;&#103;&#104;&#x74;&#x77;&#111;&#114;&#x6b;&#x73;&#46;&#x63;&#x6f;&#109;">&#x70;&#x32;&#64;&#x74;&#x68;&#111;&#x75;&#103;&#x68;&#116;&#x77;&#x6f;&#114;&#107;&#x73;&#46;&#x63;&#x6f;&#109;</a> and we’ll publish it.</em></p>
+<p><em>That was this month’s pattern fun fact. Do you have a pattern fun fact you would like to share? Send it to us at <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#112;&#x32;&#x40;&#116;&#x68;&#111;&#117;&#103;&#104;&#x74;&#x77;&#111;&#x72;&#x6b;&#115;&#46;&#99;&#111;&#x6d;">&#x70;&#50;&#64;&#x74;&#104;&#x6f;&#x75;&#x67;&#104;&#116;&#119;&#x6f;&#x72;&#x6b;&#115;&#x2e;&#99;&#111;&#x6d;</a> and we’ll publish it.</em></p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: issue03 | P2 Magazine]]></title>
+  <link href="http://thoughtworks.github.io/p2/blog/categories/issue03/atom.xml" rel="self"/>
+  <link href="http://thoughtworks.github.io/p2/"/>
+  <updated>2013-12-03T16:26:09+11:00</updated>
+  <id>http://thoughtworks.github.io/p2/</id>
+  <author>
+    <name><![CDATA[The P2 Elves]]></name>
+    <email><![CDATA[p2@thoughtworks.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Credits]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue03/credits/"/>
+    <updated>2013-08-09T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue03/credits</id>
+    <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
+
+<p>Ryan Boucher, Mike Gardiner, Rachel Laycock, Rebecca Parsons, Nick Thorpe</p>
+
+<p><strong>Writers</strong></p>
+
+<p>Musa Kurhula Bayoli, Anette Bergo, Ryan Boucher, David Braue, Pennueng Chemsripong, James Gregory, Rachel Laycock, Ali Lemer, Paige Mulholland, Nick Thorpe</p>
+
+<p><strong>Art</strong></p>
+
+<p>Greg Skinner, Pennueng Chemsripong</p>
+
+<p><strong>Site Design</strong></p>
+
+<p>Andrew Carr, Ryan Boucher, Mike Gardiner</p>
+
+<p><strong>Photo Credit</strong></p>
+
+<p>The cover photo is a selfie by Ryan Boucher drifting up the Rio Ucayali</p>
+
+<p><strong>Special Thanks</strong></p>
+
+<p>Alex Ong, John Stojanovski, Alister Scott</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue03/puzzle/"/>
+    <updated>2013-08-08T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue03/puzzle</id>
+    <content type="html"><![CDATA[<p>This week’s puzzle is about deployments. Given the 11 clues we are trying to find out who does the deployment, how frequently do they do it, what deploy is their target and who prefers which method for deployment.</p>
+
+<ol>
+<li>The person who has to deploy to Mobile is not Max or Sam</li>
+<li>Neither Max or Charlie are fans of Copying Files</li>
+<li>The one who deploys quarterly does so to a Mobile target</li>
+<li>Andy deploys weekly</li>
+<li>The person making use of a third party PAAS is not Andy or Charlie</li>
+<li>Sam is either the Copying Files or the System Package enthusiast</li>
+<li>The person who makes VM Images is not Charlie and doesn’t own deploy to a PAAS</li>
+<li>The person who deploys to the PAAS is does so more frequently than the person who deploys to the Desktop</li>
+<li>Of the System Packaging fan and Charlie, one deploys monthly and the other deploys to Mobile</li>
+<li>The person who deploys to the IAAS is not Max</li>
+<li>Someone prefers application packages</li>
+<li>The fourth deploy frequency is daily. <strong>updated</strong></li>
+</ol>
+
+
+<p>Submit your completed answers to <a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#112;&#50;&#x40;&#116;&#104;&#111;&#117;&#103;&#104;&#x74;&#x77;&#111;&#x72;&#x6b;&#x73;&#x2e;&#x63;&#x6f;&#109;">&#x70;&#x32;&#64;&#116;&#x68;&#111;&#x75;&#x67;&#x68;&#x74;&#119;&#x6f;&#x72;&#x6b;&#115;&#x2e;&#x63;&#x6f;&#109;</a> and the first correct answer wins a prize.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>We had a lots of great answers from last issue’s train station puzzle. The most common answer we got was the remove the wall before the readers. This would remove the bottleneck in the physical space.</p>
+
+<p><img src="/p2/images/improve-this/train-station.png" alt="Train Station" /></p>
+
+<p>Some of the more forceful suggestions were: increasing the price for that zones so that fewer people would alight there, forcing the passengers to form a single queue rather than two and stopping the train further up the platform so the crowd is more streamlined. Other answers that were good but not enough for a prize where: add more readers, spread the readers out, add another exit to the platform and make the ticket machines faster.</p>
+
+<p>The best answers were from Chris Heisel and Paul Volpato who suggested that flat rate tickets would remove the need to use the ticket machine when alighting. Anand Krishnaswamy suggested that using an RFID would mean passengers could just walk past. Finally Juan Paulo Breinlinger suggested that we decentralise the city to reduce the pressure on that particular station. Bravo!</p>
+
+<p>The prize for Chris, Paul, Anand and Juan Paulo is a copy of <em>Pride and Paradev</em> by Alister Scott.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Test Augmentation]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue03/test-augmentation/"/>
+    <updated>2013-08-07T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue03/test-augmentation</id>
+    <content type="html"><![CDATA[<p>When a system has already been built and no automated tests have been written, automated testing is often brought in for one of three reasons: to improve quality, to reduce time spent testing or to reduce testing headcount. In such an environment I usually see two approaches to automation. The first is a breadth first approach: where we take a end-to-end, high value flows and automate them. The second option is depth first: where we take one system and wrap multiple tests around it before moving on. Any automation attempt is going to face challenges that get into the way of the delivering value in line with the original justification. I&rsquo;ll get onto these for later, as I want to talk about another option. An option often overlooked because it&rsquo;s not pure automation.</p>
+
+<p>Instead of automating an entire test flow or even a system, aim to automate single, small steps. Something simple like &lsquo;create a basic order&rsquo; or &lsquo;submit an order&rsquo;. The testers must able to run these steps in any sequence. These automated steps will be disconnected from each other and can&rsquo;t be chained together without manual intervention. This disconnection and dependence on humans is this approach&rsquo;s strength.</p>
+
+<p>To make it usable by humans; build a lightweight page for our disconnected steps. It could be something as simple as a page of Jenkins jobs, although some nice design wouldn&rsquo;t go astray. You may already know where I&rsquo;m heading, create three pages of actions: one full of fixtures (givens), one full of actions (whens) and a third with (thens).</p>
+
+<p>The &lsquo;Given I have an order&rsquo; automation script, when run, goes off and performs its short task. When complete it displays a newly created Order ID. Jotting ID numbers down is something testers have been doing since a bug first crawled out of off-by-one gap. The tester can take that Order ID and plug it into the &lsquo;Then the order is complete&rsquo; step. That step reports a failure because the order isn&rsquo;t complete –it&rsquo;s brand new. But that&rsquo;s what the tester expected –so not a failed test. The tester makes a mental note and moves on. No automated suite goes green, red or is updated in any fashion.</p>
+
+<p>So what? This is just interactive cucumber – reducing testers to being automation glue. I prefer to call them Cyborgs in Test. Part human, part machine, all tester. I jest, I call it test augmentation instead of test automation. The tester can chop and change between manual and automation as she sees fit. The value of the manual tester is their mind. Their ability to detect emergent scenarios. We lose that with automation and we consciously try and get it back with exploratory testing.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>Previously, I mentioned that the all-or-nothing automation approach has to overcome a series of challenges –each more diabolical than the last –to deliver on it&rsquo;s original business justification. I&rsquo;m going to touch on each of these with the aim of showing how test augmentation can help.</p>
+
+<p>The first of these is interoperability between different automation technologies. Each shift in system under test can require a different automation tool. Java in places, mainframe in others, OpenScript when we can&rsquo;t avoid it. AutoHotKey and Sikuli when all else fails. Interoperability between these technologies isn&rsquo;t trivial and adds a layer of brittleness that only interop knows. This brittleness can erode the teams trust in the test. One way to reduce the impact of interop is to not do it. Give humans the responsibility; they&rsquo;re much more flexible. With test augmentation the tester is managing the state between the various steps.</p>
+
+<p>The longer your test flow the more susceptible you are to change. If you&rsquo;re putting tests around a system, you&rsquo;re wanting change. When a single step in the larger automated flow breaks, the entire flow is failed until that step works again. This failing test is a good thing, it&rsquo;s telling us that either our test is wrong or the system is wrong and we&rsquo;ll change one to make it work again. The downside is that until the test is fixed the entire flow is failing. This may mean that we&rsquo;re missing out on failures after this point. It&rsquo;s also likely that the testers will have to manually re-execute the entire flow –to be sure, before the step gets fixed. With test augmentation the tester can use automation up to the point that the system has changed, shift into 4x4 mode and exercise that new code as in depth as they feel necessary before making use of the automation again.</p>
+
+<p>The next set of challenges are human. When automation is sold as a means to reduce head count. You&rsquo;ll get resistance from the testers to provide support. Why should they help you when you&rsquo;re trying to take their jobs? Test augmentation isn&rsquo;t a way to reduce headcount. It&rsquo;s about giving your testers a helping hand. It&rsquo;s about allowing them to spend more time thinking and less time doing menial repetitive tasks.</p>
+
+<p>The final challenge that I&rsquo;ll cover is that automated tests are opaque. This results in the testers not being able to see and trust what the automated tests do. They are uncertain what gets checked, which paths through the system are taken, whether shortcuts are used, etc. The end result is the testers rerun the automated tests as manual tests. It&rsquo;s still the their neck on the line if the system breaks so they are disinclined to use the automation. By giving testers smaller chunks of automation, they can learn to trust each individual piece.</p>
+
+<p>I recently worked at a client where we did some of this. There was a three day wait for a process to be completed. The testers sent a request to another team of testers who would action it and respond. We automated just that step to be completed in five minutes. That covered the 80% use case. It didn&rsquo;t handle every scenario, but it handled the most common one. Look for steps that get executed frequently or when executed, take a long time to complete.</p>
+
+<p>The downside for this approach is that you don&rsquo;t have an automated suite that you run every night. I don&rsquo;t mind this. I see more value in getting the developers to start writing unit tests for the code their changing. This will run on every commit and when combined with test augmentation is going to give you faster test cycles and better quality.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Showcase Driven Development]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue03/showcase/"/>
+    <updated>2013-08-06T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue03/showcase</id>
+    <content type="html"><![CDATA[<p>James sits on a stool in a darkened room, a TV is behind him and an iPad is in his hands. Around him are two semicircles of interested stakeholders sitting on chairs. It’s an intimate setting, conversational, and one that allows him to see the reactions and responses from those in attendance. The crowd riff of each other. James says the moment that sticks with him the most is when the realisation sets in: their product is becoming real. The tired and over-complicated process is being chipped away.</p>
+
+<p>James' showcase is similar to the many other showcases run around the planet with engaged stakeholders. It&rsquo;s the journey to the showcase that was different. Showcase driven development is not about the next iteration, or a list of features or stories, it&rsquo;s about the next time we sit in front of those people, our users and potential users. The product owner attends the showcase, gauges how it went, and decides who we should showcase to next and what work is needed to impress them. It&rsquo;s part collaboration, and part internal marketing.</p>
+
+<p>With the showcase set for a week away, it&rsquo;s time for the team to conduct their collaborative design sessions. This is where the magic lies. Whiteboards are cleaned, marker pens strewn around, and they start to explore the user flow. Refinements come as the person gets more comfortable with how creative and open they can be. After 30 minutes to an hour, the product owner pops in for some chit-chat with the users and takes them for a drink of water. The interviewer or their partner in crime will capture the whiteboard musings and create a POP app from it all. On their return, the users can play with an interactive prototype on an iPhone of their efforts.</p>
+
+<p>He gets such a great response. The feel of the clicks and the visibility of transitions solidifies their understanding of how it will work. From this point, the users are engaged – they go on sell the product to their colleagues. James tells me they’ve been called up by their colleagues asking when they can they be involved in the next session. They’re at a point where they now have too many people wanting to be involved; quite a change from the absentee product owner situation.</p>
+
+<p>“This is where the some of best feedback occurs.” says James. “We might have three drop downs and a text box and the user will try it and realise that because of where they work they can only use one hand at at time. We redesigned it to six big buttons for the most used functions.” They’re also told that there might be too many screens and they’ll collapse them.</p>
+
+<p>After the collaborative design session and before the showcase the team goes about making a static version of the real application. They won’t put a backend in until it’s been through the showcase because there will be new revelations. The showcase has more people than the collaborative design session. It’s as much a feedback session as it is a showcase: “We use static pages because they’re low cost things to throw away or change.”</p>
+
+<p>After the showcase they start putting in lightweight storage mechanisms. Things like local storage or in memory databases. “If we feel an aspect of the system congealing into something solid we’ll start putting in a more permanent back end, but for most of it we are not ready yet.”</p>
+
+<p>The team’s philosophy came about by trying to make no irreversible decisions. “We don&rsquo;t want to do anything that will potentially limit us from pivoting later.” That&rsquo;s manifested as not being tied to a technology stack –they started with Ruby, ditched it for Go on the back-end and Node for asset compilation, it wasn&rsquo;t a big deal to change. They also don&rsquo;t use big frameworks on the client side. Their fear is that as soon as you take one on you start spending more of your time being constrained by what the framework allows you to do. “Ever notice how most Bootstrap apps look like Bootstrap, and how you can spot a Backbone app a mile away?”, says James. “Yeah, avoiding that.”</p>
+
+<p>Our infrastructure is deliberately light. We have a small and mature team, and we&rsquo;ve made a conscious decision to forgo many of the standard environmental fare. An example is our lack of a Continuous Integration server, we&rsquo;re not integrating, and we&rsquo;re small enough to just run tests before we push. Nothing is forever though, and we&rsquo;re continually evaluating our need for every piece of our project and infrastructure.</p>
+
+<p>We’re currently hosting on Heroku and can change that easily. For most of the project we’ve not had a database. James laughs. “That led to some difficult conversations with the internal IT department. They’d wanted us to use their standard enterprise fare of Oracle DB and when we said we didn’t have a database, they didn’t get it. How can you have an application without a database?”. The database is a great example of our evaluation approach, we need it now so now we have a database. It&rsquo;s an in-memory database and local storage on the devices. Both of those will change in the future and that’s the point.</p>
+
+<p>For James the moment when they realised what we were doing it the right way was when their product owner came in and said we had 2-3 days to do a massive pivot and try and sell to a new market. “We built out the prototype as fast as we could in those 3 days and pitched it. The business were ecstatic and began throwing money at us to add their features in.” He recognised it wasn’t perfect, the quality dropped and they took on some tech debt which they’ve been paying off. “I think that another team would have let such an opportunity pass them by. We seized it. Our approach let us do that.”</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Fly on the Story Wall]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue03/comic"/>
+    <updated>2013-08-05T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue03/comic</id>
+    <content type="html"><![CDATA[<p><img src="/p2/images/comic/1.png" alt="Jim the Accountant" /></p>
+]]></content>
+  </entry>
+  
+</feed>

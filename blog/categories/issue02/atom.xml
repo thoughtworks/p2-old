@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: issue02 | P2 Magazine]]></title>
+  <link href="http://thoughtworks.github.io/p2/blog/categories/issue02/atom.xml" rel="self"/>
+  <link href="http://thoughtworks.github.io/p2/"/>
+  <updated>2013-12-03T16:26:09+11:00</updated>
+  <id>http://thoughtworks.github.io/p2/</id>
+  <author>
+    <name><![CDATA[The P2 Elves]]></name>
+    <email><![CDATA[p2@thoughtworks.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Credits]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue02/credits/"/>
+    <updated>2013-07-08T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue02/credits</id>
+    <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
+
+<p>Ryan Boucher, Mike Gardiner, Rachel Laycock, Rebecca Parsons, Nick Thorpe</p>
+
+<p><strong>Writers</strong></p>
+
+<p>Ryan Boucher, Nick Thorpe, Mike Gardiner, Scott Robinson, Satyam Agarwala</p>
+
+<p><strong>Art</strong></p>
+
+<p>Greg Skinner</p>
+
+<p><strong>Site Design</strong></p>
+
+<p>Andrew Carr, Mike Gardiner, Ryan Boucher</p>
+
+<p><strong>Photo Credit</strong></p>
+
+<p>The cover photo was taken by Ray Grasso and is of nothing in particular.</p>
+
+<p><strong>Special Thanks</strong></p>
+
+<p>Andrew Carr, Stewart Gleadow, John Stojanovski, Mike Gardiner</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue02/puzzle/"/>
+    <updated>2013-07-07T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue02/puzzle</id>
+    <content type="html"><![CDATA[<p>Consider a city where there train network has two zones. Zones impact the cost of a journey. The more zones crossed the more the journey costs. Each passenger has to swipe their ticket to indicate the end of their journey. Within this network there is a station that gets quite busy at the end of the day.</p>
+
+<p>&ldquo;Here is a sketch of our train station (the dark triangles are the ticket readers):&rdquo;</p>
+
+<p><img src="/p2/images/improve-this/train-station.png" alt="Train Station" /></p>
+
+<p>The trouble is that this particular station sits in an increasingly popular area. As each month goes by the number of passengers alighting here goes up.</p>
+
+<p>The question is: by changing only one thing how can we maximise the throughput of the alighting passengers?</p>
+
+<p>Send your answers to p2@thoughtworks.com, once again the first person with the best answer wins.</p>
+
+<h3>Last Issue’s Puzzle</h3>
+
+
+<p>The Java Finally puzzle has joint-winners: Anand Krishnaswamy and Alex Ong. Alex SMS’d his answer within minutes of the issue being published but didn’t provide the why. Shortly afterwards Anand sent us this answer explaing why but didn’t tell us the answer.</p>
+
+<p><em class='snippet'>The spec says that all returns will attempt to return control to caller. So in the catch block the return attempts to return control by copying the to-be-returned value to the stack &amp; the proceeds to execute finally (if found). The finally doesn&rsquo;t return anything. It merely sets the value of a local variable (which is a primitive type) which has no impact on the value copied on to the activation record. Hence, if the returned value is a primitive type or immutable (string) then there is no impact to alterations done in the finally.<br/><br/>In the 2nd example, the return type is a user defined type &amp; hence the reference is set on the AR before the finally is attempted. The finally alters the contents of the reference [and] hence that is reflected in the caller. To verify this, alter the finally in the 2nd example as follows:</p>
+
+<pre>finally {<br/>  marketEdge = new MarketEdge();<br/>  marketEdge.value = 99;<br/>}</pre>
+
+
+<p>Since the reference is altered from the one on the AR, changes are not reflected in the object being returned.</p>
+
+<p>The answer to Exhibit A is 30 and Exhibit B is 50.</em></p>
+
+<p>Congratulations to Anand and Alex. You’re prize is a free copy of <em>What You Need to Know About Dates and Times in Computing</em>. Thanks to everyone else who responded."</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Improve This]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue02/improve-this/"/>
+    <updated>2013-07-06T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue02/improve-this</id>
+    <content type="html"><![CDATA[<p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
+
+<p>In this issue, Mike sent a link to an <a href='https://github.com/gardym/spacecubed-projectrjs/blob/master/lib/streamers/twitter_stream_source.js' target='_blank'>event source to a realtime social media visualization.</a></p>
+
+<p>Before we ever apply brainpower, let&rsquo;s apply computer power. JSLint and JSHint are both tools to find mistakes and oversights.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/721358c7f65836737415.js'></script></div>
+
+
+<p>The implied globals are all OK. The unused variables are not. We see immediately that:</p>
+
+<ol>
+<li>The <span class='inline-code'>mongo</span> dependency isn&rsquo;t used<br />2. There is no error handling around inserting records into the database.</li>
+</ol>
+
+
+<p>The first problem is easily solved. The second problem we&rsquo;ll report and ignore, because it appears throughout the rest of the program:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/7866987a3e0dfe1cae22.js'></script></div>
+
+
+<p>Let&rsquo;s apply brainpower. Three things stand out:</p>
+
+<ol>
+<li><p><span class='inline-code'>map_tweet_to_event</span> seems to have an unnecessary callback.  This <em>should</em> be an easy fix.</p></li>
+<li><p><span class='inline-code'>tweet.coordinates</span> is both null-checked and uses magic numbers.  This isn&rsquo;t a problem; but, data structures with optional nulls are easy to trip on in normal use and complicate testing.</p></li>
+<li><p><span class='inline-code'>start_streaming</span> is a set of deeply nested callbacks.  This one is four levels deep. Not a serious offence by Javascript standards; but, we can do better.</p></li>
+</ol>
+
+
+<p>Sadly, this code came with no tests. We write a characterization test to give confidence that we won&rsquo;t break anything. The bottom of nested callbacks are good places to find expected behaviors:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/65dfdfd385020f6b8a0d.js'></script></div>
+
+
+<p>We flesh out the test guided by the test failures.</p>
+
+<p>Now, we can refactor with (more) confidence:</p>
+
+<p>First, we collapse the <span class='inline-code'>map_tweet_to_event</span> callback.</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/14adb21c2f800ec16908.js'></script></div>
+
+
+<p>Second, we split up <span class='inline-code'>start_streaming</span> up by responsibility. Those responsibilities— right now— are:</p>
+
+<ol>
+<li>Streaming tweets.<br />2. Logging.<br />3. Filtering tweets.<br />4. Saving raw tweets.<br />5. Saving events (processed tweets).</li>
+</ol>
+
+
+<p>1 through 3 involve the Twitter stream. 4 and 5 involve the database.</p>
+
+<p>We create a <span class='inline-code'>stream_tweets</span> function:&ldquo; ,</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/ff2d4371a7b429e00de1.js'></script></div>
+
+
+<p>Notice we inline the <span class='inline-code'>params</span> object that was previously initialized in <span class='inline-code'>track_current_user</span> because it is only used by the <span class='inline-code'>Twitter.stream</span> method.</p>
+
+<p>Then, we create a <span class='inline-code'>record_tweet</span> function:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/e4c1d8372458c10795c9.js'></script></div>
+
+
+<p>This function returns the callback function, but keeps the <span class='inline-code'>db</span> in scope.
+Finally, we update <span class='inline-code'>track_current_user</span>:</p>
+
+<div class='normal-gist'><script src='https://gist.github.com/gardym/b9a1a696c09805bbcd01.js'></script></div>
+
+
+<p>The tests pass! That means it works, right? ;&ndash;)</p>
+
+<p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#112;&#50;&#x40;&#116;&#x68;&#x6f;&#117;&#103;&#104;&#116;&#x77;&#111;&#114;&#107;&#x73;&#x2e;&#x63;&#x6f;&#109;">&#x70;&#50;&#64;&#x74;&#104;&#x6f;&#117;&#103;&#x68;&#x74;&#119;&#111;&#x72;&#107;&#x73;&#46;&#99;&#x6f;&#109;</a></a>.</em></p>
+
+<div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Continuous Design and the NoPSD Movement]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue02/continuous-design/"/>
+    <updated>2013-07-05T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue02/continuous-design</id>
+    <content type="html"><![CDATA[<p>I&rsquo;m skyping with Andrew Carr when tells me about the NoPSD movement. A quick Google yields zero results. I could be onto something new here, or he could be another crackpot pushing GNU Hurd. This movement is using the pinnacle of graphics editing programs to push a new agenda in software design. Lately, Andrew finds that most of the styling he would normally do in Photoshop can be done using CSS3. It&rsquo;s not the file format that&rsquo;s the problem but what it represents: change is hard, so get it right the first time.</p>
+
+<p>There is a legacy process that sits behind the design methods we apply to software creation; most of it comes from traditional marketing and design.  It&rsquo;s an approach that&rsquo;s worked for creative agencies: magazines, TV advertisements, advertising campaigns – all these things are planned meticulously up front. In some cases, it&rsquo;s necessary – after all, it&rsquo;s harder to change an advertisement that&rsquo;s aired, or a magazine that&rsquo;s been printed then it is to change software.</p>
+
+<p>Most software design is still outsourced to firms who are traditionally marketing &lsquo;creative&rsquo; companies. They&rsquo;re expensive, they&rsquo;ll deliver you a pixel-perfect layout of your entire application, and they&rsquo;ll charge you for it. It&rsquo;s what they know. &ldquo;But it&rsquo;s all just documentation, really.&rdquo; says Andrew, &ldquo;Comps, mockups, pitches, they&rsquo;re just requirements: visual documentation.&rdquo;</p>
+
+<p>What&rsquo;s worse is that we freeze this documentation as <strong>The Final Design</strong>, a canonical reference. Once that happens you stop talking about it, you stop challenging it or even being aware it needs adaptation. Worse still, there&rsquo;s a tendency to fall back to what you consider absolute, and the design starts driving the product. He sums it up: the accepted practice is not to redesign.</p>
+
+<p>Even some of the most successful Agile delivery teams are doing design the old fashioned way. Segmenting the design off as something that has to be done first. Only then do we shift into a happy Agile land. Wherein when we get feedback, we change and pivot on our product.  We need to pivot our design, too. When everything is designed up front, and we change – then the vestigial parts of the design become waste. We must be leaner.</p>
+
+<blockquote><p>&ldquo;We need to pivot our design&rdquo;</p></blockquote>
+
+<p>Continuous Design is applying the same practices we use in writing software and product development, to design. &ldquo;It&rsquo;s coming from the same place as everything we do, it&rsquo;s just moving this approach into a new part of the development. Andrew says. "It&rsquo;s about being involved in the whole process.&rdquo; Jeff Patton&rsquo;s lean approach to products talks about this: build the smallest thing you can as a base. Know you&rsquo;ll change it. Build it out over time. Stop when you&rsquo;ve done enough.</p>
+
+<p>Andrew explains how he makes it work. He takes the prioritised features and creates a short buffer. Iteration Zero is the perfect time to build this design buffer. The design of the first story is little more than vague wireframes. He then works directly with the developers and the business.</p>
+
+<p>This is where using a more dynamic tool like HTML and CSS comes in; your designs become more adaptive to the changing product. As a designer you&rsquo;re no longer just projecting a good looking vision using Photoshop; you are involved in the development of the product.</p>
+
+<p>When the design comes over the wall you don&rsquo;t get to see what drove the existing design; why the original designer made the decisions they did. Without this information you may be doomed to repeat design dead-ends. By being involved in the entire process you know how the design got to where it was and are better able to adapt it to the situation as it changes.</p>
+
+<p>&ldquo;When it comes to products, user experience trumps pretty pictures. It&rsquo;s not easy for most designers to do, because you have to rebel against everything you&rsquo;ve been taught as a designer: fight the pretty pictures, fight the urge to tweak your drop shadows or find the perfect border-radius.&rdquo; Fast feedback is achieved by regularly putting things in front of users.</p>
+
+<p>Once you&rsquo;ve broken your design mind of old habits you have to fight the establishment too, says Andrew. Often clients will ask for design work up front to get you to prove your worth. &ldquo;I&rsquo;ve had to do this on a few clients. It&rsquo;s like pitching your ability to do a project by <strong>doing</strong> a sample project, sometimes more. Can you imagine developers being asked to spike out a mainframe in two weeks so we can see what they&rsquo;re made of?&rdquo;</p>
+
+<blockquote><p>&ldquo;There needs to be a revolution in the marketing world. It&rsquo;s such a bloated process, full of wasted energy.&rdquo;</p></blockquote>
+
+<p>There needs to be a revolution in the marketing world. It&rsquo;s such a bloated process, full of wasted energy. It might work for selling billboards but it certainly doesn&rsquo;t work for building software. It promotes the same &lsquo;chuck it over the fence&rsquo; mentality that we&rsquo;ve fought between development to testers, and from testing to operations and production.</p>
+
+<p>When dealing with traditional creative agencies it&rsquo;s a well known fact that designs will not go back once they are pronounced final because they are too expensive to re-engage. But by working with an embedded designer in your project you&rsquo;ll find you will have a comparable dollar cost and a much better design because they will be in the development team and do only what is needed.</p>
+
+<p>To rise to the challenge of Continuous Design you a need designer who is good at producing quality work quickly. There is a misconception that traditional designers can&rsquo;t work quickly. This isn&rsquo;t true at all, because the traditional marketing world has such a rapid pace of doing things anyway &ndash; receive a proposal on Thursday and pitch on Monday.</p>
+
+<p>Andrew says he&rsquo;ll still do some sketching and Photoshop here and there, but it&rsquo;s for wireframing and layout, not for perfecting pixels. Just like the NoSQL movement was about using alternative data stores to support better data-modelling, the NoPSD movement is about alternatives that better support the real movement: Continuous Design.</p>
+
+<p>Continue the discussion here: <a href='http://bit.ly/15reOuG' target='_blank'>Continuous Design and the NoPSD Movement.</a>"</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Honey, I think I Just Made a Factory in JS]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue02/factory/"/>
+    <updated>2013-07-04T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue02/factory</id>
+    <content type="html"><![CDATA[<p>Alexander furtively enters the room. He takes the seat beside me and fiddles with a pen. &ldquo;Ryan&rdquo; he starts, and I can tell he&rsquo;s really uncomfortable now. &ldquo;Ryan, I think I just made a factory in JavaScript&rdquo;. He cringes when he says JavaScript.</p>
+
+<p>Alexander is uncomfortable because, right now, functional is cool and by writing a factory, he&rsquo;s done something very uncool, he&rsquo;s brought an object oriented idiom into a place it doesn&rsquo;t belong. Factories are prevalent in Java, that similarly named language that came out at roughly the same time. Factories are one way to solve the problem: we want something made but we don&rsquo;t want to concern ourselves with how it&rsquo;s made. A parallel to the society we live in.</p>
+
+<p>Since the industrial revolution that was Java, we have come to depend more and more on factories. But there is a cleaner, more functional way, a callback to a more civilised time.</p>
+
+<p>So I said to Alexander, there is a way you can still hide the intricacies of manufacturing and not require a factory. Instead take the options we would have passed to the factory and pass them with a callback –a continuation– to the creation procedure. We regain control when the continuation is called. This approach: continuation-passing style, is cleaner as there are fewer moving parts and, when made asynchronous is oh so cool.</p>
+]]></content>
+  </entry>
+  
+</feed>

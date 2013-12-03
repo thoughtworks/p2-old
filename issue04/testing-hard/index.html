@@ -1,0 +1,288 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Testing makes it hard to test</title>
+
+<meta name="description" content="The level of testing you decide on re-enforces that level of testing and makes it harder to test the system at both lower and higher levels.">
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue04/comic" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue04/rounded-bias/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue04/index">issue04, September 2013</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            	5 / 9
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Testing makes it hard to test</h1>
+        <h3>The level of testing you decide on re-enforces that level of testing and makes it harder to test the system at both lower and higher levels.</h3>
+        <p class="byline">
+        Words and Music by Ryan Boucher
+        </p>
+    </header>
+    <div class="article-body"><p>Mike was working on an old, heavily customised, oversized, off-the-shelf content management system. Because it was an off the shelf product, it wasn’t unit-tested. And the organisation didn’t feel they could effectively unit test their modifications to it. So they decided to test higher up the testing pyramid; they chose functional level tests. A couple of consultants were brought in to show the team how. Which they did and as they were very capable developers they wrote lots of tests, fast. Soon they had covered most of the essential flows through the system. Because those consultants had written a lot of tests fast, these tests were reinforced as <strong>the</strong> way to write tests for this system.</p>
+
+<blockquote><p>The act of exclusively doing unit testing had made it harder for me to test my system at a higher level.</p></blockquote>
+
+<p>This had some flow on effects. The first was that new code was not test-driven. All the functional tests were written after the code. When you do that you don’t get the other benefits you get from test-driven code: less code and a well-factored design. The code became complex and making changes began to take longer.</p>
+
+<p>Unit tests execute faster than functional tests. It is true that the existing code was going to be hard to unit test –it had never been designed with testing in mind. The new code wasn’t unit tested because “Why go to the effort of unit testing it, when it’s super easy to write a functional test?”. Their test suite slowed down and their effort switched to making it run faster.</p>
+
+<p>So here we have the well known saga of higher level tests taking a long time to run. When the testing suite takes too long teams waste energy trying to parallelise the build, prune their test suite, or avoiding writing as many tests. A common consultant answer is to write more unit tests. With that comes our second story.</p>
+
+<p>One of my hobbies is the design of games: board, card or computer. I was trying to turn a card game I’d made into a computer game. I was writing it in JavaScript and through the use of RequireJS it was executing entirely on the client. As a tester and strong quality advocate I had unit tested this quite heavily.</p>
+
+<p>But, there came a point where I wanted to run some integration tests to exercise the various options the player could do at different times. I ran into a problem. My game relied on an uncertainty mechanic: a set of shuffled decks. When it came to unit testing it was trivial to test the behaviour but from an integration perspective, I hadn’t left any way for me to create deterministic behaviour. The act of exclusively doing unit testing had made it harder for me to test my system at a higher level.</p>
+
+<p>I’m now a strong proponent of outside-in-testing and why all the layers in the testing pyramid are important. Testing should be done at each level. The deeper down you go the more code design benefits you get, the higher you go the easier it is to test integration behaviour. But it’s not an exclusive thing. A well factored design exists at each layer within the application and across applications. Integration happens as soon as we have two functions interacting. It continues as we zoom out to our unit, then to clusters of units, clusters of clusters –we might call these packages or modules; we keep pulling out to our application, multiple applications interacting with each other and with people and clusters of people interacting with each other.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/ryan-avatar.jpg"/>
+         </a>
+         <div>Ryan Boucher</div>
+         
+         <a href="http://twitter.com/distributedlife">@distributedlife</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue04/comic" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue04/rounded-bias/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

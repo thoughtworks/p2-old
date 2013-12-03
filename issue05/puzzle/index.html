@@ -1,0 +1,344 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Puzzle</title>
+
+<meta name="description" content="The Solution to dealing with possibilities">
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue05/bdd-on-legacy/" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue05/credits/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue05/index">issue05, October 2013</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+            	7 / 8
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Puzzle</h1>
+        <h3>The Solution to dealing with possibilities</h3>
+        <p class="byline">
+        Words and Music by The P2 Elves
+        </p>
+    </header>
+    <div class="article-body"><p>No new puzzle this month. Let’s get straight into the answer from last month. Judging from the answers, this one wasn’t as explained as well as it could have been. So, we’ll go through what was in our brains when we wrote it.</p>
+
+<p>There is a sequence that starts with: 2, 4, 6, 8 and is followed by a blank. There are <strong>many</strong> numbers that <strong>could</strong> follow. We weren&rsquo;t aware of this when we wrote the puzzle but at oeis.org there are about 200 sequences, many obscure, some irrelevant, that start with 2, 4, 6, 8. I&rsquo;m going to include the puzzle solution factoring in all of these potential, mostly obscure, sequences. From analysis of these obscure sequences, none continue to 3, 6, 13 or 26. This will be relevant later.</p>
+
+<p>Of all the numbers that can follow they fall into <strong>three</strong> categories. The number could be larger, smaller or the same as the last. What we are trying to do is to reduce our options and we’re using a technique known as equivalence partitioning.</p>
+
+<p>Initial thoughts guesses:</p>
+
+<ul>
+<li>2, 4, 6, 8, 6</li>
+<li>2, 4, 6, 8, 8</li>
+<li>2, 4, 6, 8, 10</li>
+</ul>
+
+
+<p>Our first four numbers show that the sequence isn’t a decreasing sequence. The smaller (6) and equal (8) numbers prove that the sequence doesn’t have to be increasing. The larger number, if you chose 10, tells you nothing new. But we can do better with our first guess:</p>
+
+<ul>
+<li>2, 4, 6, 8, 3</li>
+</ul>
+
+
+<p>If 3 is in the sequence, then we have a non-increasing sequence that allows odd numbers and isn’t an obscure sequence.</p>
+
+<ul>
+<li>2, 4, 6, 8, 3, -1</li>
+</ul>
+
+
+<p>If we follow that up with -1 and it is allowed, then we can have any number in the sequence and it will be allowed. If -1 is not allowed. We can have any non-negative number. Follow this up with a 0. If we allow 0, then we do allow any non-negative number. If 0 is not in the sequence, then our sequence has to be made of positive numbers.</p>
+
+<ul>
+<li>2, 4, 6, 8, 3, -1 &ndash;> any number</li>
+<li>2, 4, 6, 8, 3, <span style="color:red">-1x</span>, 0 &ndash;> any non-negative number</li>
+<li>2, 4, 6, 8, 3, <span style="color:red">-1x</span>, <span style="color:red">0x</span> &ndash;> any positive number</li>
+</ul>
+
+
+<p>Let’s go back to the 3 and if that is not in the sequence. We should follow up with a 13. If we allow 13 then we know that odd numbers are ok, but smaller numbers are not. We also know that it isn’t an obscure sequence but we still not sure if the sequence is a greater than or a greater than or equal to. So we follow that up with another 13.</p>
+
+<ul>
+<li>2, 4, 6, 8, <span style="color:red">3x</span>, 13, 13 &ndash;> Any number that is greater to or equal to the prior</li>
+<li>2, 4, 6, 8, <span style="color:red">3x</span>, 13, <span style="color:red">13x</span> &ndash;> Any number that is greater than the prior.</li>
+</ul>
+
+
+<p>What if 13 isn’t allowed. We are the point where we know that odd numbers are not allowed but that’s all we know. So we should follow that up with a 6. We need to know if smaller numbers are supported.</p>
+
+<ul>
+<li>2, 4, 6, 8, <span style="color:red">3x</span>, <span style="color:red">13x</span>, 6 &ndash;> Any even number</li>
+</ul>
+
+
+<p>If the 6 is not successful we try an 8. If the 8 is in the sequence we have a greater than or equal to situation. When the 8 is not in the sequence we follow up with a 26. We need to know if the sequence is one of the obscure ones or just an ever increasing even number</p>
+
+<ul>
+<li>2, 4, 6, 8, <span style="color:red">3x</span>, <span style="color:red">13x</span>, <span style="color:red">6x</span>, 8 &ndash;>  any even number that is greater to or equal to the prior</li>
+<li>2, 4, 6, 8, <span style="color:red">3x</span>, <span style="color:red">13x</span>, <span style="color:red">6x</span>, <span style="color:red">8x</span>, 26 &ndash;> any even number that is greater than the prior</li>
+<li>2, 4, 6, 8, <span style="color:red">3x</span>, <span style="color:red">13x</span>, <span style="color:red">6x</span>, <span style="color:red">8x</span>, <span style="color:red">26x</span> &ndash;> a special pattern from oeis.org</li>
+</ul>
+
+
+<p>How do we deal with the special patterns? That same way we have before, what’s the number that tells us the most about what we don’t know yet. What challenges our assumptions the most.</p>
+
+<p>Of the potential next numbers it could be 10, 12, 14, 16, 18, 20, 22, 24, 30, 32, 38, 50 and 212. But when waited for number of sequences that have that number next the order changes to: 10, 12, 16, 20, 24, 22, 14, 18, 30, 32, 38, 50 and 212. There are 37 sequences that continue to 10. 27 that continue to 12 and the remainder have 5 or fewer options, most only have 1.</p>
+
+<p>We continue the process as before, whittling away. No prizes are awarded this month.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>For those that want to do some analysis on the oeis.org dataset, you can do the following:</p>
+
+<p>Get all the things:</p>
+
+<div class='normal-gist'><code id="gist-6724348" data-file="1.sh"></code></div>
+
+
+<p>Merge all the things:</p>
+
+<div class='normal-gist'><code id="gist-6724348" data-file="2.sh"></code></div>
+
+
+<p>Open up sublime, and find all occurances of <span class='inline-code'><code>&lt;tt&gt;</code></span>, expand selection to the line, cut the selection. New document, paste. Remove the <span class='inline-code'><code>&lt;tt&gt;</code></span> and <span class='inline-code'><code>&lt;/tt&gt;</code></span>.</p>
+
+<p>Now you have the dataset. F5 will sort the lines. Remove all those that don’t start with 2, 4, 6, 8. You can use a regex find here <span class='inline-code'><code>^2, 4, 6, 8</code></span>.</p>
+
+<p>Enjoy.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/pdp11-avatar.jpg"/>
+         </a>
+         <div>by The P2 Elves</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue05/bdd-on-legacy/" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue05/credits/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

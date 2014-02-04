@@ -1,0 +1,265 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Lambdas beyond syntax</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/index" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/svn-git" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue08/index">issue08, February 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+            	1 / 6
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Lambdas beyond syntax</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Neal Ford
+        </p>
+    </header>
+    <div class="article-body"><p>Computer science often advances in fits and starts, with good ideas appearing decades before they suddenly become part of the mainstream. For example, Simula 67, created in 1967, is regarded as the first object-oriented language, yet object-orientation didn’t really become mainstream until after the popularization of C++ after 1983. Often, good ideas await foundation technologies to catch up. In its early years, Java was regularly considered too slow and expensive in memory usage for high performance applications.</p>
+
+<p>Once garbage collection became mainstream, it simultaneously eliminated entire categories of hard to debug problems and allowed the runtime to manage a process that is complex and error prone for developers. Functional programming aims to do the same thing for the algorithms you write, allowing you to work at a higher level of abstraction while freeing the runtime to perform sophisticated optimizations. Developers receive the same benefits of lower complexity and higher performance that garbage collection provided, but at a more intimate level, in the way you devise solutions.</p>
+
+<h3>Imperative processing</h3>
+
+<p>I’ll start with a common problem and its imperative solution. Let’s say that you are given a list of names, some of which consist of a single character, and you are asked to return a comma-delimited string with the single letter names removed, with each name capitalized. Java code to implement this algorithm appears in Example 1-1.</p>
+
+<p><img src="/p2/images/lambdas/neal-code1.jpg" alt="Code" /></p>
+
+<p>Because you must process the entire list, the easiest way to attack the problem in Example 1-1 is within an imperative loop. For each name, I check to see if it’s length is greater than the disallowed single character, then append the capitalized name onto result, along with a trailing comma. The last name in the final string shouldn’t include the comma, so I strip it off the final return value.</p>
+
+<p>Imperative programming encourages developers to perform operations within loops. In this case, I do three things: filter the list to eliminate single characters, transform the list to capitalize each name, then convert the list into a single string. For now, I’ll call these three operations Useful Things to do to a list. In an imperative language, I must use the same low-level mechanism (iteration over the list) for all three types of processing. Functional languages offer specific helpers for these operations.</p>
+
+<h3>Functional processing</h3>
+
+<p>Functional programming languages categorize problems differently than imperative languages. The logical categories listed above are represented as functions that implement the low-level transformation but rely on the developer to customize the low-level machinery with a higher-order function, supplied as one of the parameters. Thus, I could conceptualize the problem as</p>
+
+<script src="https://gist.github.com/caek/8811960.js"></script>
+
+
+<p>Functional languages allow you to model this conceptual solution without worrying about the details.</p>
+
+<p>Consider the processing example from Example 1-1, implemented in Java 8, shown in Example 1-2.</p>
+
+<p><img src="/p2/images/lambdas/neal-code2.jpg" alt="Code" /></p>
+
+<p>The Java example in Example 1-2 reads much like the pseudo-code above, with necessary implementation details. Given the list of names, I first filter it, eliminating single characters. The output of that operation is then fed into the map() function, which executes the supplied code block on each element of the collection, returning the transformed collection. Finally, the output collection from map flows to the reduce() function, which combines each element based on the rules supplied in the code block. In this case, to combine the first two elements, I concatenate them with a comma.</p>
+
+<p>What are the benefits of thinking at a higher level of abstraction? First, it encourages you to categorize problems differently, seeing commonalities. Second, it allows the runtime to be more intelligent about optimizations. In some cases, re-ordering the work stream makes it more efficient (for example, processing fewer items) if it doesn’t change the ultimate outcome. Third, it allows solutions that aren’t possible when the developer is elbow deep in the details of the engine. For example, consider the chore required to make the Java code in Example 1-1 run across multiple threads. Because you control the low-level details of iteration, you must weave the thread code into yours. In the Java 8 version, I can make it parallel by adding another modifier to the stream, as shown in Example 1-3.</p>
+
+<p><img src="/p2/images/lambdas/neal-code3.jpg" alt="Code" /></p>
+
+<p>Working at a higher level of abstraction allows the runtime to optimize low-level details. Writing an industrial strength virtual machine with garbage collection is an extraordinarily complex task, and developers gladly ceded those responsibilities. By encapsulating garbage collection, JVM engineers have made great advances that developers enjoy yet are not negatively impacted by. Functional programming aims to do that at the algorithmic level.</p>
+
+<p>Stop thinking about the low-level details of how iteration, transformation, and reduction work to solve problems, and start noticing the prevalence of problems in those shapes.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/neal-avatar.jpg"/>
+         </a>
+         <div>Neal Ford</div>
+         
+         <a href="http://twitter.com/neal4d">@neal4d</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/index" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/svn-git" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

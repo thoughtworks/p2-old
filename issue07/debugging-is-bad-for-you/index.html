@@ -1,0 +1,288 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Debugging is bad for you</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue07/trust-and-truth" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue07/cd-in-windows-part-2" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue07/index">issue07, December 2013</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+            	2 / 8
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Debugging is bad for you</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Ryan Boucher
+        </p>
+    </header>
+    <div class="article-body"><p>I&rsquo;m mildly bothered by announcements like &ldquo;we&rsquo;ve made it easier to attach a debugger&rdquo;. Why? To me, using the debugger is an admission that you don&rsquo;t understand the code. Consider all the times you used the debugger. Was your code working as you expected? Methinks not.</p>
+
+<p>I used to live in the debugger. It was a homely place and I, a studious pupil of F5 Driven Development (also known as Debug Driven Development). I was in the process of tidying up my blog and I found this article where I talked about how the combination of the comma-operator and default parameters conspired to undo me.</p>
+
+<p>Take a look at this code:</p>
+
+<div class='normal-gist'><code id="gist-7716891" data-file="code.cc"></code></div>
+
+
+<p>The first calls isMatch that has a default parameter to false (don&rsquo;t update the catalogue) and that boolean you see there, we&rsquo;ll that&rsquo;s a part of the if-statement and not the isMatch call. That&rsquo;s because C++ has: operator,(). This is the comma-operator that evaluates each expression but only returns the right hand most value. From memory, the if-statement is always true.</p>
+
+<p>The second block is how the code should have been, but it is very hard to spot the difference. We shouldn&rsquo;t have written it this way for that very reason; its crappy code. There is all sorts of badness going on: the Law of Demeter, default parameters in interfaces, the command-query principle and a very poorly named function. Also, from the looks of this code I had a collection with a catalogue inside of it. What!?</p>
+
+<p>I used the debugger to get me out of this mess. I should have just written a test and established some expectations. It would not have been hard, but back when I wrote this I didn&rsquo;t really know how to do unit testing.</p>
+
+<p>I don&rsquo;t do this any more: write in C++ or use the debugger, unless I have to. So, what do I do when I encounter code that doesn&rsquo;t work as expected? I follow these steps:</p>
+
+<ol>
+<li><p>I make a mental note that this code is too complicated and I&rsquo;ll need to refactor it. If I can&rsquo;t make head nor tail of it, and I&rsquo;m writing it, what hope is there for whoever follows me?</p></li>
+<li><p>I have tests these days. So I&rsquo;ll ask myself: are these tests trying to do too much? Could I write a more discrete test for this?</p></li>
+<li><p>I make sure that I&rsquo;ve stubbed all my dependencies correctly. Do I have too many dependencies? Could I reduce my overall dependency count by combining some of them?</p></li>
+<li><p>I try and write simpler expectations. Do we even have a result? Is it JSON? Does it have the element we care about? Does it have our expected value? It&rsquo;s usually a case that I&rsquo;ve missed some simpler tests, that would have failed had I had them.</p></li>
+<li><p>If I&rsquo;ve done all this then it&rsquo;s time to break out the debugger. Find out what is going on. Then go back and write some tests for what I just learned. Using the debugger is like a technical spike. You get in, you learn and then you get out. Once you&rsquo;re out you do things properly.</p></li>
+</ol>
+
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>There was a time once when I would step over each line of my code in the debugger to make sure it was doing what I expected it to do. This was before I released it. It was like the paper desk check.</p>
+
+<p>What a waste of time.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/ryan-avatar.jpg"/>
+         </a>
+         <div>Ryan Boucher</div>
+         
+         <a href="http://twitter.com/distributedlife">@distributedlife</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue07/trust-and-truth" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue07/cd-in-windows-part-2" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

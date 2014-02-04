@@ -1,0 +1,299 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Virus VI - Malware 2.0</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue07/cd-in-windows-part-2" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue07/test-martini" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue07/index">issue07, December 2013</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+            	4 / 8
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Virus VI - Malware 2.0</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by John Stojanovski and Nick Thorpe
+        </p>
+    </header>
+    <div class="article-body"><p>Last month, we met Z0mbie, the Soviet genius who created the polymorphic Zmist virus. The ultimate stealth weapon.</p>
+
+<p>Z0mbie was part of 29a, a notorious band of virus (VX) writers. “29a” is 666 in Hex. 29a were responsible for the first 64-bit virus, the first Windows 2000 virus, and the first PDA virus.</p>
+
+<p>Have you ever watched a Superhero movie, and found yourself barracking for the bad guys rather than the guy with his undies on the outside? Welcome to VX culture.  You’ll like it here.</p>
+
+<p>With growing public access to the internet, and especially with IRC, VX became an exclusive and very private scene, with its own culture, its own bragging rights, and its own feuds. The viruses were very public, but the VX guys’ real identities were very secret.</p>
+
+<p>29a were the elite.  They even had their own magazine for a while, where members with handles like Wintermute, Heuristic, Ratter, Darkman, and The Slug would provide tips on infection strategies, favourite viruses, and even maths games and logical puzzles (sound familiar, P2 readers)?  There probably aren’t too many old virus writers. Its all about leaving your mark. Prove something. The VX world is a lot like the street art scene: get your paint up in the most public place you can. You don’t want to be famous, just notorious. VX guys would sometimes include code in their malware which would hunt and erase other viruses, if they were feuding with that writer.</p>
+
+<p>Early viruses would simply display a message. “I’m here!”. But as VX culture grew, the payloads became more sophisticated, and sometimes darker. Often it was a prank. the stoned virus would simply boot up a message. The sole message on the screen would be: &ldquo;your PC is now stoned&rdquo; That&rsquo;s it. That was the prank.</p>
+
+<p>Or the the prank could be elaborate.</p>
+
+<p><em>You might see an animated guy  walking across the screen. There was a really cool little virus called “Cascade”. You were sitting at your dos prompt and you had a bunch of text on the screen and all of a sudden one of your characters would fall to the bottom of the screen. It would just fall,  and if one fell it would knock one, it would stop there and that one would continue to go down and it would cascade and rain letters down.  And it wasn&rsquo;t particularly malicious because you could just clear the screen or reissue the action…  but it was fairly annoying depending on what you were doing.</em></p>
+
+<p><em>But after a while &hellip;people were starting to do malicious things, things like killing a disk. Killing a disk is notoriously easy. In the simplest case you just override the sector of the disk and it&rsquo;s no longer bootable. You do that with one int 13 call. How many instructions would that be?  5, tops. The next time someone tried to boot the disk, it wouldn&rsquo;t work.</em></p>
+
+<p>Later, malware started deleting files on the user’s computer.</p>
+
+<p>Then, in 1998 the game changed forever.  CIH, otherwise known as Chernobyl had arrived.
+<em>CIH was the first virus that would flash roms. They would flash your BIOS effectively out from underneath you.</em></p>
+
+<p>Your BIOS is the Basic Input Output System of your computer. When you push the “on” button, the first and only thing your computer knows how to do is to read the BIOS. Its like the autonomic nervous system of the computer, and it is stored on a small memory chip mounted on the motherboard. The BIOS makes sure all the hardware &ndash; all the chips, and drives, and the screen, all work together. Its on this platform which everything else rests: the instructions in the BIOS tell the computer how to load the operating system.</p>
+
+<p>CIH used caving to hide, and was designed to trigger on a certain date. In some variants, this date happened to correspond with the Chernobyl nuclear disaster in the Ukraine.</p>
+
+<p><em>Prior to that there was never an instance where a virus could physically hurt your machine. Whereas in this case it would flash your BIOS, your machine just would not know what to do when you booted. It was effectively useless and in those days BIOS chips were directly soldered onto the motherboard. There were very few instances where you could actually take the chip out and put a new one in.</em></p>
+
+<p>For good measure, it also zeroed out the first 1024 KB of your boot drive. For the first time, a virus that could actually render your hardware useless had emerged. Damage from the CIH virus has been estimated at numbers between $20 million and $1 billion dollars globally. Chen Ing Hau (CIH), a Taiwanese university student, had written the virus. It had started spreading on campus at Tatung University, but it went global. It had been shipped with a firmware update to Yamaha CDR drives, and IBM Aptiva drives also shipped with the virus on them.</p>
+
+<p>Welcome to malware 2.0.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/john-avatar.jpg"/>
+         </a>
+         <div>John Stojanovski</div>
+         
+         <a href="http://twitter.com/jotsnhoj">@jotsnhoj</a>
+         
+      </div>
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/nick-avatar.png"/>
+         </a>
+         <div>Nick Thorpe</div>
+         
+         <a href="http://twitter.com/agileboardhacks">@agileboardhacks</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue07/cd-in-windows-part-2" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue07/test-martini" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

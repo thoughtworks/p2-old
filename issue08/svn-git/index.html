@@ -1,0 +1,274 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | SVN to Git, Making Technical Changes at Scale</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/lambas" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/cd-in-windows-part-3" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue08/index">issue08, February 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+            	2 / 6
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>SVN to Git, Making Technical Changes at Scale</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Mike Vitale and Rachel Laycock
+        </p>
+    </header>
+    <div class="article-body"><p>No one likes change. It’s uncomfortable, difficult, and sometimes down-right painful. But in order to improve and be more effective at our jobs we often need to change. In this industry especially, change happens in technologies and practices at an alarming rate. That might lead you to believe that those who work in this industry happily embrace change and see it as par for the course. In my experience this is often not the case.</p>
+
+<blockquote><blockquote><p>&ldquo;It isn’t uncommon to see an organisation using the same practices and technologies they were 5 or 10 years ago.&rdquo;</p></blockquote></blockquote>
+
+<p>Large organisations want to manage change to reduce the risks it can have. They attempt to have consistency in practices and technology choices, which enable their people to understand what is going on. This allows people to move between teams more easily when necessary, only needing to understand the domain of a new project and not also the tools, technologies and practices of the new team. This has the unfortunate effect of not just slowing down and managing change, but often of stopping it altogether. It isn’t uncommon to see an organisation using the same practices and technologies they were 5 or 10 years ago. In an industry where new frameworks and platforms seem to arrive almost every week, organisations can quickly find themselves using less than great tools for the job, or worse, using unsupported tools. This ironically introduces risks that their behaviour was trying to avoid.</p>
+
+<p>So what do large organisations do to embrace some changes, in the face of a constantly changing industry? How do they navigate their way through the bazillions of tool and language choices to make a sane one, that isn’t just a passing fad? There are two tandem practices that I have seen work in large scale organisations; piloting changes and creating visibility.</p>
+
+<p>Pilot changes by choosing one team to trial the new technology or practice in. At a recent client, our team spent months of talking through the how’s and why’s of Git being a better source control management (SCM) choice than SVN, for the development team of the Fortune 500 company.</p>
+
+<p>Shortly after I arrived, I was introduced to Mike, who was in charge of the internal operations and services team. Mike was responsible for supporting tens of overloaded servers, as well as hundreds of overworked developers. During one of my first conversations with Mike, he asked me what I thought about Git as a source control mechanism.  Being a developer, I rattled off the usual suspects: local history, not needing to contact the server for <em>everything</em>, better merge support,  and visibility of entire commit histories attributed to the correct authors etc. Also, the developers on the team were dreading working with Subversion, the client&rsquo;s current SCM of choice, after being burned with merging hell and the lack of visibility of their commit history on other projects.</p>
+
+<p>Eventually, after many conversations, Mike was receptive to the idea of piloting Git in a team. The organisation had already started moving to the Atlassian stack, so another Git selling point was the Stash frontend to Git. Stash allows you to manage your Git repositories, a feature that wasn’t available for SVN. Mike agreed to set up a test Git server, fronted by Stash. Stash would allow him to have a decent UI for access control on top of the Git back-end.  It took a couple of attempts, but I was eventually able to import our project into the test Git server, including the fully-attributed commit history.</p>
+
+<p>Once the source control was ported to Git, the team was clamoring to complete the move for our project. The developers had been asking to work with Git for some time, but hadn’t managed to convince the powers that be. I continued to work with Mike on the Stash side of the migration. We were able to set up project information in the web front-end, access controls for multiple projects, and import SSH keys for password-less attributed commits.</p>
+
+<p>After another final export of the Subversion tree imported into Git, our team fully switched over to using the new SCM.  I showed the developers how they should import their SSH keys into Stash and then configure their workstations to handle the SSH key-exchange and that was it &ndash; they were up and running!</p>
+
+<p>Our team was the first project in this large organisation to fully switch development from Subversion to Git. We were the pilot and thankfully our pilot was a success story. Developers were happier, merging was easier, commit histories were accessible and understood and it wasn’t long before the team was comfortable with the new workflow provided by Git.</p>
+
+<p>It has been 5 months since that initial pilot and the success spread within a few months. Two more teams have successfully carried out a similar porting exercise. Git is spreading like wildfire around the organisation!</p>
+
+<blockquote><blockquote><p>“When large organisations face new technology, often their first concern is, how they can implement this change across the board &ndash; when it should be to see if it’s viable at all.”</p></blockquote></blockquote>
+
+<p>Getting that first pilot off the ground can be hard. It took us months of consulting, getting to know the right people, setting up the right kind of relationships, and doing the right work to affect change in an environment that&rsquo;s usually very averse to change. The technology change itself wasn’t that difficult. In my experience developers are smart people that can pick up most tools and technologies, given they make sense and are appropriate.</p>
+
+<p>When large organisations face new technology, often their first concern is, how they can implement this change across the board &ndash; when it should be to see if it’s viable at all. With some success behind you, you are more likely to understand what is required to implement the change on a more concrete level and some of the pitfalls and gotcha’s that you could meet. Remember, we took several attempts to port over SVN &ndash; but you can time-box such activities.</p>
+
+<p>The second part of a change like this is creating visibility. At ThoughtWorks we use the Technology Radar to get a snapshot every 6 months of the technologies and practices we are using in our organisation and at clients. This gives us insight across the organisation about how we feel about them. Should they be assessed, trialed, adopted or should we be more cautious and hold our use? Many other organisations, who want to manage change rather than slow it down or avoid it altogether, choose to adopt a similar radar snapshot for their technology and practice choices.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>However, when a change is new and it is going well, ensure you celebrate any successes. People are quick to grumble and often forget what is going well. You will need this ‘good press’ to sell further implementation of the change within the organisation.</p>
+
+<p>Remember that not all pilots will be successful. The whole point of it being a pilot is that it is low risk &ndash; you aren’t asking the whole organisation to change, just one contained team that you can gauge at any given time of it’s success or failure.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/mikeVitale-avatar.jpg"/>
+         </a>
+         <div>Mike Vitale</div>
+         
+         <a href="http://twitter.com/MikeVitale42">@MikeVitale42</a>
+         
+      </div>
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/rachel-avatar.png"/>
+         </a>
+         <div>Rachel Laycock</div>
+         
+         <a href="http://twitter.com/rachellaycock">@rachellaycock</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/lambas" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/cd-in-windows-part-3" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

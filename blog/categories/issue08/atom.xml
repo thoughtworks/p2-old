@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: issue08 | P2 Magazine]]></title>
+  <link href="http://thoughtworks.github.io/p2/blog/categories/issue08/atom.xml" rel="self"/>
+  <link href="http://thoughtworks.github.io/p2/"/>
+  <updated>2014-02-04T17:38:25-05:00</updated>
+  <id>http://thoughtworks.github.io/p2/</id>
+  <author>
+    <name><![CDATA[The P2 Elves]]></name>
+    <email><![CDATA[p2@thoughtworks.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Credits / About]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/credits/"/>
+    <updated>2014-02-07T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/credits</id>
+    <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
+
+<p>P2 refers to Pillar 2. Pillar 2, within ThoughtWorks, is software excellence, flanked by pillars one and three of sustainable business and social justice. These three equally support ThoughtWorks.</p>
+
+<p>Software excellence evades definition. It’s easy to think of concise lines of code laid out like prose. But we didn’t want this magazine to be exclusively for those who think in code. ThoughtWorks is filled with testers, designers, analysts and innovators. We had to expand our definition to include the excellence that happens before and after we consider how we solve a problem.</p>
+
+<p><strong>Editorial Committee</strong></p>
+
+<p>Rachel Laycock, Sarah Howe, Rebecca Parsons, Karan Misra, Rouan Wilsenach</p>
+
+<p><strong>Writers</strong></p>
+
+<p>Rachel Laycock, Neal Ford, Mike Vitale, Sam Gibson, Anand Krishnaswamy</p>
+
+<p><strong>Site Design</strong></p>
+
+<p>Ryan Boucher, Andrew Carr, Mike Gardiner</p>
+
+<p><strong>Photo Credit</strong></p>
+
+<p>Krabi by Rachel Laycock</p>
+
+<p><strong>Special Thanks</strong></p>
+
+<p>Dan Sansom-Gower</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/puzzle/"/>
+    <updated>2014-02-06T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/puzzle</id>
+    <content type="html"><![CDATA[<p>Welcome to the first puzzle for 2014. This it is brought to you by Anand Krishnaswamy.</p>
+
+<p>A city is divided into zones (shown in red, green, orange, lilac and blue in the picture below) by the municipal corporation. Each zone has a few garbage bins within its bounds (spread out as evenly as possible). Each zone (except the grey one) has a garbage collection truck assigned to it. This truck plies the designated zone and empties the bins therein. Each truck has the capacity of 9 bins. Surrounding the brightly coloured zones is a special zone (bounded by the black line &amp; outside all the other zones) which is a &ldquo;common-zone&rdquo;. Any truck can empty bins in this zone only when it has collected all the garbage in its designated zone. No truck is assigned the grey zone.</p>
+
+<p><img src="/p2/images/puzzle/garbage.png" alt="Garbage" /></p>
+
+<p>A garbage truck is paid 1 bitcoins per emptied bin and a bonus of 5 bitcoins for every bin after the 5th bin emptied.</p>
+
+<p>Devise a solution for the garbage collection company to track, manage &amp; setup accounting for their trucks &amp; ensure that the city is garbage-free. Note that your elegant solution must scale to a city with, say, 10,000 bins.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Coding your workstation with Babushka]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/babushka"/>
+    <updated>2014-02-05T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/babushka</id>
+    <content type="html"><![CDATA[<h2>Your Workstation Sucks</h2>
+
+<p>No, seriously, it does. Worse, it&rsquo;s your fault. You can&rsquo;t name half the apps that you have installed through <span class='inline-code'>apt-get, homebrew, port,<span> whatever.</p>
+
+<p>If it was dropped in a vat of alien-larva-that-consume-electronics-and-also-souls right now, could you restore it tomorrow? In a week? Do you even know?</p>
+
+<p>You preach repeatability and automation. You spend time configuring vagrant/docker for your projects. You <em>don&rsquo;t</em> treat your workstations with the same care.</p>
+
+<p>The usual suspects — Chef, Puppet, et. al. — are too complicated. They focus on managing thousands of servers, huge developer ecosystems, dozens of incompatible versions. Besides: they&rsquo;re far too popular to be cool anymore.</p>
+
+<p>Enter Babushka.</p>
+
+<p>This article will walk through configuring a workstation with Babushka. It will take about 20 minutes from start to finish.</p>
+
+<h2>The Beginning</h2>
+
+<p>Before starting anything, Babushka has to be installed.</p>
+
+<script src="https://gist.github.com/caek/8812117.js"></script>
+
+
+<h2>The Project</h2>
+
+<p>Create a project.</p>
+
+<script src="https://gist.github.com/caek/8812125.js"></script>
+
+
+<h2>Describing It</h2>
+
+<p>Babushka projects define an acyclic dependency graph.</p>
+
+<p>For example, I might require that the <span class='inline-code'>zsh</span> is installed, which would itself require <span class='inline-code'>homebrew, gcc,</span> and <span class='inline-code'>autoconf</span>. When I ask Babushka to meet the zsh dependency, it would ensure that all of its dependencies are also met.</p>
+
+<p>Dependencies are defined using a simple DSL, and are read from any ruby file.</p>
+
+<h2>Packaged Apps</h2>
+
+<p>The easiest dependencies to describe are all the apps under package management that are currently installed. If you&rsquo;re on OSX and already using homebrew, you can see all of your installed apps by running <span class='inline-code'>brew list:</span></p>
+
+<script src="https://gist.github.com/caek/8812144.js"></script>
+
+
+<p>Babushka knows how to install apps using whatever package manager a platform provides, so the dependencies are simple. Create a file for all of these packaged apps and call it <span class='inline-code'>apps.rb</span>. Inside define a dependency for packaged apps. The app dependency name must end in <span class='inline-code'>.bin</span>, e.g.</p>
+
+<script src="https://gist.github.com/caek/8812151.js"></script>
+
+
+<p>Now, ask Babushka to meet the <span class='inline-code'>all-packaged-apps dependency</span>, and view the output. If the dependency was met successfully, the dependency will be green, otherwise it will be red with an error message of some sort.</p>
+
+<script src="https://gist.github.com/caek/8812174.js"></script>
+
+
+<p>(Babushka looks for dependency definitions in several places, including in the directory <span class='inline-code'>~/.babushka/deps</span>)</p>
+
+<h2>OS X Apps</h2>
+
+<p>Not all apps are packaged apps. Specifically Chromium, Firefox, Alfred, iTerm2, etc. are distributed as <span class='inline-code'>.dmg</span> files. Babushka knows how to install these too.</p>
+
+<p>Create a file called <span class='inline-code'>osx.rb</span> where all of the dependencies specific to Mac OS X will go.</p>
+
+<script src="https://gist.github.com/caek/8812196.js"></script>
+
+
+<p>There&rsquo;s some magic going on here.</p>
+
+<p>First: The dependency must be named the same at the app that it provides. The iTerm.app dependency will only be met if an application called &lsquo;iTerm.app&rsquo; exists in <span class='inline-code'>/Applications</span> or <span class='inline-code'>~/Applications</span>.</p>
+
+<p>Second: If &lsquo;iTerm.app&rsquo; doesn&rsquo;t exist, then the <span class='inline-code'>source</span> URL must link to a zip file that contains an application bundle by that name, a <span class='inline-code'>.dmg</span> disk image that contains a bundle by that name, or a <span class='inline-code'>.pkg</span> installer that install a bundle by that name.</p>
+
+<p>Make sure it&rsquo;s working by running babushka.</p>
+
+<script src="https://gist.github.com/caek/8812221.js"></script>
+
+
+<h2>OS X Settings</h2>
+
+<p>Aside from apps, there are system settings: Dock magnification, full disk encryption, keyboard shortcuts, etc.</p>
+
+<p>In <span class='inline-code'>osx.rb</span> dependencies can be defined for these settings. On OS X these settings are stored in plists and can be read or written using the <span class='inline-code'>defaults</span> command.</p>
+
+<script src="https://gist.github.com/caek/8812257.js"></script>
+
+
+<p>Because Babushka doesn&rsquo;t know how to &ldquo;move the dock to the right&rdquo;, it has to be manually implemented. Each dependency has two methods <span class='inline-code'>met?</span> and <span class='inline-code'>meet</span>.</p>
+
+<p><span class='inline-code'>met?</span> is evaluated for truthiness (<span class='inline-code'>truthy</span> meaning &ldquo;this dependency is already met&rdquo; and <span class='inline-code'>falsey</span> meaning &ldquo;this dependency is not yet met&rdquo;). It is run every time a dependency is required.</p>
+
+<p><span class='inline-code'>meet</span> is what performs the action to install a dependency if the dependency isn&rsquo;t already <span class='inline-code'>met?</span>. In the case of auto hiding the dock.</p>
+
+<p>For example: If the doc is already set to hidden — i.e. the shell command <span class='inline-code'>defaults read com.apple.dock autohide</span> returns 0 and outputs the value &ldquo;1&rdquo; to stdout — then the dependency is already met. If it&rsquo;s not already hidden, then write setting and restart the dock.</p>
+
+<p><span class='inline-code'>meet</span> blocks should be idempotent by convention. Care should be taken so that running Babushka multiple times doesn&rsquo;t have unintended side effects.</p>
+
+<p>And of course, the results can be seen again by running the settings dependency.</p>
+
+<script src="https://gist.github.com/caek/8813432.js"></script>
+
+
+<p>(There&rsquo;re a lot of OS X settings that can be set through the defaults command. A good resource for discovering them is secrets.blacktree.com)</p>
+
+<h2>Bringing it All Together</h2>
+
+<p>At this point the project has several different dependencies that describe various aspects of a workstation (settings, packaged apps, and GUI apps) that each can be run independently.</p>
+
+<p>To ease configuration, create a root dependency for every machine that you want to manage with Babushka. A simple informal convention is to name this dependency the same as the hostname of the machine.
+For example, if a machine is named <span class='inline-code'>cape-town</span>, create a file called <span class='inline-code'>cape_town.rb</span> and add a single dependency.</p>
+
+<script src="https://gist.github.com/caek/8813454.js"></script>
+
+
+<p>Configuring the machine is now as simple as:</p>
+
+<p><span class='inline-code'>$ babushka cape-town</span></p>
+
+<p>When there are multiple workstations, simple add another hostname dependency. Another machine might share many of the same dependencies, but look like:</p>
+
+<script src="https://gist.github.com/caek/8813469.js"></script>
+
+
+<h2>GitHub Integration</h2>
+
+<p>Pretty neat! There&rsquo;s now a repo that describes a set of common workstation dependencies, and it can be run on any current install to bring it up-to-date.</p>
+
+<p>But&hellip; after re-installing OS X where will Babushka find the dependency project? And where will it get base dependencies like <span class='inline-code'>git</span> or <span class='inline-code'>gcc</span> without manual effort to install them.</p>
+
+<p>Babushka integrates with GitHub so configuring a machine after a fresh install is as easy as creating a repo on any GitHub account called <span class='inline-code'>babushka-deps</span> and pushing changes there.</p>
+
+<script src="https://gist.github.com/caek/8813501.js"></script>
+
+
+<p>For example, if the GitHub user samfoo has a <span class='inline-code'>babushka-deps project</span>, running <span class='inline-code'>babushka samfoo:cape-town</span> will clone samfoo&rsquo;s project to <span class='inline-code'>~/.babushka/sources/samfoo</span> and try to meet the <span class='inline-code'>cape-town</span> dependency (which configures everything) therein.</p>
+
+<h2>Looking Forward</h2>
+
+<p>Managing a workstation with Babushka is simple after understanding the conventions. Chef Solo and Puppet (and, of course others) can used for managing personal machine configurations, but are too unwieldy for simple tasks and require lots more configuration and domain knowledge.</p>
+
+<p>Because Babushka is so simple, there&rsquo;s no reason why a team couldn&rsquo;t publish a <span class='inline-code'>babushka-deps</span> repo to their GitHub account that contains all the dependencies necessary for getting new devs up and running. For example, it could install vagrant and clone the project repo. Getting new developers setup is limited, then, only by download speed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Continuous Delivery on Windows, Part III: Infrastructure Automation]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/cd-in-windows-part-3"/>
+    <updated>2014-02-04T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/cd-in-windows-part-3</id>
+    <content type="html"><![CDATA[<p>And now we’re onto the really tough problem of automating the creation and updates to your infrastructure on Windows. What we want is to be able to create any environment at the touch of a button and using automation this environment magically appears before our eyes ready to deploy our software to. Allowing us to do things like parallel testing and scaling of your infrastructure. The best way to do this at present is through virtualisation.</p>
+
+<h2>Virtualisation</h2>
+
+<p>Virtualisation means you won’t be building all your environments from scratch on one box.  Through shared use of server resources you can create lots of production-like environments at low cost. You can choose to build your own local cloud solution for this or choose a hosted option. The easiest being the latter, as most hosted cloud options provided by vendors like Azure from MS and EC2 from Amazon, provide Infrastructure as a Service (IaaS). This will give you some basic Windows infrastructure, like your operating system, but that is only part of the problem solved.</p>
+
+<blockquote><blockquote><p>&ldquo;you can build the entire environment from scratch using Puppet and Chef…but hold on I thought we were on Windows?&rdquo;</p></blockquote></blockquote>
+
+<h2>Environments</h2>
+
+<p>Most real systems are heterogeneous, which means they need to be configured for specific purposes. Examples of the types of environments you might need are development, continuous integration (CI) and production-like. Development is likely to have development tools and stubs to external components and applications. CI may only include your build tool and basic frameworks like .NET, but won’t need development tools or real external components and applications. Production-like environments will have real external components and systems, but won’t need build and development tools. You could start with a base image and then use configuration management tools like Puppet and Chef to configure your environment to your needs. Alternatively, you can build the entire environment from scratch using Puppet and Chef…but hold on I thought we were on Windows?</p>
+
+<h2>Configuration Management</h2>
+
+<p>We are on Windows, and fortunately massive improvements have been made to configuration management tools like Puppet and Chef. They now have a lot of built in support for Windows packages and configuration. A large part of the environment configuration can be performed using these tools and for everything else there are always executable blocks, which allow you to call out to PowerShell. Although if you do use an executable block, ensure you replace it with the actual package should it start being supported by default. It isn’t clean or easy to manage lots of executable blocks.</p>
+
+<p>And lets not forget our new friend Chocolatey, which will allow you to install system packages. More and more applications are becoming available in Chocolatey so watch this space&hellip;</p>
+
+<h2>PowerShell &amp; WMI</h2>
+
+<p>For everything else there is PowerShell. Specifically, WindowsFeatures and PowerShell for Windows Server 2008 r2 has a server manager module. This module has commandlets that allow you to add a Windows server feature. So basically with PowerShell and WMI (Windows Management Infrastructure and WinRM (Windows Remoting)) you can pretty much do anything that the Windows Server API will let you. Including automating Active Directory commands. The caveat is that your Windows Server needs to be at least Windows Server 2008, when PowerShell support became a built in feature. Before then&hellip; good luck!</p>
+
+<p>However it isn’t all sunshine and lollipops. WinRM is actually pretty painful and fiddly to use and as I’ve said PowerShell is an ugly and procedural language. You have to be careful not to let it grow arms and legs and become difficult to understand (and therefore, difficult to maintain). We all know what happens to that kind of code.</p>
+
+<h2>More Pain</h2>
+
+<p>There are a few other pain points I would be remiss not to mention while we are at it. Let’s start with registries. In Windows we have 32bit and 64bit registries. Both Puppet and Chef have issues with living on one registry and installing to another. Once you end up in this space, be prepared to debug and perhaps jump through some hoops to get things working.</p>
+
+<p>Other irritating “features” you need to manage are Windows updates and ISO mounting. ISO mounting is still not built into Windows operating systems so you’ll need to download something like Virtual Clone Drive. And finally there is the cost. Even on Azure, Windows environments are more expensive than Linux, but good luck using that as an excuse to port all your software.</p>
+
+<p>So now that I have thoroughly depressed you and made you consider just doing it on Linux. Let’s talk about the light at the end of the tunnel. These problems can be solved by you and in my opinion you have two options.</p>
+
+<h3>1. Manage the problem</h3>
+
+<p>Being aware of a problem is the first step to fixing it. Don’t go into Windows automation believing it’s going to be easy and you won’t have to deal with these little niggles. The best defense is an offense. Be prepared, be careful with registries, ensure you manage windows updates so they don’t manage you and use a version of a Windows that supports PowerShell and WinRM. Right now, I recommend Windows Server 2008 and above.</p>
+
+<blockquote><blockquote><p>&ldquo;&hellip;using a GUI is not the kind of easy we are after&rdquo;</p></blockquote></blockquote>
+
+<h3>1. Create the need for change</h3>
+
+<p>I’ve said it before but it is really the only way that things will get better. Microsoft and vendors have a responsibility to respond to requirements from their customers. So create those requirements by making them visible at scale. If we all started trying to do DevOps in Windows tomorrow the vendors would respond by trying to make it easier for us. We just need to remind them that using a GUI is not the kind of easy we are after. Push the community and support open source software (OSS). Even Microsoft is supporting OSS now. For example, they have open-sourced MVC and their Entity Framework, demonstrating that a lot of fantastic tooling and innovation can be built and trusted in this environment.</p>
+
+<p>OK I’ll admit those probably aren’t the nice easy solutions you were after, but given the nature of software, I’m sure if I write this again in five years, we won’t have these problems and we’ll have awesome tools for automating the creation of our infrastructure and the deployment of our applications. We’ll be lamenting how much Puppet and Chef suck and how much better our new tools are.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>Right now we have to create the requirement for change and the only way to do that is for everyone to try and automate what they can. Use the best tool there is and petition to have it better.</p>
+
+<p>Automate what you can, and accept what you can’t… for now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SVN to Git, Making Technical Changes at Scale]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/svn-git"/>
+    <updated>2014-02-03T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/svn-git</id>
+    <content type="html"><![CDATA[<p>No one likes change. It’s uncomfortable, difficult, and sometimes down-right painful. But in order to improve and be more effective at our jobs we often need to change. In this industry especially, change happens in technologies and practices at an alarming rate. That might lead you to believe that those who work in this industry happily embrace change and see it as par for the course. In my experience this is often not the case.</p>
+
+<blockquote><blockquote><p>&ldquo;It isn’t uncommon to see an organisation using the same practices and technologies they were 5 or 10 years ago.&rdquo;</p></blockquote></blockquote>
+
+<p>Large organisations want to manage change to reduce the risks it can have. They attempt to have consistency in practices and technology choices, which enable their people to understand what is going on. This allows people to move between teams more easily when necessary, only needing to understand the domain of a new project and not also the tools, technologies and practices of the new team. This has the unfortunate effect of not just slowing down and managing change, but often of stopping it altogether. It isn’t uncommon to see an organisation using the same practices and technologies they were 5 or 10 years ago. In an industry where new frameworks and platforms seem to arrive almost every week, organisations can quickly find themselves using less than great tools for the job, or worse, using unsupported tools. This ironically introduces risks that their behaviour was trying to avoid.</p>
+
+<p>So what do large organisations do to embrace some changes, in the face of a constantly changing industry? How do they navigate their way through the bazillions of tool and language choices to make a sane one, that isn’t just a passing fad? There are two tandem practices that I have seen work in large scale organisations; piloting changes and creating visibility.</p>
+
+<p>Pilot changes by choosing one team to trial the new technology or practice in. At a recent client, our team spent months of talking through the how’s and why’s of Git being a better source control management (SCM) choice than SVN, for the development team of the Fortune 500 company.</p>
+
+<p>Shortly after I arrived, I was introduced to Mike, who was in charge of the internal operations and services team. Mike was responsible for supporting tens of overloaded servers, as well as hundreds of overworked developers. During one of my first conversations with Mike, he asked me what I thought about Git as a source control mechanism.  Being a developer, I rattled off the usual suspects: local history, not needing to contact the server for <em>everything</em>, better merge support,  and visibility of entire commit histories attributed to the correct authors etc. Also, the developers on the team were dreading working with Subversion, the client&rsquo;s current SCM of choice, after being burned with merging hell and the lack of visibility of their commit history on other projects.</p>
+
+<p>Eventually, after many conversations, Mike was receptive to the idea of piloting Git in a team. The organisation had already started moving to the Atlassian stack, so another Git selling point was the Stash frontend to Git. Stash allows you to manage your Git repositories, a feature that wasn’t available for SVN. Mike agreed to set up a test Git server, fronted by Stash. Stash would allow him to have a decent UI for access control on top of the Git back-end.  It took a couple of attempts, but I was eventually able to import our project into the test Git server, including the fully-attributed commit history.</p>
+
+<p>Once the source control was ported to Git, the team was clamoring to complete the move for our project. The developers had been asking to work with Git for some time, but hadn’t managed to convince the powers that be. I continued to work with Mike on the Stash side of the migration. We were able to set up project information in the web front-end, access controls for multiple projects, and import SSH keys for password-less attributed commits.</p>
+
+<p>After another final export of the Subversion tree imported into Git, our team fully switched over to using the new SCM.  I showed the developers how they should import their SSH keys into Stash and then configure their workstations to handle the SSH key-exchange and that was it &ndash; they were up and running!</p>
+
+<p>Our team was the first project in this large organisation to fully switch development from Subversion to Git. We were the pilot and thankfully our pilot was a success story. Developers were happier, merging was easier, commit histories were accessible and understood and it wasn’t long before the team was comfortable with the new workflow provided by Git.</p>
+
+<p>It has been 5 months since that initial pilot and the success spread within a few months. Two more teams have successfully carried out a similar porting exercise. Git is spreading like wildfire around the organisation!</p>
+
+<blockquote><blockquote><p>“When large organisations face new technology, often their first concern is, how they can implement this change across the board &ndash; when it should be to see if it’s viable at all.”</p></blockquote></blockquote>
+
+<p>Getting that first pilot off the ground can be hard. It took us months of consulting, getting to know the right people, setting up the right kind of relationships, and doing the right work to affect change in an environment that&rsquo;s usually very averse to change. The technology change itself wasn’t that difficult. In my experience developers are smart people that can pick up most tools and technologies, given they make sense and are appropriate.</p>
+
+<p>When large organisations face new technology, often their first concern is, how they can implement this change across the board &ndash; when it should be to see if it’s viable at all. With some success behind you, you are more likely to understand what is required to implement the change on a more concrete level and some of the pitfalls and gotcha’s that you could meet. Remember, we took several attempts to port over SVN &ndash; but you can time-box such activities.</p>
+
+<p>The second part of a change like this is creating visibility. At ThoughtWorks we use the Technology Radar to get a snapshot every 6 months of the technologies and practices we are using in our organisation and at clients. This gives us insight across the organisation about how we feel about them. Should they be assessed, trialed, adopted or should we be more cautious and hold our use? Many other organisations, who want to manage change rather than slow it down or avoid it altogether, choose to adopt a similar radar snapshot for their technology and practice choices.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>However, when a change is new and it is going well, ensure you celebrate any successes. People are quick to grumble and often forget what is going well. You will need this ‘good press’ to sell further implementation of the change within the organisation.</p>
+
+<p>Remember that not all pilots will be successful. The whole point of it being a pilot is that it is low risk &ndash; you aren’t asking the whole organisation to change, just one contained team that you can gauge at any given time of it’s success or failure.</p>
+]]></content>
+  </entry>
+  
+</feed>

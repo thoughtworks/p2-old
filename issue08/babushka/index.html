@@ -1,0 +1,367 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Coding your workstation with Babushka</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/cd-in-windows-part-3" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue08/index">issue08, February 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+            	4 / 6
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Coding your workstation with Babushka</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Sam Gibson
+        </p>
+    </header>
+    <div class="article-body"><h2>Your Workstation Sucks</h2>
+
+<p>No, seriously, it does. Worse, it&rsquo;s your fault. You can&rsquo;t name half the apps that you have installed through <span class='inline-code'>apt-get, homebrew, port,<span> whatever.</p>
+
+<p>If it was dropped in a vat of alien-larva-that-consume-electronics-and-also-souls right now, could you restore it tomorrow? In a week? Do you even know?</p>
+
+<p>You preach repeatability and automation. You spend time configuring vagrant/docker for your projects. You <em>don&rsquo;t</em> treat your workstations with the same care.</p>
+
+<p>The usual suspects — Chef, Puppet, et. al. — are too complicated. They focus on managing thousands of servers, huge developer ecosystems, dozens of incompatible versions. Besides: they&rsquo;re far too popular to be cool anymore.</p>
+
+<p>Enter Babushka.</p>
+
+<p>This article will walk through configuring a workstation with Babushka. It will take about 20 minutes from start to finish.</p>
+
+<h2>The Beginning</h2>
+
+<p>Before starting anything, Babushka has to be installed.</p>
+
+<script src="https://gist.github.com/caek/8812117.js"></script>
+
+
+<h2>The Project</h2>
+
+<p>Create a project.</p>
+
+<script src="https://gist.github.com/caek/8812125.js"></script>
+
+
+<h2>Describing It</h2>
+
+<p>Babushka projects define an acyclic dependency graph.</p>
+
+<p>For example, I might require that the <span class='inline-code'>zsh</span> is installed, which would itself require <span class='inline-code'>homebrew, gcc,</span> and <span class='inline-code'>autoconf</span>. When I ask Babushka to meet the zsh dependency, it would ensure that all of its dependencies are also met.</p>
+
+<p>Dependencies are defined using a simple DSL, and are read from any ruby file.</p>
+
+<h2>Packaged Apps</h2>
+
+<p>The easiest dependencies to describe are all the apps under package management that are currently installed. If you&rsquo;re on OSX and already using homebrew, you can see all of your installed apps by running <span class='inline-code'>brew list:</span></p>
+
+<script src="https://gist.github.com/caek/8812144.js"></script>
+
+
+<p>Babushka knows how to install apps using whatever package manager a platform provides, so the dependencies are simple. Create a file for all of these packaged apps and call it <span class='inline-code'>apps.rb</span>. Inside define a dependency for packaged apps. The app dependency name must end in <span class='inline-code'>.bin</span>, e.g.</p>
+
+<script src="https://gist.github.com/caek/8812151.js"></script>
+
+
+<p>Now, ask Babushka to meet the <span class='inline-code'>all-packaged-apps dependency</span>, and view the output. If the dependency was met successfully, the dependency will be green, otherwise it will be red with an error message of some sort.</p>
+
+<script src="https://gist.github.com/caek/8812174.js"></script>
+
+
+<p>(Babushka looks for dependency definitions in several places, including in the directory <span class='inline-code'>~/.babushka/deps</span>)</p>
+
+<h2>OS X Apps</h2>
+
+<p>Not all apps are packaged apps. Specifically Chromium, Firefox, Alfred, iTerm2, etc. are distributed as <span class='inline-code'>.dmg</span> files. Babushka knows how to install these too.</p>
+
+<p>Create a file called <span class='inline-code'>osx.rb</span> where all of the dependencies specific to Mac OS X will go.</p>
+
+<script src="https://gist.github.com/caek/8812196.js"></script>
+
+
+<p>There&rsquo;s some magic going on here.</p>
+
+<p>First: The dependency must be named the same at the app that it provides. The iTerm.app dependency will only be met if an application called &lsquo;iTerm.app&rsquo; exists in <span class='inline-code'>/Applications</span> or <span class='inline-code'>~/Applications</span>.</p>
+
+<p>Second: If &lsquo;iTerm.app&rsquo; doesn&rsquo;t exist, then the <span class='inline-code'>source</span> URL must link to a zip file that contains an application bundle by that name, a <span class='inline-code'>.dmg</span> disk image that contains a bundle by that name, or a <span class='inline-code'>.pkg</span> installer that install a bundle by that name.</p>
+
+<p>Make sure it&rsquo;s working by running babushka.</p>
+
+<script src="https://gist.github.com/caek/8812221.js"></script>
+
+
+<h2>OS X Settings</h2>
+
+<p>Aside from apps, there are system settings: Dock magnification, full disk encryption, keyboard shortcuts, etc.</p>
+
+<p>In <span class='inline-code'>osx.rb</span> dependencies can be defined for these settings. On OS X these settings are stored in plists and can be read or written using the <span class='inline-code'>defaults</span> command.</p>
+
+<script src="https://gist.github.com/caek/8812257.js"></script>
+
+
+<p>Because Babushka doesn&rsquo;t know how to &ldquo;move the dock to the right&rdquo;, it has to be manually implemented. Each dependency has two methods <span class='inline-code'>met?</span> and <span class='inline-code'>meet</span>.</p>
+
+<p><span class='inline-code'>met?</span> is evaluated for truthiness (<span class='inline-code'>truthy</span> meaning &ldquo;this dependency is already met&rdquo; and <span class='inline-code'>falsey</span> meaning &ldquo;this dependency is not yet met&rdquo;). It is run every time a dependency is required.</p>
+
+<p><span class='inline-code'>meet</span> is what performs the action to install a dependency if the dependency isn&rsquo;t already <span class='inline-code'>met?</span>. In the case of auto hiding the dock.</p>
+
+<p>For example: If the doc is already set to hidden — i.e. the shell command <span class='inline-code'>defaults read com.apple.dock autohide</span> returns 0 and outputs the value &ldquo;1&rdquo; to stdout — then the dependency is already met. If it&rsquo;s not already hidden, then write setting and restart the dock.</p>
+
+<p><span class='inline-code'>meet</span> blocks should be idempotent by convention. Care should be taken so that running Babushka multiple times doesn&rsquo;t have unintended side effects.</p>
+
+<p>And of course, the results can be seen again by running the settings dependency.</p>
+
+<script src="https://gist.github.com/caek/8813432.js"></script>
+
+
+<p>(There&rsquo;re a lot of OS X settings that can be set through the defaults command. A good resource for discovering them is secrets.blacktree.com)</p>
+
+<h2>Bringing it All Together</h2>
+
+<p>At this point the project has several different dependencies that describe various aspects of a workstation (settings, packaged apps, and GUI apps) that each can be run independently.</p>
+
+<p>To ease configuration, create a root dependency for every machine that you want to manage with Babushka. A simple informal convention is to name this dependency the same as the hostname of the machine.
+For example, if a machine is named <span class='inline-code'>cape-town</span>, create a file called <span class='inline-code'>cape_town.rb</span> and add a single dependency.</p>
+
+<script src="https://gist.github.com/caek/8813454.js"></script>
+
+
+<p>Configuring the machine is now as simple as:</p>
+
+<p><span class='inline-code'>$ babushka cape-town</span></p>
+
+<p>When there are multiple workstations, simple add another hostname dependency. Another machine might share many of the same dependencies, but look like:</p>
+
+<script src="https://gist.github.com/caek/8813469.js"></script>
+
+
+<h2>GitHub Integration</h2>
+
+<p>Pretty neat! There&rsquo;s now a repo that describes a set of common workstation dependencies, and it can be run on any current install to bring it up-to-date.</p>
+
+<p>But&hellip; after re-installing OS X where will Babushka find the dependency project? And where will it get base dependencies like <span class='inline-code'>git</span> or <span class='inline-code'>gcc</span> without manual effort to install them.</p>
+
+<p>Babushka integrates with GitHub so configuring a machine after a fresh install is as easy as creating a repo on any GitHub account called <span class='inline-code'>babushka-deps</span> and pushing changes there.</p>
+
+<script src="https://gist.github.com/caek/8813501.js"></script>
+
+
+<p>For example, if the GitHub user samfoo has a <span class='inline-code'>babushka-deps project</span>, running <span class='inline-code'>babushka samfoo:cape-town</span> will clone samfoo&rsquo;s project to <span class='inline-code'>~/.babushka/sources/samfoo</span> and try to meet the <span class='inline-code'>cape-town</span> dependency (which configures everything) therein.</p>
+
+<h2>Looking Forward</h2>
+
+<p>Managing a workstation with Babushka is simple after understanding the conventions. Chef Solo and Puppet (and, of course others) can used for managing personal machine configurations, but are too unwieldy for simple tasks and require lots more configuration and domain knowledge.</p>
+
+<p>Because Babushka is so simple, there&rsquo;s no reason why a team couldn&rsquo;t publish a <span class='inline-code'>babushka-deps</span> repo to their GitHub account that contains all the dependencies necessary for getting new devs up and running. For example, it could install vagrant and clone the project repo. Getting new developers setup is limited, then, only by download speed.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/sam-avatar.jpg"/>
+         </a>
+         <div>Sam Gibson</div>
+         
+         <a href="http://twitter.com/capnkrump">@capnkrump</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/cd-in-windows-part-3" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

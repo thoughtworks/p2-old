@@ -84,4 +84,20 @@
 ]]></content>
   </entry>
   
+  <entry>
+    <title type="html"><![CDATA[A Word From The Editor]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue03/index"/>
+    <updated>2013-08-01T00:00:00+10:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue03/index</id>
+    <content type="html"><![CDATA[<p>I remember working on a project where some team members were dissatisfied with the daily stand-up. They didn’t feel like they were getting any value out  of it. For the next iteration, the team held no stand-ups. During the retrospective, we talked about what information we hadn’t shared with each other that we should have. Stand-up was brought back the following iteration to share just that information.</p>
+
+<p>In the 3rd issue of P2 magazine we pause improve this and ask for feedback on whether it should come back. We talk to Musa Kurhula Baloyi about the challenges of <em>Localisation and Digitisation in Africa</em>. Nick Thorpe continues his series with John Stojanovski and John’s history with computer viruses. Ali Lemer talks to Anette Bergo about her experiences of setting up the MelbJS group. All this, more and some new features like an RSS feed and arrow keys make up the August edition of P2 Magazine.</p>
+
+<p>If you&rsquo;d like to get in touch, you can email us at: <a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#112;&#x32;&#x40;&#x74;&#x68;&#111;&#117;&#103;&#104;&#116;&#x77;&#x6f;&#x72;&#107;&#x73;&#46;&#x63;&#x6f;&#109;">&#x70;&#50;&#64;&#116;&#104;&#x6f;&#117;&#103;&#x68;&#116;&#119;&#111;&#114;&#x6b;&#x73;&#x2e;&#99;&#111;&#x6d;</a></p>
+>>>>>>> 12e48e4e56611651f7fb9cb3b22038ea03183183
+
+<p>Ryan Boucher, Editor in Chief</p>
+]]></content>
+  </entry>
+  
 </feed>

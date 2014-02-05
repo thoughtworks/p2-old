@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue07 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue07/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-02-04T19:04:04-05:00</updated>
+  <updated>2014-02-05T16:01:58-05:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -49,11 +49,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue07/puzzle/"/>
-<<<<<<< HEAD
     <updated>2013-12-08T00:00:00-05:00</updated>
-=======
-    <updated>2013-12-08T00:00:00+11:00</updated>
->>>>>>> 12e48e4e56611651f7fb9cb3b22038ea03183183
     <id>http://thoughtworks.github.io/p2/issue07/puzzle</id>
     <content type="html"><![CDATA[<p>Last month we had a puzzle where we looked at how we could remove the uncertainty of intersections when the light goes orange and the driver isn’t at that perfect distance where it’s hard to know whether one should keep going or brake.</p>
 

@@ -1,0 +1,270 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Two months early. 300k under budget</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue09/vagrant" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue09/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue09/index">issue09, March 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+            	4 / 5
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Two months early. 300k under budget</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Dave Elliman
+        </p>
+    </header>
+    <div class="article-body"><p>It was a sunny Thursday afternoon. An intrigued, but slightly dubious Technical Architect, Dan, left our ThoughtWorks presentation.</p>
+
+<p>Could Clojure be used to build the bespoke CMS? Is it too bleeding edge? Would his team get it?</p>
+
+<p>But lets take a step back. Why would a large organisation with a mix of technologies and legacy systems want to muddy the waters with a completely new language?</p>
+
+<p>A while ago we engaged with Dan’s company. Their business model was shifting more towards a digital presence and they needed a platform to build for the future. They wanted to utilise as much of their older back end systems as they could. They knew rebuilding their entire platform from scratch, “the big rewrite”, is an anti-pattern.</p>
+
+<blockquote><blockquote><p>“Why would a large organisation with a mix of technologies and legacy systems want to muddy the waters with a completely new language?”</p></blockquote></blockquote>
+
+<p>Their teams’ current skill-sets leant them towards Java, but the important thing to us was the feeling that we could genuinely deliver quickly and meet their deadlines.</p>
+
+<p>A few months in we were about to start a smaller project within the larger program of work. We needed to add content management to a number of potential web site instances. We began by reviewing available CMS tools in the market. After some research it turned out that none of the off-the-shelf CMS tools available would meet their required approach in the way we needed, so we decided to build our own.</p>
+
+<p>We already had a continuous delivery pipeline set up from the main project that we could adapt, we just needed the right technological choices that would deliver business value in an innovative way to meet our deadline. We knew we had to use the JVM, but building what was to be an app used by partnering digital agencies and client staff, needed to be robust and work intuitively. After brainstorming some ideas we decided to put forward the idea of a Javascript based Single Page App (SPA) with a Clojure back end and a set of small Clojure based micro services sitting on top of MongoDB hosted in Rackspace.</p>
+
+<p>Dan wasn’t easily convinced. He took some persuading&hellip;</p>
+
+<p>We had to present the pros and cons of polyglot programming using the JVM as the basis of the agreement, rather than just using Java.</p>
+
+<p>Dan still wasn’t convinced&hellip;</p>
+
+<p>We discussed the existing Clojure community, the maturity of the language itself and the momentum we saw in the industry. Companies are seeing speed to market deliveries, that are based on Clojure.</p>
+
+<p>Dan decided to test out the theory.</p>
+
+<p>If he, someone without a development background could get Clojure, then surely his team of Java developers could too.</p>
+
+<p>He had recently built an app to collect data about the various sites the company hosted in different places and had used Java and Spring MVC. He locked himself away for the weekend and rebuilt his app&hellip; in a fraction of the code.</p>
+
+<p>The following Monday we got an email from Dan.</p>
+
+<p>“I am more than happy to go ahead with the use of Clojure.”</p>
+
+<p>Win.</p>
+
+<p>Given the go ahead, we started our usual project inception activities and started delivering the application. We decided to split the services so that one service would provide content to its consuming web sites that were responsible for all layout decisions given the content components and some meta data about it, and another service was responsible for maintaining it. The Javascript SPA used the second service directly as well as domain specific services on the main project platform &ndash; we were also building in parallel.</p>
+
+<p>The first deadline was 6 weeks away. No-one expected us to hit it. We had started a week late due to internal governance and we were using a new technology the team didn’t know.</p>
+
+<p>We were careful to structure the iterations and get the right things done in the right order. We engaged with user testing in early pre-development to get the designs and user experience conversations going. The users were accustomed to traditional CMS’s, an approach we had eschewed because of the varying outlets for the content &ndash; we didn’t want to enter ‘template hell’. We worked with the client to establish acceptance criteria and trained their internal users on how create the necessary content. We released every day to a pre-production environment so the users could test early and often.</p>
+
+<p>The process continued with the team delivering and the users creating content on the application, an application constantly growing in capability.</p>
+
+<p>We hit the deadline a week early.</p>
+
+<p>It was no big deal. We were delivering everyday, multiple times a day. We had delivered everything for phase 1 of the product two months early and way under budget. But how much of this was due to the process? How much to do with it being an SPA, Clojure, or the team?</p>
+
+<blockquote><blockquote><p>“After a couple of iterations no-one talked about learning curves anymore.”</p></blockquote></blockquote>
+
+<p>Success is always an aggregate of all these factors. Most of the team members had very little Clojure experience when they started. They wanted to know how they would do TDD, what IDE if any they would use, what was a REPL etc. After a couple of iterations no-one talked about learning curves anymore. They just got it.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>Engaging a client when you are sure an innovative solution would better serve the problem is key. It’s a rite of passage for everyone. At ThoughtWorks we are fortunate that we have a large pool of experience to reach out to as well as strong community links, all of which helped in our cause. The key is not to be afraid to try it out. Create a low risk way to do this, like Dan did. Test out and prove your theory.</p>
+
+<p>Software creation is a design process and design goes through many iterations until you get it right. That includes the tools you choose.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/dave-elliman.jpg"/>
+         </a>
+         <div>Dave Elliman</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue09/vagrant" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue09/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

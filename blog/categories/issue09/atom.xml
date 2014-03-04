@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: issue09 | P2 Magazine]]></title>
+  <link href="http://thoughtworks.github.io/p2/blog/categories/issue09/atom.xml" rel="self"/>
+  <link href="http://thoughtworks.github.io/p2/"/>
+  <updated>2014-03-04T18:15:11-05:00</updated>
+  <id>http://thoughtworks.github.io/p2/</id>
+  <author>
+    <name><![CDATA[The P2 Elves]]></name>
+    <email><![CDATA[p2@thoughtworks.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue09/puzzle/"/>
+    <updated>2014-03-06T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue09/puzzle</id>
+    <content type="html"><![CDATA[<p>We didn’t get any correct answers to last month&rsquo;s puzzle, but the responses we did receive provided great feedback* on how to improve it. So, in the spirit of agile, we are going to iterate and improve. We have taken your comments and reworded the puzzle to hopefully make it more clear.</p>
+
+<p>Please send your answers to <a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#x70;&#50;&#x40;&#x74;&#104;&#x6f;&#117;&#103;&#x68;&#x74;&#x77;&#111;&#114;&#107;&#115;&#x2e;&#x63;&#111;&#109;">&#112;&#x32;&#64;&#x74;&#104;&#x6f;&#117;&#103;&#x68;&#116;&#x77;&#111;&#114;&#x6b;&#x73;&#x2e;&#99;&#111;&#109;</a> and the best answer will win a P2 related prize!</p>
+
+<p>A city is divided into zones (shown in red, green, orange, lilac and blue in the picture below) by the municipal corporation. Each zone has a few garbage bins within its bounds (spread out as evenly as possible). Each zone (except the grey one) has a garbage collection truck assigned to it. This truck plies the designated zone and empties the bins therein. Each truck has the capacity of 9 bins. Surrounding the brightly coloured zones is a special zone (bounded by the black line &amp; outside all the other zones) &ndash; this is a &ldquo;common-zone&rdquo;. Any truck can empty bins in this zone, but only when it has collected all the garbage in its designated zone. No truck is assigned the grey zone.</p>
+
+<p><img src="/p2/images/puzzle/garbage.png" alt="Garbage" /></p>
+
+<p>The problem that the garbage company faces is simple. They want a mechanism to identify which bins have been emptied &amp; whether a truck has emptied all the bins in its zone. Secondly, the company has faced some problems. Drivers sometimes fill their truck with “stuff” from somewhere (not from the city bins), thereby increasing the weight of their “daily collection” &amp; claiming money for it. The company wishes to ensure that the collection in the truck is indeed only from the city bins.</p>
+
+<p>Devise a solution for the garbage collection company to track the activity (bins visited, bins emptied, etc.) &amp; collection for their trucks.</p>
+
+<p>Note that your elegant solution must be frugal &amp; can scale to a city with, say, 10,000 bins.</p>
+
+<p>*Feedback is always welcome! If you have some ideas or would like to submit your own puzzle to P2 Magazine then please email us at <a href="&#109;&#x61;&#x69;&#108;&#116;&#x6f;&#58;&#112;&#50;&#x40;&#116;&#104;&#x6f;&#117;&#103;&#104;&#116;&#119;&#x6f;&#114;&#x6b;&#x73;&#x2e;&#99;&#x6f;&#x6d;&#x2e;">&#x70;&#x32;&#64;&#x74;&#x68;&#x6f;&#117;&#x67;&#x68;&#x74;&#x77;&#x6f;&#x72;&#107;&#115;&#46;&#x63;&#111;&#109;&#46;</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Two months early. 300k under budget]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue09/two-months-early"/>
+    <updated>2014-03-05T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue09/two-months-early</id>
+    <content type="html"><![CDATA[<p>It was a sunny Thursday afternoon. An intrigued, but slightly dubious Technical Architect, Dan, left our ThoughtWorks presentation.</p>
+
+<p>Could Clojure be used to build the bespoke CMS? Is it too bleeding edge? Would his team get it?</p>
+
+<p>But lets take a step back. Why would a large organisation with a mix of technologies and legacy systems want to muddy the waters with a completely new language?</p>
+
+<p>A while ago we engaged with Dan’s company. Their business model was shifting more towards a digital presence and they needed a platform to build for the future. They wanted to utilise as much of their older back end systems as they could. They knew rebuilding their entire platform from scratch, “the big rewrite”, is an anti-pattern.</p>
+
+<blockquote><blockquote><p>“Why would a large organisation with a mix of technologies and legacy systems want to muddy the waters with a completely new language?”</p></blockquote></blockquote>
+
+<p>Their teams’ current skill-sets leant them towards Java, but the important thing to us was the feeling that we could genuinely deliver quickly and meet their deadlines.</p>
+
+<p>A few months in we were about to start a smaller project within the larger program of work. We needed to add content management to a number of potential web site instances. We began by reviewing available CMS tools in the market. After some research it turned out that none of the off-the-shelf CMS tools available would meet their required approach in the way we needed, so we decided to build our own.</p>
+
+<p>We already had a continuous delivery pipeline set up from the main project that we could adapt, we just needed the right technological choices that would deliver business value in an innovative way to meet our deadline. We knew we had to use the JVM, but building what was to be an app used by partnering digital agencies and client staff, needed to be robust and work intuitively. After brainstorming some ideas we decided to put forward the idea of a Javascript based Single Page App (SPA) with a Clojure back end and a set of small Clojure based micro services sitting on top of MongoDB hosted in Rackspace.</p>
+
+<p>Dan wasn’t easily convinced. He took some persuading&hellip;</p>
+
+<p>We had to present the pros and cons of polyglot programming using the JVM as the basis of the agreement, rather than just using Java.</p>
+
+<p>Dan still wasn’t convinced&hellip;</p>
+
+<p>We discussed the existing Clojure community, the maturity of the language itself and the momentum we saw in the industry. Companies are seeing speed to market deliveries, that are based on Clojure.</p>
+
+<p>Dan decided to test out the theory.</p>
+
+<p>If he, someone without a development background could get Clojure, then surely his team of Java developers could too.</p>
+
+<p>He had recently built an app to collect data about the various sites the company hosted in different places and had used Java and Spring MVC. He locked himself away for the weekend and rebuilt his app&hellip; in a fraction of the code.</p>
+
+<p>The following Monday we got an email from Dan.</p>
+
+<p>“I am more than happy to go ahead with the use of Clojure.”</p>
+
+<p>Win.</p>
+
+<p>Given the go ahead, we started our usual project inception activities and started delivering the application. We decided to split the services so that one service would provide content to its consuming web sites that were responsible for all layout decisions given the content components and some meta data about it, and another service was responsible for maintaining it. The Javascript SPA used the second service directly as well as domain specific services on the main project platform &ndash; we were also building in parallel.</p>
+
+<p>The first deadline was 6 weeks away. No-one expected us to hit it. We had started a week late due to internal governance and we were using a new technology the team didn’t know.</p>
+
+<p>We were careful to structure the iterations and get the right things done in the right order. We engaged with user testing in early pre-development to get the designs and user experience conversations going. The users were accustomed to traditional CMS’s, an approach we had eschewed because of the varying outlets for the content &ndash; we didn’t want to enter ‘template hell’. We worked with the client to establish acceptance criteria and trained their internal users on how create the necessary content. We released every day to a pre-production environment so the users could test early and often.</p>
+
+<p>The process continued with the team delivering and the users creating content on the application, an application constantly growing in capability.</p>
+
+<p>We hit the deadline a week early.</p>
+
+<p>It was no big deal. We were delivering everyday, multiple times a day. We had delivered everything for phase 1 of the product two months early and way under budget. But how much of this was due to the process? How much to do with it being an SPA, Clojure, or the team?</p>
+
+<blockquote><blockquote><p>“After a couple of iterations no-one talked about learning curves anymore.”</p></blockquote></blockquote>
+
+<p>Success is always an aggregate of all these factors. Most of the team members had very little Clojure experience when they started. They wanted to know how they would do TDD, what IDE if any they would use, what was a REPL etc. After a couple of iterations no-one talked about learning curves anymore. They just got it.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>Engaging a client when you are sure an innovative solution would better serve the problem is key. It’s a rite of passage for everyone. At ThoughtWorks we are fortunate that we have a large pool of experience to reach out to as well as strong community links, all of which helped in our cause. The key is not to be afraid to try it out. Create a low risk way to do this, like Dan did. Test out and prove your theory.</p>
+
+<p>Software creation is a design process and design goes through many iterations until you get it right. That includes the tools you choose.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Isolation and Automation with Vagrant]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue09/vagrant"/>
+    <updated>2014-03-04T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue09/vagrant</id>
+    <content type="html"><![CDATA[<p>Anyone who has gone from developing on Unix to Windows can tell you the pain of crossing technical stacks. In spite of this, disparate tech stacks are common in many organisations. Even on the same team, developers, testers and operations can have different machine setups and tool choices. Sometimes it’s just down to personal choice. But it’s not necessarily a bad thing. Having consistency can cause innovation to stagnate and sometimes one tool really is better suited to a purpose than another. But what if you need your teams to cross-pollinate or merge together?</p>
+
+<blockquote><blockquote><p>“To have every engineer learn about the intricacies of each environment … would be completely impractical.”</p></blockquote></blockquote>
+
+<p>To have every engineer learn about the intricacies of each environment that she may or may not be working in would be completely impractical and create an extremely slow ramp-up time. So what can you do to not spend inordinate amounts of time getting everyone in a state where they can actually do some work?</p>
+
+<p>Let me introduce you to Vagrant….</p>
+
+<p>My current project faces the problem of normalizing our environments across a large organization. Historically the development group was split and that lead to a large divergence in practices, development techniques, tools and approaches to solving problems. Our goal is to overcome that divergence by having a team that combines elements of both groups. That team though, has its own challenges. Each team member has brought their own special sets of tools, machine and method of working, to the table. This has resulted in several technical stacks, each with its own knowledge silo that only a handful of people, or even just one person, on the team can operate.</p>
+
+<p>Faced with this, the team has started to adopt Vagrant as a way to normalize, isolate and automate our environments. We looked at other tools like Boxen and Chef as ways to manage our machines, but quickly decided against them because of the ‘Bring Your Own Device’ nature of the team. Not to mention that Boxen would work only on Mac devices and we were dealing with Windows and Unix like environments. Chef works cross-platform, but gave less flexibility to the developer in how she set up her environment &ndash; we do use Chef as a way to manage the VMs, though.</p>
+
+<h3>Environment Consolidation</h3>
+
+<p>Some environments are more modern than others. Either because they are newer or have had recent investment. Some have technical debt that needs to be overcome in order to introduce a more modern toolchain. We have found that Vagrant solves many of the conflicts and difficulties that arose in our competing development environments.</p>
+
+<p>One conflict we face is the differences between workstations and upstream environments. We want to normalize the tools we use, so we did the following in each environment:</p>
+
+<p><b>Development:</b> We abstracted away the differences between Mac, Linux and &ndash; for the most part &ndash; Windows. Doing this was a great way to ensure consistency for engineers.</p>
+
+<p><b>Production:</b> To go just a step further, our Vagrant boxes are set up to use the same virtual machine image we use in the datacenter, where we deploy. In the words of Forrest Gump, &ldquo;That&rsquo;s good! One less thing.&rdquo;</p>
+
+<p>Some of our tooling differs because of where and how we deploy. Some of our software, for example, runs and compiles under Java 7 while others are still on Java 6. Vagrant made this completely painless because of the isolation of virtual machines.</p>
+
+<p>We were also easily able to introduce new tools into our environments. We are a large team and communicating the addition of a new tool or library or dependency &ndash; especially system packages &ndash; can be pretty cumbersome. Luckily, we just plop it into the provisioning part of our Vagrantfile &ndash; using chef-solo &ndash; and everyone is good to go after a simple <code>vagrant provision</code>.</p>
+
+<blockquote><blockquote><p>”Been on holiday for a week? &hellip; you can be confident that when you return, a simple re-provisioning of the Vagrant box will get any tool changes you missed?”</p></blockquote></blockquote>
+
+<h3>Sunshine and lollipops</h3>
+
+<p>The introduction of Vagrant into our environment allows for any team member to jump confidently from one part of our code to another. They can have a fully functioning environment in at most, 15 minutes. A developer on a Windows machine can quickly jump into a new part of the codebase with her pair by bringing up the required Vagrant box and starting to poke around in the code. Been on holiday for a week? In our team, you can be confident than when you return a simple re-provisioning of the Vagrant box will get any tool changes you missed. And, if you’re using Chef or Puppet, easily see the differences in the log. Allowing a conversation like, &ldquo;Why was gcc upgraded last week?&rdquo; instead of the open ended, &ldquo;What happened last week that I need to know about?&rdquo;</p>
+
+<h3>Bonus features</h3>
+
+<p>In addition, Vagrant provides some nice bonuses to our development environment and workflow, including bringing new team members on-board quickly, finding bugs faster and to recovering from environmental quagmires&hellip;
+New team member on-boarding
+This is one of my favorites. How long does it usually take for a new team member to be ready to work on your team? We regularly on-board a new team members &ndash; either new to the team or that part of the codebase. It is really fun and empowering to say, &ldquo;Here are the steps: 1. Check out the code, 2. Run ./go [1], 3. Take a 10 minute coffee break and you will be ready to go when you get back&rdquo;.
+Recreating deployment schemes
+We are also integrating many systems together that get deployed separately to different VMs in our Continuous Integration build and in production. It is relatively easy for us to set up a &lsquo;production-like&rsquo; deployment on our local boxes. Bring up 2+ boxes, point them at each other &ndash; using the :private_network option in Vagrant &ndash; and run your tests to see the bug visible in a production-like scenario.
+Easy nuclear option
+When things go wrong and you&rsquo;ve yak shaved for a hours, it can be really disheartening to have to resort to the &lsquo;nuclear option&rsquo; and reinstall your operating system. With Vagrant, the nuclear option becomes easy. It&rsquo;s time for another coffee break and you&rsquo;ll be back up and running in no time.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>If you think it is too difficult to get started, I challenge you to try create a Vagrant box for your next ‘from-scratch’ project. You can start with the &ldquo;shell&rdquo; provisioning and upgrade to Chef or Puppet from there. There are plenty of simple bootstraps to get you started, so stop wasting your time setting up environments and have a coffee break instead.</p>
+
+<p>[1] The &ldquo;./go&rdquo; script is a simple wrapper script that essentially does the following in any project we have: &ldquo;vagrant up; vagrant ssh &lsquo;/my/build/tool build&rsquo;&rdquo;.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why you should hire a Polyglot Programmer?]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/hire-polyglot"/>
+    <updated>2014-03-03T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/hire-polyglot</id>
+    <content type="html"><![CDATA[<p>It’s common for people to be sceptical of software developers with varied coding experience. We&rsquo;re used to seeing, “5 years C# experience” on the CV in front of us, so when we see a CV that says: “2 years of Ruby, 1 year of Python and 2 years of Java”, we might be concerned that the person doesn&rsquo;t have the depth of experience we need.  Although this reaction is natural, it’s misguided.</p>
+
+<blockquote><blockquote><p>”If it doesn&rsquo;t matter whether the programmer you&rsquo;re considering has deep knowledge of the language your application uses, what does?“</p></blockquote></blockquote>
+
+<p>The person with the second CV could be a better developer on a C# project than your language expert, despite having little or no C# experience. Let’s not confuse them with a developer who happens to know a few languages. I’m talking about a particular kind of developer with varied experience and a good grasp of engineering fundamentals. The polyglot programmer.</p>
+
+<p>pol·y·glot
+ˈpäliˌglät/
+adjective: knowing or using several languages.</p>
+
+<p>If it doesn&rsquo;t matter whether the programmer you&rsquo;re considering has deep knowledge of the language your application uses, what does? How are you meant to decide whether a coder is up to the task? How do you know they&rsquo;ll be able to pick up C# and add value to your project without slowing you down?
+Let me set the scene&hellip;</p>
+
+<p>Your organisation&rsquo;s technology stack is .NET. Your team is a group of seasoned .NET developers and their experience ranges from 5-15 years. Let&rsquo;s say you hire the person with the second CV.</p>
+
+<p>Ana, has a number of years of experience under her belt, but none in .NET. In spite of the scepticism of the team, Ana quickly picks up C#. She is not only able to keep up with the team, but ends up teaching them many new things.</p>
+
+<p>Why?</p>
+
+<h3>It’s all about the basics</h3>
+
+<p>Software engineering is about more than the language you&rsquo;re using. In my experience, the developer you want on your team is often the one that understands these fundamental software engineering practices:</p>
+
+<h2>Automated testing</h2>
+
+<p>Automated tests give us confidence that our software does what it&rsquo;s meant to. The developer you hire should understand this and ensure that testing is a first class concern in your development process. Developers who are passionate about testing tend to be intolerant of those who are not. With your support, expect your new hire to quickly get the rest of the team writing tests.</p>
+
+<h2>Design</h2>
+
+<p>When I talk about design, I&rsquo;m not thinking of UML diagrams or planning out the details of the application in advance, which could potentially make it difficult to change. I’m talking about having an awareness of what good code looks like and ensuring that the team is constantly making the small changes required to ensure the code stays that way. The programmer you want to hire understands emergent design and object oriented programming. They know how to refactor code to make it easier to work with, regardless of the language they are using.</p>
+
+<h2>Deployment</h2>
+
+<p>Your software is worthless unless it is in production. No matter how innovative the features are, if a user cannot use it, it’s pointless. When you hire a developer who knows how to automate the deployment and configuration of your applications, you gain the potential to move quickly on new ideas and confidence that your application can recover from disasters.</p>
+
+<p>These skills cross-cut languages and a developer who really understands how to apply these practices in one language can port their knowledge to another.</p>
+
+<h3>Varied experience</h3>
+
+<p>Ana notices that the assertions the team are writing in their tests are clumsy. The tests don&rsquo;t read well and the error messages don&rsquo;t provide much detail when they fail. In her Java days, she used a library called Hamcrest that made assertions read more like English and provide clearer error messages on failure. She asks herself “Is there something like that for .NET?” With a quick search, she finds FluentAssertions. To her delight, it has cleaner syntax than the Java library she’s used before, thanks to C#&rsquo;s extension methods.</p>
+
+<p>Ana realises the team deploys their application manually. She has automated a number of deployments in Unix and, even though there are more sophisticated tools available, believes a bash script is an improvement over manually deploying. She does some digging and comes across PowerShell. She starts writing some PowerShell scripts to automate the deployment. The syntax is a bit clumsier than Bash, but a lot of it is the same. Soon she has a script up and running that copies the application DLLs and gets the web server to serve the updated files. She asks herself whether there&rsquo;s a way to test all this PowerShell she’s writing. Ana finds a testing framework called Pester and tests the scripts she’s written.</p>
+
+<p>The team is taken aback. They&rsquo;ve never even tried automating their deployment, and some Windows newbie has just written scripts to do it in a Microsoft language. And it’s tested! Who knew you could test scripts?</p>
+
+<p>A polyglot programmer can open your team&rsquo;s eyes to the development practices and tools that are common in other languages.</p>
+
+<h3>The right tool for the job</h3>
+
+<p>Not all applications are the same. The problems they seek to solve vary greatly. Knowing multiple languages allows you to pick the right technology for the problem at hand. Why should you care? Software built on the wrong technology stack can be unnecessarily complex and painful. For example, using Java to solve a clearly functional problem, when Clojure would be simpler. Or building a Rails app when your users want the kind of fluid interface a single page JavaScript framework can give them.</p>
+
+<p>Hiring a Polyglot Programmer allows you to use their breadth of experience to help you make smart decisions on your technology choices.
+I&rsquo;m sold! Where do I find one?</p>
+
+<p>This is the hard part. Poor development practices are widespread in the industry. If you find a developer who matches the criteria I&rsquo;ve described, snap them up! Remember to look for more than their experience in your language or framework on their CV. What do they know about quality software design and testing? What is their experience in putting their code live?</p>
+
+<blockquote><blockquote><p>”If you can&rsquo;t find a good polyglot programmer, then you have the power to create one!“</p></blockquote></blockquote>
+
+<p>I&rsquo;m not saying that deep knowledge of a language or framework isn’t useful. It&rsquo;s often important, so don&rsquo;t run off and fire your team of language experts. The point I&rsquo;m making is that a polyglot programmer brings a set of valuable general skills and can learn the specifics as they go.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>The good news is that, if you can&rsquo;t find a good polyglot programmer, you have the power to create one! Encourage your development team to broaden their skill set, give them the time to experiment with new languages, frameworks and tools. And, most importantly, make sure you&rsquo;re helping them build those crucial fundamental skills. Those skills that differentiate a great developer from a decent one, no matter which language they&rsquo;re coding in.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[TheBot]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/thebot"/>
+    <updated>2014-03-02T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/thebot</id>
+    <content type="html"><![CDATA[<p>“ Robots that are controlled by node.js.” The idea imprinted on me immediately.</p>
+
+<p>“A crowd controlled robotic car!"</p>
+
+<p><image></p>
+
+<p>A fun product with a tonne of learning potential. However, doing a &ldquo;follow the blog posts/tutorials&rdquo; stitch and patch job recommended on the NodeBots site did not excite me one bit. Sure, we’d done it in two days, but what would we have learned in the process?</p>
+
+<p>Despite having worked extensively on node.js, the language did not interest me much &ndash; ambiguous syntax, callbacks, promises, etc. I had been looking for an opportunity do something real in Golang, and building a concurrent open source firmware for TheBot was just the ticket.</p>
+
+<p><image></p>
+
+<p>TheBot is first and foremost an experiment. An experiment aimed at research and learning. An experiment to kickstart a hardware engineering culture in ThoughtWorks. Birthed as a crowd controlled robotic car that transmits video feed back to the controller; the vision has transformed many times during the development. Can it be the ultimate open source sensing/proximity prototyping platform? Could we extract a product out of this?</p>
+
+<blockquote><blockquote><p>“TheBot’s value is the immense learning and research potential.”</p></blockquote></blockquote>
+
+<p>On first appearance, TheBot looks like the result of odd inter-breeding between a remote-controlled car and the contents of your local Radio Shack. TheBot itself though, is not really just a car, it is actually a fully-fledged Golang based framework for working with hardware sensors and motor control. In it’s current incarnation, the RaspberryPi-based robot allows you to control it remotely using any device capable of running a modern browser. The on-board smarts do things like use rangefinders to implement collision avoidance, and you can even send it logo-ish commands like ‘turn 90 degrees right’.</p>
+
+<p>Right now, we are laying down the rails for what is to come next. The modules are already taking shape and we are using our learnings from TheBot to drive the development of the framework(s) and the underlying hardware abstraction layer.</p>
+
+<p>Unique Selling Proposal: TheBot’s value is the immense learning and research potential in its current form. The fact that it looks like a car and has 4 wheels is just a bonus.</p>
+
+<h3>The Guts</h3>
+
+<p>We plan on doing a proper video walk through of the hardware soon, but until then:</p>
+
+<p><image></p>
+
+<h3>Why Golang?</h3>
+
+<p>Golang has excellent and remarkable support for concurrency in the core language. The RaspberryPi is single threaded and we needed the car to handle multiple real world interactions at the same time. Using threads would have forced us to use mutexes, etc, for synchronization. The ‘goroutines+channels' architecture in Golang helped us focus on the &ldquo;actual&rdquo; interactions. (Goroutines are light weight threads which are executed via the Go runtime on real threads via a M:N mapping. Channels are a typed mechanism for passing messages between goroutines). The resulting code is much easier to read, reason with and understand.</p>
+
+<blockquote><blockquote><p>“Simply running the binary was always enough. This helped tremendously in shortening our development/build/deploy cycles and made the process even more gratifying.”</p></blockquote></blockquote>
+
+<p>Golang is a statically typed, garbage collected and compiled programming language. However, in use, it feels like a FAST (slightly) verbose scripting language which has support for systems programming  and duck typing. Since the cross compiled binary was entirely self contained, no runtime was needed. Simply running the binary was enough, which helped tremendously in shortening our development, build and deploy cycles and made the process even more gratifying.</p>
+
+<h3>Why RaspberryPi?</h3>
+
+<p>The RaspberryPi represents the most available lowest common denominator; an ARM chip running Linux. Besides marrying well with cross compiled Golang, it also doesn’t skimp in the I/O department I2C ✓ GPIO ✓ PWM ✓ The forgiving nature of the hardware, integrated HDMI/Ethernet/USB go a long way in making it a good first choice.</p>
+
+<p>That being said, we could deploy the firmware, in its current form, on any Linux based platform that has the ability to talk GPIO/I2C, including:
+BeagleBone Black
+PandaBoard, etc.</p>
+
+<p>Our long term goal is to be able to target raw microcontrollers.</p>
+
+<h3>What does it do ?</h3>
+
+<p>Watch the video: www.youtube.com/watch?v=iMXjkZ4B3EM</p>
+
+<h3>What next?</h3>
+
+<p>The current form factor was an evolutionary step; a convenience which allowed us to get started quickly.</p>
+
+<p>We definitely want to cater to the hobbyist / education space &ndash; possibly in the form of a stripped down, dressed up Super 8 sensor kit, to help people get started quickly &ndash; as it has the potential for maximum impact at the grassroots level. At the same time, we want to balance things out by looking at solidly marketable areas like B2B logistics / delivery &ndash; which could apply to the rural health care space &ndash; and home automation. The home automation space is particularly exciting as the potential for integration between smart software and hardware innovation is really high &ndash; aptly demonstrated by the NEST devices.</p>
+
+<p>To make the above happen, we will need to stretch TheBot’s legs and expand its capabilities. We are in the process of extracting a hardware abstraction framework (EMBD) which will allow us to target a variety of hosts &ndash; RPi, BBB, etc. &ndash; from a single code base. This is particularly helpful because it will allow us to quickly prototype solutions using readily available hobby boards, while still retaining the ability to target the final hardware. Besides that, we are also interested in route mapping and visualization, as capability in this area will open many more opportunities.</p>
+
+<p>⁂</p>
+
+<p>The development process was nothing short of enthralling. We did not have well established libraries to lean back on. We went into this &ldquo;batteries not included.&rdquo; The decisions were deliberate; to use Golang and not pre-existing libraries because the potential for learning would have been limited. We optimized for maximized learning. And boy did it pay off. Not only did we end up writing our very own Golang libraries for interfacing with all these sensors, we also had the opportunity to try and model the interactions of software with the real world. Imagine for one second how many different ways there are to make the car turn right. Things we take for granted in software can open a can of worms when the &ldquo;real world&rdquo; gets involved!</p>
+
+<p>The technical attractiveness of such an undertaking is obvious, but there is more to it. I believe that a lot of good can be done for the &ldquo;voiceless&rdquo; by getting cheap commodity devices into their hands. A simple 2G connected solar powered open hardware device could allow a village like Panchayat, India, to bypass all the middle men and leverage social networking to report grievances to their congress representative. This could bring about a revolution. What minister worth his salt would want to look bad on Facebook? Our hope is that the resulting learnings and framework created from TheBot effort can and will make this possible.</p>
+
+<p>The possibilities are truly endless.</p>
+
+<h3>Links to Watch</h3>
+
+<p><a href="https://github.com/kidoman/embd">https://github.com/kidoman/embd</a></p>
+
+<h3>Credits</h3>
+
+<p>Contributors in no particular order: Sapto, Rohit, Kunal, Nikesh, Shantanu, Hanu, Gagan, Shaunak, Kashyap, Mukund, Akhil, Vishwas, Mallik, Deepthi, Shaun, Nag, Bala &amp; Sam Newman</p>
+]]></content>
+  </entry>
+  
+</feed>

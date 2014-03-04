@@ -1,0 +1,288 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | TheBot</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue09/index" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/hire-polyglot" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue09/index">issue09, March 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+            	1 / 5
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>TheBot</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Karan Misra
+        </p>
+    </header>
+    <div class="article-body"><p>“ Robots that are controlled by node.js.” The idea imprinted on me immediately.</p>
+
+<p>“A crowd controlled robotic car!&#8221;</p>
+
+<p><image></p>
+
+<p>A fun product with a tonne of learning potential. However, doing a &ldquo;follow the blog posts/tutorials&rdquo; stitch and patch job recommended on the NodeBots site did not excite me one bit. Sure, we’d done it in two days, but what would we have learned in the process?</p>
+
+<p>Despite having worked extensively on node.js, the language did not interest me much &ndash; ambiguous syntax, callbacks, promises, etc. I had been looking for an opportunity do something real in Golang, and building a concurrent open source firmware for TheBot was just the ticket.</p>
+
+<p><image></p>
+
+<p>TheBot is first and foremost an experiment. An experiment aimed at research and learning. An experiment to kickstart a hardware engineering culture in ThoughtWorks. Birthed as a crowd controlled robotic car that transmits video feed back to the controller; the vision has transformed many times during the development. Can it be the ultimate open source sensing/proximity prototyping platform? Could we extract a product out of this?</p>
+
+<blockquote><blockquote><p>“TheBot’s value is the immense learning and research potential.”</p></blockquote></blockquote>
+
+<p>On first appearance, TheBot looks like the result of odd inter-breeding between a remote-controlled car and the contents of your local Radio Shack. TheBot itself though, is not really just a car, it is actually a fully-fledged Golang based framework for working with hardware sensors and motor control. In it’s current incarnation, the RaspberryPi-based robot allows you to control it remotely using any device capable of running a modern browser. The on-board smarts do things like use rangefinders to implement collision avoidance, and you can even send it logo-ish commands like ‘turn 90 degrees right’.</p>
+
+<p>Right now, we are laying down the rails for what is to come next. The modules are already taking shape and we are using our learnings from TheBot to drive the development of the framework(s) and the underlying hardware abstraction layer.</p>
+
+<p>Unique Selling Proposal: TheBot’s value is the immense learning and research potential in its current form. The fact that it looks like a car and has 4 wheels is just a bonus.</p>
+
+<h3>The Guts</h3>
+
+<p>We plan on doing a proper video walk through of the hardware soon, but until then:</p>
+
+<p><image></p>
+
+<h3>Why Golang?</h3>
+
+<p>Golang has excellent and remarkable support for concurrency in the core language. The RaspberryPi is single threaded and we needed the car to handle multiple real world interactions at the same time. Using threads would have forced us to use mutexes, etc, for synchronization. The ‘goroutines+channels&#8217; architecture in Golang helped us focus on the &ldquo;actual&rdquo; interactions. (Goroutines are light weight threads which are executed via the Go runtime on real threads via a M:N mapping. Channels are a typed mechanism for passing messages between goroutines). The resulting code is much easier to read, reason with and understand.</p>
+
+<blockquote><blockquote><p>“Simply running the binary was always enough. This helped tremendously in shortening our development/build/deploy cycles and made the process even more gratifying.”</p></blockquote></blockquote>
+
+<p>Golang is a statically typed, garbage collected and compiled programming language. However, in use, it feels like a FAST (slightly) verbose scripting language which has support for systems programming  and duck typing. Since the cross compiled binary was entirely self contained, no runtime was needed. Simply running the binary was enough, which helped tremendously in shortening our development, build and deploy cycles and made the process even more gratifying.</p>
+
+<h3>Why RaspberryPi?</h3>
+
+<p>The RaspberryPi represents the most available lowest common denominator; an ARM chip running Linux. Besides marrying well with cross compiled Golang, it also doesn’t skimp in the I/O department I2C ✓ GPIO ✓ PWM ✓ The forgiving nature of the hardware, integrated HDMI/Ethernet/USB go a long way in making it a good first choice.</p>
+
+<p>That being said, we could deploy the firmware, in its current form, on any Linux based platform that has the ability to talk GPIO/I2C, including:
+BeagleBone Black
+PandaBoard, etc.</p>
+
+<p>Our long term goal is to be able to target raw microcontrollers.</p>
+
+<h3>What does it do ?</h3>
+
+<p>Watch the video: www.youtube.com/watch?v=iMXjkZ4B3EM</p>
+
+<h3>What next?</h3>
+
+<p>The current form factor was an evolutionary step; a convenience which allowed us to get started quickly.</p>
+
+<p>We definitely want to cater to the hobbyist / education space &ndash; possibly in the form of a stripped down, dressed up Super 8 sensor kit, to help people get started quickly &ndash; as it has the potential for maximum impact at the grassroots level. At the same time, we want to balance things out by looking at solidly marketable areas like B2B logistics / delivery &ndash; which could apply to the rural health care space &ndash; and home automation. The home automation space is particularly exciting as the potential for integration between smart software and hardware innovation is really high &ndash; aptly demonstrated by the NEST devices.</p>
+
+<p>To make the above happen, we will need to stretch TheBot’s legs and expand its capabilities. We are in the process of extracting a hardware abstraction framework (EMBD) which will allow us to target a variety of hosts &ndash; RPi, BBB, etc. &ndash; from a single code base. This is particularly helpful because it will allow us to quickly prototype solutions using readily available hobby boards, while still retaining the ability to target the final hardware. Besides that, we are also interested in route mapping and visualization, as capability in this area will open many more opportunities.</p>
+
+<p>⁂</p>
+
+<p>The development process was nothing short of enthralling. We did not have well established libraries to lean back on. We went into this &ldquo;batteries not included.&rdquo; The decisions were deliberate; to use Golang and not pre-existing libraries because the potential for learning would have been limited. We optimized for maximized learning. And boy did it pay off. Not only did we end up writing our very own Golang libraries for interfacing with all these sensors, we also had the opportunity to try and model the interactions of software with the real world. Imagine for one second how many different ways there are to make the car turn right. Things we take for granted in software can open a can of worms when the &ldquo;real world&rdquo; gets involved!</p>
+
+<p>The technical attractiveness of such an undertaking is obvious, but there is more to it. I believe that a lot of good can be done for the &ldquo;voiceless&rdquo; by getting cheap commodity devices into their hands. A simple 2G connected solar powered open hardware device could allow a village like Panchayat, India, to bypass all the middle men and leverage social networking to report grievances to their congress representative. This could bring about a revolution. What minister worth his salt would want to look bad on Facebook? Our hope is that the resulting learnings and framework created from TheBot effort can and will make this possible.</p>
+
+<p>The possibilities are truly endless.</p>
+
+<h3>Links to Watch</h3>
+
+<p><a href="https://github.com/kidoman/embd">https://github.com/kidoman/embd</a></p>
+
+<h3>Credits</h3>
+
+<p>Contributors in no particular order: Sapto, Rohit, Kunal, Nikesh, Shantanu, Hanu, Gagan, Shaunak, Kashyap, Mukund, Akhil, Vishwas, Mallik, Deepthi, Shaun, Nag, Bala &amp; Sam Newman</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/karan-misra.jpg"/>
+         </a>
+         <div>Karan Misra</div>
+         
+         <a href="http://twitter.com/kid0m4n">@kid0m4n</a>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue09/index" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue08/hire-polyglot" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

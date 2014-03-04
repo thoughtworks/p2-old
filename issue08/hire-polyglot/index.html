@@ -1,0 +1,276 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Why you should hire a Polyglot Programmer?</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/thebot" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue09/vagrant" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue09/index">issue09, March 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+            	2 / 5
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Why you should hire a Polyglot Programmer?</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Rouan Wilsenach
+        </p>
+    </header>
+    <div class="article-body"><p>It’s common for people to be sceptical of software developers with varied coding experience. We&rsquo;re used to seeing, “5 years C# experience” on the CV in front of us, so when we see a CV that says: “2 years of Ruby, 1 year of Python and 2 years of Java”, we might be concerned that the person doesn&rsquo;t have the depth of experience we need.  Although this reaction is natural, it’s misguided.</p>
+
+<blockquote><blockquote><p>”If it doesn&rsquo;t matter whether the programmer you&rsquo;re considering has deep knowledge of the language your application uses, what does?“</p></blockquote></blockquote>
+
+<p>The person with the second CV could be a better developer on a C# project than your language expert, despite having little or no C# experience. Let’s not confuse them with a developer who happens to know a few languages. I’m talking about a particular kind of developer with varied experience and a good grasp of engineering fundamentals. The polyglot programmer.</p>
+
+<p>pol·y·glot
+ˈpäliˌglät/
+adjective: knowing or using several languages.</p>
+
+<p>If it doesn&rsquo;t matter whether the programmer you&rsquo;re considering has deep knowledge of the language your application uses, what does? How are you meant to decide whether a coder is up to the task? How do you know they&rsquo;ll be able to pick up C# and add value to your project without slowing you down?
+Let me set the scene&hellip;</p>
+
+<p>Your organisation&rsquo;s technology stack is .NET. Your team is a group of seasoned .NET developers and their experience ranges from 5-15 years. Let&rsquo;s say you hire the person with the second CV.</p>
+
+<p>Ana, has a number of years of experience under her belt, but none in .NET. In spite of the scepticism of the team, Ana quickly picks up C#. She is not only able to keep up with the team, but ends up teaching them many new things.</p>
+
+<p>Why?</p>
+
+<h3>It’s all about the basics</h3>
+
+<p>Software engineering is about more than the language you&rsquo;re using. In my experience, the developer you want on your team is often the one that understands these fundamental software engineering practices:</p>
+
+<h2>Automated testing</h2>
+
+<p>Automated tests give us confidence that our software does what it&rsquo;s meant to. The developer you hire should understand this and ensure that testing is a first class concern in your development process. Developers who are passionate about testing tend to be intolerant of those who are not. With your support, expect your new hire to quickly get the rest of the team writing tests.</p>
+
+<h2>Design</h2>
+
+<p>When I talk about design, I&rsquo;m not thinking of UML diagrams or planning out the details of the application in advance, which could potentially make it difficult to change. I’m talking about having an awareness of what good code looks like and ensuring that the team is constantly making the small changes required to ensure the code stays that way. The programmer you want to hire understands emergent design and object oriented programming. They know how to refactor code to make it easier to work with, regardless of the language they are using.</p>
+
+<h2>Deployment</h2>
+
+<p>Your software is worthless unless it is in production. No matter how innovative the features are, if a user cannot use it, it’s pointless. When you hire a developer who knows how to automate the deployment and configuration of your applications, you gain the potential to move quickly on new ideas and confidence that your application can recover from disasters.</p>
+
+<p>These skills cross-cut languages and a developer who really understands how to apply these practices in one language can port their knowledge to another.</p>
+
+<h3>Varied experience</h3>
+
+<p>Ana notices that the assertions the team are writing in their tests are clumsy. The tests don&rsquo;t read well and the error messages don&rsquo;t provide much detail when they fail. In her Java days, she used a library called Hamcrest that made assertions read more like English and provide clearer error messages on failure. She asks herself “Is there something like that for .NET?” With a quick search, she finds FluentAssertions. To her delight, it has cleaner syntax than the Java library she’s used before, thanks to C#&rsquo;s extension methods.</p>
+
+<p>Ana realises the team deploys their application manually. She has automated a number of deployments in Unix and, even though there are more sophisticated tools available, believes a bash script is an improvement over manually deploying. She does some digging and comes across PowerShell. She starts writing some PowerShell scripts to automate the deployment. The syntax is a bit clumsier than Bash, but a lot of it is the same. Soon she has a script up and running that copies the application DLLs and gets the web server to serve the updated files. She asks herself whether there&rsquo;s a way to test all this PowerShell she’s writing. Ana finds a testing framework called Pester and tests the scripts she’s written.</p>
+
+<p>The team is taken aback. They&rsquo;ve never even tried automating their deployment, and some Windows newbie has just written scripts to do it in a Microsoft language. And it’s tested! Who knew you could test scripts?</p>
+
+<p>A polyglot programmer can open your team&rsquo;s eyes to the development practices and tools that are common in other languages.</p>
+
+<h3>The right tool for the job</h3>
+
+<p>Not all applications are the same. The problems they seek to solve vary greatly. Knowing multiple languages allows you to pick the right technology for the problem at hand. Why should you care? Software built on the wrong technology stack can be unnecessarily complex and painful. For example, using Java to solve a clearly functional problem, when Clojure would be simpler. Or building a Rails app when your users want the kind of fluid interface a single page JavaScript framework can give them.</p>
+
+<p>Hiring a Polyglot Programmer allows you to use their breadth of experience to help you make smart decisions on your technology choices.
+I&rsquo;m sold! Where do I find one?</p>
+
+<p>This is the hard part. Poor development practices are widespread in the industry. If you find a developer who matches the criteria I&rsquo;ve described, snap them up! Remember to look for more than their experience in your language or framework on their CV. What do they know about quality software design and testing? What is their experience in putting their code live?</p>
+
+<blockquote><blockquote><p>”If you can&rsquo;t find a good polyglot programmer, then you have the power to create one!“</p></blockquote></blockquote>
+
+<p>I&rsquo;m not saying that deep knowledge of a language or framework isn’t useful. It&rsquo;s often important, so don&rsquo;t run off and fire your team of language experts. The point I&rsquo;m making is that a polyglot programmer brings a set of valuable general skills and can learn the specifics as they go.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>The good news is that, if you can&rsquo;t find a good polyglot programmer, you have the power to create one! Encourage your development team to broaden their skill set, give them the time to experiment with new languages, frameworks and tools. And, most importantly, make sure you&rsquo;re helping them build those crucial fundamental skills. Those skills that differentiate a great developer from a decent one, no matter which language they&rsquo;re coding in.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/Rouan-Wilsenach.jpg"/>
+         </a>
+         <div>Rouan Wilsenach</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue08/thebot" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue09/vagrant" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

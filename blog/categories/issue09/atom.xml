@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue09 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue09/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-03-04T19:02:45-05:00</updated>
+  <updated>2014-03-04T19:17:13-05:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -20,7 +20,7 @@
     <id>http://thoughtworks.github.io/p2/issue09/puzzle</id>
     <content type="html"><![CDATA[<p>We didn’t get any correct answers to last month&rsquo;s puzzle, but the responses we did receive provided great feedback* on how to improve it. So, in the spirit of agile, we are going to iterate and improve. We have taken your comments and reworded the puzzle to hopefully make it more clear.</p>
 
-<p>Please send your answers to <a href="&#109;&#x61;&#x69;&#x6c;&#116;&#111;&#x3a;&#x70;&#50;&#64;&#x74;&#104;&#x6f;&#117;&#103;&#x68;&#x74;&#119;&#111;&#x72;&#x6b;&#115;&#46;&#x63;&#x6f;&#x6d;">&#112;&#50;&#64;&#116;&#104;&#111;&#x75;&#x67;&#104;&#x74;&#x77;&#x6f;&#114;&#107;&#x73;&#x2e;&#99;&#111;&#109;</a> and the best answer will win a P2 related prize!</p>
+<p>Please send your answers to <a href="&#109;&#97;&#105;&#x6c;&#x74;&#111;&#x3a;&#x70;&#x32;&#64;&#x74;&#104;&#x6f;&#117;&#103;&#x68;&#x74;&#x77;&#x6f;&#114;&#107;&#115;&#x2e;&#99;&#x6f;&#x6d;">&#x70;&#x32;&#x40;&#x74;&#104;&#111;&#117;&#103;&#x68;&#x74;&#119;&#111;&#x72;&#107;&#115;&#46;&#99;&#x6f;&#x6d;</a> and the best answer will win a P2 related prize!</p>
 
 <p>A city is divided into zones (shown in red, green, orange, lilac and blue in the picture below) by the municipal corporation. Each zone has a few garbage bins within its bounds (spread out as evenly as possible). Each zone (except the grey one) has a garbage collection truck assigned to it. This truck plies the designated zone and empties the bins therein. Each truck has the capacity of 9 bins. Surrounding the brightly coloured zones is a special zone (bounded by the black line &amp; outside all the other zones) &ndash; this is a &ldquo;common-zone&rdquo;. Any truck can empty bins in this zone, but only when it has collected all the garbage in its designated zone. No truck is assigned the grey zone.</p>
 
@@ -69,7 +69,7 @@
 
 <p><em>If he, someone without a development background could get Clojure, then surely his team of Java developers could too.</em></p>
 
-<p>*He had recently built an app to collect data about the various sites the company hosted in different places and had used Java and Spring MVC. He locked himself away for the weekend and rebuilt his app&hellip; in a fraction of the code. *</p>
+<p><em>He had recently built an app to collect data about the various sites the company hosted in different places and had used Java and Spring MVC. He locked himself away for the weekend and rebuilt his app&hellip; in a fraction of the code.</em></p>
 
 <p>The following Monday we got an email from Dan.</p>
 
@@ -144,17 +144,23 @@
 
 <p>In addition, Vagrant provides some nice bonuses to our development environment and workflow, including bringing new team members on-board quickly, finding bugs faster and to recovering from environmental quagmires&hellip;
 New team member on-boarding
-This is one of my favorites. How long does it usually take for a new team member to be ready to work on your team? We regularly on-board a new team members &ndash; either new to the team or that part of the codebase. It is really fun and empowering to say, &ldquo;Here are the steps: 1. Check out the code, 2. Run ./go [1], 3. Take a 10 minute coffee break and you will be ready to go when you get back&rdquo;.
-Recreating deployment schemes
-We are also integrating many systems together that get deployed separately to different VMs in our Continuous Integration build and in production. It is relatively easy for us to set up a &lsquo;production-like&rsquo; deployment on our local boxes. Bring up 2+ boxes, point them at each other &ndash; using the :private_network option in Vagrant &ndash; and run your tests to see the bug visible in a production-like scenario.
-Easy nuclear option
-When things go wrong and you&rsquo;ve yak shaved for a hours, it can be really disheartening to have to resort to the &lsquo;nuclear option&rsquo; and reinstall your operating system. With Vagrant, the nuclear option becomes easy. It&rsquo;s time for another coffee break and you&rsquo;ll be back up and running in no time.</p>
+This is one of my favorites. How long does it usually take for a new team member to be ready to work on your team? We regularly on-board a new team members &ndash; either new to the team or that part of the codebase. It is really fun and empowering to say,</p>
+
+<p><em>&ldquo;Here are the steps: 1. Check out the code, 2. Run ./go [1], 3. Take a 10 minute coffee break and you will be ready to go when you get back&rdquo;.</em></p>
+
+<h3>Recreating deployment schemes</h3>
+
+<p>We are also integrating many systems together that get deployed separately to different VMs in our Continuous Integration build and in production. It is relatively easy for us to set up a &lsquo;production-like&rsquo; deployment on our local boxes. Bring up 2+ boxes, point them at each other &ndash; using the :private_network option in Vagrant &ndash; and run your tests to see the bug visible in a production-like scenario.</p>
+
+<h3>Easy nuclear option</h3>
+
+<p>When things go wrong and you&rsquo;ve yak shaved for a hours, it can be really disheartening to have to resort to the &lsquo;nuclear option&rsquo; and reinstall your operating system. With Vagrant, the nuclear option becomes easy. It&rsquo;s time for another coffee break and you&rsquo;ll be back up and running in no time.</p>
 
 <p style="text-align:center;"> ⁂</p>
 
 <p>If you think it is too difficult to get started, I challenge you to try create a Vagrant box for your next ‘from-scratch’ project. You can start with the &ldquo;shell&rdquo; provisioning and upgrade to Chef or Puppet from there. There are plenty of simple bootstraps to get you started, so stop wasting your time setting up environments and have a coffee break instead.</p>
 
-<p>[1] The &ldquo;./go&rdquo; script is a simple wrapper script that essentially does the following in any project we have: &ldquo;vagrant up; vagrant ssh &lsquo;/my/build/tool build&rsquo;&rdquo;.</p>
+<p><em>[1] The &ldquo;./go&rdquo; script is a simple wrapper script that essentially does the following in any project we have: &ldquo;vagrant up; vagrant ssh &lsquo;/my/build/tool build&rsquo;&rdquo;.</em></p>
 ]]></content>
   </entry>
   
@@ -282,7 +288,7 @@ PandaBoard, etc.</p>
 
 <h3>What does it do ?</h3>
 
-<p>Watch the video: <a href="http://www.youtube.com/watch?v=iMXjkZ4B3EM">http://www.youtube.com/watch?v=iMXjkZ4B3EM</a></p>
+<p>Watch the <a href="http://www.youtube.com/watch?v=iMXjkZ4B3EM" target="_blank">video</a>.</p>
 
 <h3>What next?</h3>
 
@@ -302,7 +308,7 @@ PandaBoard, etc.</p>
 
 <h3>Links to Watch</h3>
 
-<p><a href="https://github.com/kidoman/embd">https://github.com/kidoman/embd</a></p>
+<p><a href="https://github.com/kidoman/embd" target="_blank">github.com/kidoman/embd</a></p>
 
 <h3>Credits</h3>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue08 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue08/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-03-05T08:18:57-05:00</updated>
+  <updated>2014-03-05T08:39:06-05:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -12,39 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Credits / About]]></title>
-    <link href="http://thoughtworks.github.io/p2/issue08/credits/"/>
-    <updated>2014-03-07T00:00:00-05:00</updated>
-    <id>http://thoughtworks.github.io/p2/issue08/credits</id>
-    <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
-
-<p>P2 refers to Pillar 2. Pillar 2, within ThoughtWorks, is focused on software excellence and revolutionizing the IT industry, flanked by pillars one and three of sustainable business and social justice. These three equally support ThoughtWorks.</p>
-
-<p>Software excellence evades definition. It’s easy to think of concise lines of code laid out like prose. But we didn’t want this magazine to be exclusively for those who think in code. ThoughtWorks is filled with testers, designers, analysts and innovators. We had to expand our definition to include the excellence that happens before and after we consider how we solve a problem.</p>
-
-<p><strong>Editorial Committee</strong></p>
-
-<p>Rachel Laycock, Sarah Howe, Rebecca Parsons, Karan Misra, Rouan Wilsenach</p>
-
-<p><strong>Writers</strong></p>
-
-<p>Rachel Laycock, Neal Ford, Mike Vitale, Sam Gibson, Anand Krishnaswamy</p>
-
-<p><strong>Site Design</strong></p>
-
-<p>Ryan Boucher, Andrew Carr, Mike Gardiner</p>
-
-<p><strong>Photo Credit</strong></p>
-
-<p>Krabi by Rachel Laycock</p>
-
-<p><strong>Special Thanks</strong></p>
-
-<p>Dan Sansom-Gower</p>
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Credits / About]]></title>
@@ -296,6 +263,49 @@ For example, if a machine is named <span class='inline-code'>cape-town</span>, c
 <p>Right now we have to create the requirement for change and the only way to do that is for everyone to try and automate what they can. Use the best tool there is and petition to have it better.</p>
 
 <p>Automate what you can, and accept what you can’t… for now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SVN to Git, Making Technical Changes at Scale]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue08/svn-git"/>
+    <updated>2014-02-03T00:00:00-05:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue08/svn-git</id>
+    <content type="html"><![CDATA[<p>No one likes change. It’s uncomfortable, difficult, and sometimes down-right painful. But in order to improve and be more effective at our jobs we often need to change. In this industry especially, change happens in technologies and practices at an alarming rate. That might lead you to believe that those who work in this industry happily embrace change and see it as par for the course. In my experience this is often not the case.</p>
+
+<blockquote><blockquote><p>&ldquo;It isn’t uncommon to see an organisation using the same practices and technologies they were 5 or 10 years ago.&rdquo;</p></blockquote></blockquote>
+
+<p>Large organisations want to manage change to reduce the risks it can have. They attempt to have consistency in practices and technology choices, which enable their people to understand what is going on. This allows people to move between teams more easily when necessary, only needing to understand the domain of a new project and not also the tools, technologies and practices of the new team. This has the unfortunate effect of not just slowing down and managing change, but often of stopping it altogether. It isn’t uncommon to see an organisation using the same practices and technologies they were 5 or 10 years ago. In an industry where new frameworks and platforms seem to arrive almost every week, organisations can quickly find themselves using less than great tools for the job, or worse, using unsupported tools. This ironically introduces risks that their behaviour was trying to avoid.</p>
+
+<p>So what do large organisations do to embrace some changes, in the face of a constantly changing industry? How do they navigate their way through the bazillions of tool and language choices to make a sane one, that isn’t just a passing fad? There are two tandem practices that I have seen work in large scale organisations; piloting changes and creating visibility.</p>
+
+<p>Pilot changes by choosing one team to trial the new technology or practice in. At a recent client, our team spent months of talking through the how’s and why’s of Git being a better source control management (SCM) choice than SVN, for the development team of the Fortune 500 company.</p>
+
+<p>Shortly after I arrived, I was introduced to Mike, who was in charge of the internal operations and services team. Mike was responsible for supporting tens of overloaded servers, as well as hundreds of overworked developers. During one of my first conversations with Mike, he asked me what I thought about Git as a source control mechanism.  Being a developer, I rattled off the usual suspects: local history, not needing to contact the server for <em>everything</em>, better merge support,  and visibility of entire commit histories attributed to the correct authors etc. Also, the developers on the team were dreading working with Subversion, the client&rsquo;s current SCM of choice, after being burned with merging hell and the lack of visibility of their commit history on other projects.</p>
+
+<p>Eventually, after many conversations, Mike was receptive to the idea of piloting Git in a team. The organisation had already started moving to the Atlassian stack, so another Git selling point was the Stash frontend to Git. Stash allows you to manage your Git repositories, a feature that wasn’t available for SVN. Mike agreed to set up a test Git server, fronted by Stash. Stash would allow him to have a decent UI for access control on top of the Git back-end.  It took a couple of attempts, but I was eventually able to import our project into the test Git server, including the fully-attributed commit history.</p>
+
+<p>Once the source control was ported to Git, the team was clamoring to complete the move for our project. The developers had been asking to work with Git for some time, but hadn’t managed to convince the powers that be. I continued to work with Mike on the Stash side of the migration. We were able to set up project information in the web front-end, access controls for multiple projects, and import SSH keys for password-less attributed commits.</p>
+
+<p>After another final export of the Subversion tree imported into Git, our team fully switched over to using the new SCM.  I showed the developers how they should import their SSH keys into Stash and then configure their workstations to handle the SSH key-exchange and that was it &ndash; they were up and running!</p>
+
+<p>Our team was the first project in this large organisation to fully switch development from Subversion to Git. We were the pilot and thankfully our pilot was a success story. Developers were happier, merging was easier, commit histories were accessible and understood and it wasn’t long before the team was comfortable with the new workflow provided by Git.</p>
+
+<p>It has been 5 months since that initial pilot and the success spread within a few months. Two more teams have successfully carried out a similar porting exercise. Git is spreading like wildfire around the organisation!</p>
+
+<blockquote><blockquote><p>“When large organisations face new technology, often their first concern is, how they can implement this change across the board &ndash; when it should be to see if it’s viable at all.”</p></blockquote></blockquote>
+
+<p>Getting that first pilot off the ground can be hard. It took us months of consulting, getting to know the right people, setting up the right kind of relationships, and doing the right work to affect change in an environment that&rsquo;s usually very averse to change. The technology change itself wasn’t that difficult. In my experience developers are smart people that can pick up most tools and technologies, given they make sense and are appropriate.</p>
+
+<p>When large organisations face new technology, often their first concern is, how they can implement this change across the board &ndash; when it should be to see if it’s viable at all. With some success behind you, you are more likely to understand what is required to implement the change on a more concrete level and some of the pitfalls and gotcha’s that you could meet. Remember, we took several attempts to port over SVN &ndash; but you can time-box such activities.</p>
+
+<p>The second part of a change like this is creating visibility. At ThoughtWorks we use the Technology Radar to get a snapshot every 6 months of the technologies and practices we are using in our organisation and at clients. This gives us insight across the organisation about how we feel about them. Should they be assessed, trialed, adopted or should we be more cautious and hold our use? Many other organisations, who want to manage change rather than slow it down or avoid it altogether, choose to adopt a similar radar snapshot for their technology and practice choices.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>When a change is new and it is going well, ensure you celebrate any successes. People are quick to grumble and often forget what is going well. You will need this ‘good press’ to sell further implementation of the change within the organisation.</p>
+
+<p>Remember that not all pilots will be successful. The whole point of it being a pilot is that it is low risk &ndash; you aren’t asking the whole organisation to change, just one contained team that you can gauge at any given time of it’s success or failure.</p>
 ]]></content>
   </entry>
   

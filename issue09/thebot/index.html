@@ -108,13 +108,13 @@
 
 <p>“A crowd controlled robotic car!&#8221;</p>
 
-<p><image></p>
+<p><img src="/p2/images/robot/thebot.jpg" alt="TheBot" /></p>
 
 <p>A fun product with a tonne of learning potential. However, doing a &ldquo;follow the blog posts/tutorials&rdquo; stitch and patch job recommended on the NodeBots site did not excite me one bit. Sure, we’d done it in two days, but what would we have learned in the process?</p>
 
 <p>Despite having worked extensively on node.js, the language did not interest me much &ndash; ambiguous syntax, callbacks, promises, etc. I had been looking for an opportunity do something real in Golang, and building a concurrent open source firmware for TheBot was just the ticket.</p>
 
-<p><image></p>
+<p><img src="/p2/images/robot/robot-complete.jpg" alt="Robot" /></p>
 
 <p>TheBot is first and foremost an experiment. An experiment aimed at research and learning. An experiment to kickstart a hardware engineering culture in ThoughtWorks. Birthed as a crowd controlled robotic car that transmits video feed back to the controller; the vision has transformed many times during the development. Can it be the ultimate open source sensing/proximity prototyping platform? Could we extract a product out of this?</p>
 
@@ -130,7 +130,7 @@
 
 <p>We plan on doing a proper video walk through of the hardware soon, but until then:</p>
 
-<p><image></p>
+<p><img src="/p2/images/robot/arch.jpg" alt="Design" /></p>
 
 <h3>Why Golang?</h3>
 
@@ -152,7 +152,7 @@ PandaBoard, etc.</p>
 
 <h3>What does it do ?</h3>
 
-<p>Watch the video: www.youtube.com/watch?v=iMXjkZ4B3EM</p>
+<p>Watch the video: <a href="http://www.youtube.com/watch?v=iMXjkZ4B3EM">http://www.youtube.com/watch?v=iMXjkZ4B3EM</a></p>
 
 <h3>What next?</h3>
 
@@ -162,7 +162,7 @@ PandaBoard, etc.</p>
 
 <p>To make the above happen, we will need to stretch TheBot’s legs and expand its capabilities. We are in the process of extracting a hardware abstraction framework (EMBD) which will allow us to target a variety of hosts &ndash; RPi, BBB, etc. &ndash; from a single code base. This is particularly helpful because it will allow us to quickly prototype solutions using readily available hobby boards, while still retaining the ability to target the final hardware. Besides that, we are also interested in route mapping and visualization, as capability in this area will open many more opportunities.</p>
 
-<p>⁂</p>
+<p style="text-align:center;"> ⁂</p>
 
 <p>The development process was nothing short of enthralling. We did not have well established libraries to lean back on. We went into this &ldquo;batteries not included.&rdquo; The decisions were deliberate; to use Golang and not pre-existing libraries because the potential for learning would have been limited. We optimized for maximized learning. And boy did it pay off. Not only did we end up writing our very own Golang libraries for interfacing with all these sensors, we also had the opportunity to try and model the interactions of software with the real world. Imagine for one second how many different ways there are to make the car turn right. Things we take for granted in software can open a can of worms when the &ldquo;real world&rdquo; gets involved!</p>
 

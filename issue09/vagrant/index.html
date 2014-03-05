@@ -122,9 +122,11 @@
 
 <p>One conflict we face is the differences between workstations and upstream environments. We want to normalize the tools we use, so we did the following in each environment:</p>
 
-<p><b>Development:</b> We abstracted away the differences between Mac, Linux and &ndash; for the most part &ndash; Windows. Doing this was a great way to ensure consistency for engineers.</p>
+<ul>
+<li><p><strong>Development:</strong> We abstracted away the differences between Mac, Linux and &ndash; for the most part &ndash; Windows. Doing this was a great way to ensure consistency for engineers.</p></li>
+<li><p><strong>Production:</strong> To go just a step further, our Vagrant boxes are set up to use the same virtual machine image we use in the datacenter, where we deploy. In the words of Forrest Gump, &ldquo;That&rsquo;s good! One less thing.&rdquo;</p></li>
+</ul>
 
-<p><b>Production:</b> To go just a step further, our Vagrant boxes are set up to use the same virtual machine image we use in the datacenter, where we deploy. In the words of Forrest Gump, &ldquo;That&rsquo;s good! One less thing.&rdquo;</p>
 
 <p>Some of our tooling differs because of where and how we deploy. Some of our software, for example, runs and compiles under Java 7 while others are still on Java 6. Vagrant made this completely painless because of the isolation of virtual machines.</p>
 

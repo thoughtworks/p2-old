@@ -1,0 +1,304 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Getting a flavour of one billion lines of code</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue10/arduino" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue10/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue10/index">issue10, April 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+        
+            
+            	4 / 7
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Getting a flavour of one billion lines of code</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Dan Abel
+        </p>
+    </header>
+    <div class="article-body"><p><em>A client wanted us to quickly tell them the state their code was in. So they could improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
+
+<h3>The situation</h3>
+
+<p>The client were often hitting stumbling blocks shipping their software, releases were pushed back or failed to happen at all. They wanted to release more consistently. They asked Thoughtworks to examine the situation and advise on how to release often and well &ndash; getting new features to customers fast. We had 3 weeks.</p>
+
+<h3>The challenge</h3>
+
+<p>My role was to assess the state of the codebase to determine what was holding them back. I was asked to examine the code that made up their core platform, a system that collected, processed and surfaced data, plus the main application that interfaced with it.</p>
+
+<blockquote><blockquote><p>“A lot of languages, a lot of freedom, and a lot of code.“</p></blockquote></blockquote>
+
+<p>The client was truly global; they had development teams everywhere. They worked at a scale I hadn’t seen before. A lot of languages, a lot of freedom, and a lot of code. More code than I could possibly look at. I was daunted by the scope and scale.</p>
+
+<h3>Acknowledging the scale</h3>
+
+<p>The client had provided visibility of about 1500 repositories &ndash; around one billion lines of code. I could see C#, C++ and Java were used widely. There were also usages of ASP.NET, VBScript, Javascript, and C as well as a smattering of other languages.</p>
+
+<p>Hand me a codebase and a little time, and I can give you an opinion on what makes it hard to understand or to change. Give me some time with the team who uses it, I can paint a picture of what’s working for them, and the value of the patterns in use.</p>
+
+<p>But here, I couldn’t look at everything. It wasn’t going to be possible to tell an accurate and complete story. I decided a few flyovers or satellite imagery of a terrain might provide an initial context for an exploration. I could then see what trends were visible at a high level, and use on-the-ground visits into detail to be able to paint a fuller picture.</p>
+
+<h3>Keeping it simple, keeping it broad</h3>
+
+<p>The first step was reaching out and making contact with the guardians of the code repositories to gather initial data. We asked each of the technology groups involved to share some codebases and to chat with us about them. We asked them, what were they afraid to touch, where did they have problems?  With that information started to look into what the code itself could tell us.</p>
+
+<p>With the first codebases in hand, I used some basic tools to get a feel of what I was looking at. wc and grep helped me identify file types, counts, lengths and raw Lines of Code. I also took a first pass at identifying automated test code.</p>
+
+<p>As I got access to more codebases I tuned up my techniques and added new data to my catalogue. I also sampled each codebase to get a feel for the code in detail, using the data to drive my reading. Knowing the percentage of comments in a codebase has value, but reading the code can start to tell the story of why.</p>
+
+<h3>Digging in</h3>
+
+<p>With these simple metrics, I gained some insight, but it wasn’t enough. Needing some options on where to go next I reached out to my team and other experts in ThoughtWorks. We picked out Source Monitor as a tool that could analyse Java, C# and C++ code, allowing us to capture metrics across many of the codebases.</p>
+
+<p>The metrics gave me more insight into the codebases. I tried visualisations and could slice and dice into the data, highlighting interesting areas to dig into.</p>
+
+<h3>Apples and oranges</h3>
+
+<p>I’d looked at about 15 repositories and 10 million lines of code. I could see good and bad things about each codebase, but I needed clarity. What was it about the data I had gathered that was important at the scale required? Comparing the codebases didn’t seem the right thing to do, this wasn’t a contest, it was about delivering features and improvements faster.</p>
+
+<p>Setting an artificial bar didn’t seem right either. Everyone has different expectations of ‘good enough’. In the real world it’s easy to find reasons and mitigations and have the bar dismissed as chasing perfection &ndash; dismissible in the real world.</p>
+
+<p>I needed something that would give the data meaning; to help to drive clear thoughts and be a call to action.</p>
+
+<h3>Open Source as Control Data</h3>
+
+<p>I thought more about comparisons. Someone on the team asked what would everyone agree on as a measurement for a good enough codebase. The answer was a revelation to me &ndash; open source projects that were popular and well used. Code that had been reviewed, developed and deployed by many teams in the real world.</p>
+
+<blockquote><blockquote><p>“The question became: what can be learnt when we compare the complexity measurements of the codebases?”</p></blockquote></blockquote>
+
+<p>Selecting four open source projects that could give me good insight, I performed the same analysis and compiled the results, based on language and purpose.</p>
+
+<p>The question became: what can be learnt when we compare the complexity measurements of the codebases? Do we see potential weaknesses that need further examination or successes we can celebrate?</p>
+
+<h3>Success</h3>
+
+<p>This allowed us to call out clearly what we could see. Our message was clearly received, even when the news wasn’t good.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>One of the most powerful indications was the amount of code in comparison to the control codebases. We were able to highlight where there was too little testing and how it connected to overly complex and coupled code. We also highlighted high levels of commenting &ndash; sometimes replacing version control or tests.</p>
+
+<p>We asked if these areas were those they were struggling with, and if the absence of modern Extreme Programming style practises in some codebases and teams were contributing. Did the bar need raising and should some codebases be considered legacy?</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/dan-abel.jpg"/>
+         </a>
+         <div>Dan Abel</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue10/arduino" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue10/puzzle/" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

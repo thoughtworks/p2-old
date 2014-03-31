@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: issue10 | P2 Magazine]]></title>
+  <link href="http://thoughtworks.github.io/p2/blog/categories/issue10/atom.xml" rel="self"/>
+  <link href="http://thoughtworks.github.io/p2/"/>
+  <updated>2014-03-30T20:12:10-04:00</updated>
+  <id>http://thoughtworks.github.io/p2/</id>
+  <author>
+    <name><![CDATA[The P2 Elves]]></name>
+    <email><![CDATA[p2@thoughtworks.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Credits / About]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue10/credits/"/>
+    <updated>2014-04-08T00:00:00-04:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue10/credits</id>
+    <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
+
+<p>P2 refers to Pillar 2. Pillar 2, within ThoughtWorks, is focused on software excellence and revolutionizing the IT industry, flanked by pillars one and three of sustainable business and social justice. These three equally support ThoughtWorks.</p>
+
+<p>Software excellence evades definition. It’s easy to think of concise lines of code laid out like prose. But we didn’t want this magazine to be exclusively for those who think in code. ThoughtWorks is filled with testers, designers, analysts and innovators. We had to expand our definition to include the excellence that happens before and after we consider how we solve a problem.</p>
+
+<p><strong>Editorial Committee</strong></p>
+
+<p>Rachel Laycock, Sarah Howe, Rebecca Parsons, Karan Misra, Rouan Wilsenach, Amira Pettus</p>
+
+<p><strong>Writers</strong></p>
+
+<p>Dan McClure, Chrig Doshi, Rachel Laycock, Shantanu Tushar, Dan Abel, Anand Krishnaswamy, David Johnston</p>
+
+<p><strong>Site Design</strong></p>
+
+<p>Ryan Boucher, Andrew Carr, Mike Gardiner</p>
+
+<p><strong>Photo Credit</strong></p>
+
+<p>New York by Rachel Laycock</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
+    <updated>2014-04-07T00:00:00-04:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue10/puzzle</id>
+    <content type="html"><![CDATA[<p>This months puzzle comes from the analytical mind of David Johnston…</p>
+
+<p>You are a train robber named Sonny Bayes. You have an informant inside the central
+bank who alerts you there are three trains leaving the bank on a certain day carrying
+large and equal amounts of gold to the three regional banks. You and your buddies
+Buster and Shane will help you rob the trains.</p>
+
+<p>The three of you agree that robbing a train is a three person job and that you&rsquo;ll only
+be able to rob one of them. You know this because this is your 3rd attempt. In the two prior attempts each of you was able to get onboard one of the three of the trains, and count the gold. But you were never able to figure out how to get if off the train. The estimated amounts the three of you had seen was {14, 14, 7, 13, 10, 15, 7, 8, 12} in millions of dollars. This time you have have devised a clever scheme! But it will involve all of you working together robbing the same train.</p>
+
+<p>The day of departure, your informant sends you a message: “Due to mechanical failure on the Silver Bullet line, only two trains left and one of them is carrying twice as much gold.” Since the message does not clarify which is the train with the larger sum, you randomly pick one of the other two and ride off to meet it.</p>
+
+<p>You sneak onto the train and find your way to the treasury car and find what appears to be around 10 million dollars worth of gold. As you begin loading it up, Buster says &ldquo;You know, it isn&rsquo;t too late to just leave this and go rob the other train. If we&rsquo;re lucky we might find twice as much on the other train.&rdquo; Shane frowns and replies, &ldquo;Yeah and if we are unlucky we&rsquo;ll only find half as much&rdquo;. But Buster replies, &ldquo;We picked this train randomly right? That means there is a 50-50 chance that this train is the richer one, right?&rdquo;</p>
+
+<p>You both nod in agreement wondering where he is going with this. Then he says, &ldquo;It seems
+to me that we are better off switching. Odds are we are going to come out ahead. If we
+keep this gold, we might have 10 million but if we switch we either get 5 million or 20
+million, right? Since either is equally likely, it seems to me that on average we
+are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
+
+<p>Shane thinks a minute and then replies &ldquo;That just doesn&rsquo;t seem right. Buster&rsquo;s arithmetic seems right but wouldn&rsquo;t this hold no matter how much we found. Isn&rsquo;t half of anything plus twice of that same thing always greater than the original thing? (If they knew algebra, they would express this as (x/2+2x)/2 = 5/4 x > x.)</p>
+
+<p>Shane continues, &ldquo;If it works for every number then why did we even have to count the gold. Wouldn&rsquo;t it also be better to switch even if we didn&rsquo;t even count it? Why did we even have to climb on board? How could randomly picking one train and then immediately changing your mind make you come out ahead? When we ride up next to this next train, can&rsquo;t we make the same argument that switching is better and so should come back to this one and so on?&rdquo;</p>
+
+<p>At this point tempers flare and both draw their revolvers and aim at each other. You, Sonny Bayes, are the gang leader. You gotta straighten this out, decide what to do and convince your two partners! Should you switch or not and why? What would true professionals do?</p>
+
+<p><em>*Please submit your response to the P2 Magazine team at <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x70;&#50;&#x40;&#116;&#104;&#111;&#117;&#x67;&#x68;&#116;&#119;&#x6f;&#114;&#x6b;&#x73;&#x2e;&#99;&#x6f;&#109;">&#112;&#x32;&#x40;&#116;&#x68;&#111;&#x75;&#x67;&#104;&#x74;&#x77;&#111;&#114;&#x6b;&#x73;&#46;&#x63;&#x6f;&#109;</a> to be in a chance to win fabulous P2 prizes.</em></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
+    <updated>2014-04-06T00:00:00-04:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue10/puzzle-answer</id>
+    <content type="html"><![CDATA[<p>We went through two iterations of the last puzzle, Garbage collection. We received two good responses from Atabek Akbalaev &amp; Fiona Coath.</p>
+
+<p>Atabek&rsquo;s solution provided a means for &ldquo;marking&rdquo; the bins in the city in one pass &amp; using that as the reference map for the future. Fiona&rsquo;s solution tackled the problem of verifying emptying of bins with weighing-measures on the arms of the apparatus that lifts the bins to empty them. Any solution with a need to install/apply something to the bins is  a candidate for operational concerns, especially if the number of bins grew significantly and/or the risk of theft/damage of the probe (RFID, QR-Code, etc.). The problem dearly missed solutions for tackling the zone-emptied-first requirement though Atabek&rsquo;s solution could be extended to address that.</p>
+
+<p>For providing part of the solution, both Atabek &amp; Fiona receive&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Getting a flavour of one billion lines of code]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue010/billion-lins-of-code"/>
+    <updated>2014-04-05T00:00:00-04:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue010/billion-lines-of-code</id>
+    <content type="html"><![CDATA[<p><em>A client wanted us to quickly tell them the state their code was in. So they could improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
+
+<h3>The situation</h3>
+
+<p>The client were often hitting stumbling blocks shipping their software, releases were pushed back or failed to happen at all. They wanted to release more consistently. They asked Thoughtworks to examine the situation and advise on how to release often and well &ndash; getting new features to customers fast. We had 3 weeks.</p>
+
+<h3>The challenge</h3>
+
+<p>My role was to assess the state of the codebase to determine what was holding them back. I was asked to examine the code that made up their core platform, a system that collected, processed and surfaced data, plus the main application that interfaced with it.</p>
+
+<blockquote><blockquote><p>“A lot of languages, a lot of freedom, and a lot of code.“</p></blockquote></blockquote>
+
+<p>The client was truly global; they had development teams everywhere. They worked at a scale I hadn’t seen before. A lot of languages, a lot of freedom, and a lot of code. More code than I could possibly look at. I was daunted by the scope and scale.</p>
+
+<h3>Acknowledging the scale</h3>
+
+<p>The client had provided visibility of about 1500 repositories &ndash; around one billion lines of code. I could see C#, C++ and Java were used widely. There were also usages of ASP.NET, VBScript, Javascript, and C as well as a smattering of other languages.</p>
+
+<p>Hand me a codebase and a little time, and I can give you an opinion on what makes it hard to understand or to change. Give me some time with the team who uses it, I can paint a picture of what’s working for them, and the value of the patterns in use.</p>
+
+<p>But here, I couldn’t look at everything. It wasn’t going to be possible to tell an accurate and complete story. I decided a few flyovers or satellite imagery of a terrain might provide an initial context for an exploration. I could then see what trends were visible at a high level, and use on-the-ground visits into detail to be able to paint a fuller picture.</p>
+
+<h3>Keeping it simple, keeping it broad</h3>
+
+<p>The first step was reaching out and making contact with the guardians of the code repositories to gather initial data. We asked each of the technology groups involved to share some codebases and to chat with us about them. We asked them, what were they afraid to touch, where did they have problems?  With that information started to look into what the code itself could tell us.</p>
+
+<p>With the first codebases in hand, I used some basic tools to get a feel of what I was looking at. wc and grep helped me identify file types, counts, lengths and raw Lines of Code. I also took a first pass at identifying automated test code.</p>
+
+<p>As I got access to more codebases I tuned up my techniques and added new data to my catalogue. I also sampled each codebase to get a feel for the code in detail, using the data to drive my reading. Knowing the percentage of comments in a codebase has value, but reading the code can start to tell the story of why.</p>
+
+<h3>Digging in</h3>
+
+<p>With these simple metrics, I gained some insight, but it wasn’t enough. Needing some options on where to go next I reached out to my team and other experts in ThoughtWorks. We picked out Source Monitor as a tool that could analyse Java, C# and C++ code, allowing us to capture metrics across many of the codebases.</p>
+
+<p>The metrics gave me more insight into the codebases. I tried visualisations and could slice and dice into the data, highlighting interesting areas to dig into.</p>
+
+<h3>Apples and oranges</h3>
+
+<p>I’d looked at about 15 repositories and 10 million lines of code. I could see good and bad things about each codebase, but I needed clarity. What was it about the data I had gathered that was important at the scale required? Comparing the codebases didn’t seem the right thing to do, this wasn’t a contest, it was about delivering features and improvements faster.</p>
+
+<p>Setting an artificial bar didn’t seem right either. Everyone has different expectations of ‘good enough’. In the real world it’s easy to find reasons and mitigations and have the bar dismissed as chasing perfection &ndash; dismissible in the real world.</p>
+
+<p>I needed something that would give the data meaning; to help to drive clear thoughts and be a call to action.</p>
+
+<h3>Open Source as Control Data</h3>
+
+<p>I thought more about comparisons. Someone on the team asked what would everyone agree on as a measurement for a good enough codebase. The answer was a revelation to me &ndash; open source projects that were popular and well used. Code that had been reviewed, developed and deployed by many teams in the real world.</p>
+
+<blockquote><blockquote><p>“The question became: what can be learnt when we compare the complexity measurements of the codebases?”</p></blockquote></blockquote>
+
+<p>Selecting four open source projects that could give me good insight, I performed the same analysis and compiled the results, based on language and purpose.</p>
+
+<p>The question became: what can be learnt when we compare the complexity measurements of the codebases? Do we see potential weaknesses that need further examination or successes we can celebrate?</p>
+
+<h3>Success</h3>
+
+<p>This allowed us to call out clearly what we could see. Our message was clearly received, even when the news wasn’t good.</p>
+
+<p style="text-align:center;"> ⁂</p>
+
+<p>One of the most powerful indications was the amount of code in comparison to the control codebases. We were able to highlight where there was too little testing and how it connected to overly complex and coupled code. We also highlighted high levels of commenting &ndash; sometimes replacing version control or tests.</p>
+
+<p>We asked if these areas were those they were struggling with, and if the absence of modern Extreme Programming style practises in some codebases and teams were contributing. Did the bar need raising and should some codebases be considered legacy?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wireless Arduino Automation]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue10/arduino"/>
+    <updated>2014-04-04T00:00:00-04:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue10/wireless-arduino</id>
+    <content type="html"><![CDATA[<p>Imagine a home automation system where you can have sensors to measure movement, temperature, and ambient light. All these sensors need to be plugged into an Arduino board, along with the connections to tubelights, fans, and the thermostat. You take your program that makes the interaction to work and upload it to the board. Now you have it all working you mount the board on the wall and connect with the rest of the circuitry. Hardware hacking success!</p>
+
+<blockquote><blockquote><p>“I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly… reeks of automation opportunity.”</p></blockquote></blockquote>
+
+<p>But, as with any project, you want to start simply with just one or two requirements and then keep adding more during the course of time, once you have something working. In the world of hardware this translates to adding more sensors and output components, and then changing your program and uploading the changes it to the board. But to do this you have to take the board off the wall and upload the changes. Meh.</p>
+
+<p>I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly I consider to be “painstaking” and reeks of automation opportunity. For me it is way too much effort to unmount my board every time I want read a new sensor value or use a new GPIO pin for output.</p>
+
+<p><img src="/p2/images/arduino.jpg" alt="arduino" /></p>
+
+<p>Throughout our hardware experiments in ThoughtWorks Bangalore we have been using Arduino hardware. Arduino’s are the most popular hardware for prototyping today. Arduino itself is not just hardware, it is an open-source prototyping platform that can receive input from sensors and affect its surroundings by controlling actuators like lights, motors, etc. The typical workflow for hardware prototyping using Arduino involves three steps:</p>
+
+<ul>
+<li><p><strong>1:</strong> Build the board by wiring the electronic components together. You can buy these pre-assembled but what would be the fun in that?</p></li>
+<li><p><strong>2:</strong> Write a program to read command values from sensors. Arduino has it’s own programming language and development environment (IDE) to program the microcontroller on the board.</p></li>
+<li><p><strong>3:</strong> React to the commands. This is where you can get your actuators to do cool stuff!</p></li>
+</ul>
+
+
+<p>An example of this could be, if you want to switch on an LED when somebody walks into the room, you will use a motion sensor and then your program will monitor its input and set the LED to on/off accordingly.</p>
+
+<p>To get all this stuff working together you need to upload a program to the Arduino by connecting it to a computer through USB and then use the Arduino IDE. All sounds great right? Except the unmounting and mounting of your Arduino!</p>
+
+<p>To do away with the need of disconnecting the Arduino from the circuit and connect it to the computer, I wrote an Arduino program (also known as a sketch) which does not hardcode the input and output pins. Instead, it waits and accepts this configuration over a wireless channel created using cheap nRF24l01 modules. All you need is one module attached to the Arduino (receiver) and another module attached to either another Arduino or a Raspberry Pi (sender). The sender can then send configuration strings as commands like this:</p>
+
+<ul>
+<li><strong>2,3:4,5</strong></li>
+</ul>
+
+
+<p>This command tells the Arduino to make pins 2 and 3 as input and 4 and 5 output. The Arduino will keep sending back periodic readings from pins 2 and 3.</p>
+
+<p>Now, lets say we have an LED connected to pin 4 of the Arduino, we can send the following command to set HIGH output to pin 4-</p>
+
+<ul>
+<li><strong>4,1</strong></li>
+</ul>
+
+
+<p>Where 4 is the pin number and 1 means HIGH. Similarly, to turn off the LED one can send 4,0 to send a LOW signal.</p>
+
+<p>This way you can configure new sensors and/or make new pins to output signals without having to re-write the program. All this without disturbing your Arduino sitting in a complex configuration even if it is in another room!</p>
+
+<h3>The code</h3>
+
+<p>All you need to do is to grab the repo at <a href="https://github.com/shaan7/arduino-sensor">https://github.com/shaan7/arduino-sensor</a> and follow the instructions. You will need one nRF24l01 module each for Arduino and the Raspberry Pi which is actually going to configure and control the Arduino board.</p>
+]]></content>
+  </entry>
+  
+</feed>

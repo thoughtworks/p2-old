@@ -1,0 +1,287 @@
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<title>Magazine | Wireless Arduino Automation</title>
+
+<link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
+<link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
+<link rel="alternate" type="application/rss+xml" title="P2 Magazine" href="http://thoughtworks.github.io/p2/atom.xml"/>
+<script src="http://modernizr.com/downloads/modernizr-2.5.3.js"></script>
+<script src="/p2/assets/js/keymaster.min.js"></script>
+</head>
+
+<body class="wrapper">
+<nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue09/broken-ui-tests" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue010/billion-lins-of-code" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+<div class="container">
+    <section class="page">
+    <nav class="issues">
+    <ul class="clearfix">
+        <li class="active"><a href="/p2/issue10/index">issue10, April 2014</a></li>
+        <li class="pull-right">Page
+        
+            
+        
+            
+        
+            
+            	3 / 7
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    </ul>
+</nav>
+
+    <article>
+    <header>
+        <h1>Wireless Arduino Automation</h1>
+        <h3></h3>
+        <p class="byline">
+        Words and Music by Shatanu Tushar
+        </p>
+    </header>
+    <div class="article-body"><p>Imagine a home automation system where you can have sensors to measure movement, temperature, and ambient light. All these sensors need to be plugged into an Arduino board, along with the connections to tubelights, fans, and the thermostat. You take your program that makes the interaction to work and upload it to the board. Now you have it all working you mount the board on the wall and connect with the rest of the circuitry. Hardware hacking success!</p>
+
+<blockquote><blockquote><p>“I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly… reeks of automation opportunity.”</p></blockquote></blockquote>
+
+<p>But, as with any project, you want to start simply with just one or two requirements and then keep adding more during the course of time, once you have something working. In the world of hardware this translates to adding more sensors and output components, and then changing your program and uploading the changes it to the board. But to do this you have to take the board off the wall and upload the changes. Meh.</p>
+
+<p>I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly I consider to be “painstaking” and reeks of automation opportunity. For me it is way too much effort to unmount my board every time I want read a new sensor value or use a new GPIO pin for output.</p>
+
+<p><img src="/p2/images/arduino.jpg" alt="arduino" /></p>
+
+<p>Throughout our hardware experiments in ThoughtWorks Bangalore we have been using Arduino hardware. Arduino’s are the most popular hardware for prototyping today. Arduino itself is not just hardware, it is an open-source prototyping platform that can receive input from sensors and affect its surroundings by controlling actuators like lights, motors, etc. The typical workflow for hardware prototyping using Arduino involves three steps:</p>
+
+<ul>
+<li><p><strong>1:</strong> Build the board by wiring the electronic components together. You can buy these pre-assembled but what would be the fun in that?</p></li>
+<li><p><strong>2:</strong> Write a program to read command values from sensors. Arduino has it’s own programming language and development environment (IDE) to program the microcontroller on the board.</p></li>
+<li><p><strong>3:</strong> React to the commands. This is where you can get your actuators to do cool stuff!</p></li>
+</ul>
+
+
+<p>An example of this could be, if you want to switch on an LED when somebody walks into the room, you will use a motion sensor and then your program will monitor its input and set the LED to on/off accordingly.</p>
+
+<p>To get all this stuff working together you need to upload a program to the Arduino by connecting it to a computer through USB and then use the Arduino IDE. All sounds great right? Except the unmounting and mounting of your Arduino!</p>
+
+<p>To do away with the need of disconnecting the Arduino from the circuit and connect it to the computer, I wrote an Arduino program (also known as a sketch) which does not hardcode the input and output pins. Instead, it waits and accepts this configuration over a wireless channel created using cheap nRF24l01 modules. All you need is one module attached to the Arduino (receiver) and another module attached to either another Arduino or a Raspberry Pi (sender). The sender can then send configuration strings as commands like this:</p>
+
+<ul>
+<li><strong>2,3:4,5</strong></li>
+</ul>
+
+
+<p>This command tells the Arduino to make pins 2 and 3 as input and 4 and 5 output. The Arduino will keep sending back periodic readings from pins 2 and 3.</p>
+
+<p>Now, lets say we have an LED connected to pin 4 of the Arduino, we can send the following command to set HIGH output to pin 4-</p>
+
+<ul>
+<li><strong>4,1</strong></li>
+</ul>
+
+
+<p>Where 4 is the pin number and 1 means HIGH. Similarly, to turn off the LED one can send 4,0 to send a LOW signal.</p>
+
+<p>This way you can configure new sensors and/or make new pins to output signals without having to re-write the program. All this without disturbing your Arduino sitting in a complex configuration even if it is in another room!</p>
+
+<h3>The code</h3>
+
+<p>All you need to do is to grab the repo at <a href="https://github.com/shaan7/arduino-sensor">https://github.com/shaan7/arduino-sensor</a> and follow the instructions. You will need one nRF24l01 module each for Arduino and the Raspberry Pi which is actually going to configure and control the Arduino board.</p>
+</div>
+    <aside class="left-column clearfix">
+   <div class="author">
+      
+      <div>
+         <a href="#">
+            <img class="author-avatar" src="/p2/images/shantanu-tushar.jpg"/>
+         </a>
+         <div>Shatanu Tushar</div>
+         
+      </div>
+      
+   </div>
+</aside>
+
+    <footer>
+    </footer>
+</article>
+
+</section>
+
+</div>
+<div id="bottom-pages">
+    <nav class="paginate">
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+      
+        <a id="prev" href="/p2/issue09/broken-ui-tests" class="prev">&#9664;</a>
+        <script type="text/javascript">
+          key('left', function() {
+            window.open($("#prev")[0].href, '_self', false);
+          });
+        </script>
+      
+
+      
+        
+      
+
+      
+
+    
+   
+    
+  
+    
+      <a id="next" href="/p2/issue010/billion-lins-of-code" class="next">&#9654;</a>
+      <script type="text/javascript">
+        key('right', function(){
+          window.open($("#next")[0].href, '_self', false);
+        });
+      </script>
+      
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+    
+
+    
+   
+    
+  
+</nav>
+
+</div>
+</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script type="text/javascript">
+if (typeof jQuery == 'undefined') {
+    document.write(unescape("%3Cscript src='assets/js/jquery-1.8.2.min.js' type='text/javascript'%3E%3C/script%3E"));
+}
+</script>
+<script type="text/javascript" src="/p2/javascripts/gist-embed.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-41328116-1', 'thoughtworks.github.io');
+ga('send', 'pageview');
+</script>
+<script>
+$(function() {
+    setTimeout(function() {
+        $("<span>&nbsp;</span>").appendTo(".cover");
+    }, 100);
+});
+</script>
+</html>

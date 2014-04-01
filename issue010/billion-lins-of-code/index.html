@@ -120,15 +120,15 @@
         Words and Music by Dan Abel
         </p>
     </header>
-    <div class="article-body"><p><em>A client wanted us to quickly tell them the state their code was in. So they could improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
+    <div class="article-body"><p><em>A client wanted us to quickly tell them the state their code was in. They wanted to improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
 
 <h3>The situation</h3>
 
-<p>The client were often hitting stumbling blocks shipping their software, releases were pushed back or failed to happen at all. They wanted to release more consistently. They asked Thoughtworks to examine the situation and advise on how to release often and well &ndash; getting new features to customers fast. We had 3 weeks.</p>
+<p>The client were often hitting stumbling blocks shipping their software, releases were pushed back or failed to happen at all. They wanted to release more consistently. They asked Thoughtworks to examine the situation and advise them on how to release more often and well. They wanted to get to customers fast. We had 3 weeks.</p>
 
 <h3>The challenge</h3>
 
-<p>My role was to assess the state of the codebase to determine what was holding them back. I was asked to examine the code that made up their core platform, a system that collected, processed and surfaced data, plus the main application that interfaced with it.</p>
+<p>My role was to assess the state of the codebase to determine what was holding them back. I was asked to examine the code that made up their core platform. It was a system that collected, processed and surfaced data. And the main application that interfaced with it.</p>
 
 <blockquote><blockquote><p>“A lot of languages, a lot of freedom, and a lot of code.“</p></blockquote></blockquote>
 
@@ -136,41 +136,47 @@
 
 <h3>Acknowledging the scale</h3>
 
-<p>The client had provided visibility of about 1500 repositories &ndash; around one billion lines of code. I could see C#, C++ and Java were used widely. There were also usages of ASP.NET, VBScript, Javascript, and C as well as a smattering of other languages.</p>
+<p>The client had provided visibility of about 1500 repositories &ndash; around one billion lines of code. C#, C++ and Java were used widely. There was also ASP.NET, VBScript, Javascript, and C &ndash; plus a smattering of other languages.</p>
 
-<p>Hand me a codebase and a little time, and I can give you an opinion on what makes it hard to understand or to change. Give me some time with the team who uses it, I can paint a picture of what’s working for them, and the value of the patterns in use.</p>
+<p>Hand me a codebase and a little time, and I can give you an opinion on what makes it hard to understand or even to change. Give me some time with the team who uses it and I can paint a picture of what’s working for them and the value of the patterns in use.</p>
 
-<p>But here, I couldn’t look at everything. It wasn’t going to be possible to tell an accurate and complete story. I decided a few flyovers or satellite imagery of a terrain might provide an initial context for an exploration. I could then see what trends were visible at a high level, and use on-the-ground visits into detail to be able to paint a fuller picture.</p>
+<p>But here, I couldn’t look at everything. It wasn’t going to be possible to tell an accurate and complete story.</p>
 
 <h3>Keeping it simple, keeping it broad</h3>
 
-<p>The first step was reaching out and making contact with the guardians of the code repositories to gather initial data. We asked each of the technology groups involved to share some codebases and to chat with us about them. We asked them, what were they afraid to touch, where did they have problems?  With that information started to look into what the code itself could tell us.</p>
+<p>I decided a few flyovers or satellite imagery of <em>a</em> terrain might provide an initial context for exploration. I could see what trends were visible at a high level and use on-the-ground visits into the detail to be able to paint a fuller picture.</p>
 
-<p>With the first codebases in hand, I used some basic tools to get a feel of what I was looking at. wc and grep helped me identify file types, counts, lengths and raw Lines of Code. I also took a first pass at identifying automated test code.</p>
+<p>The first step was reaching out and making contact with the guardians of the code repositories. I needed to gather initial data. We asked each of the technology groups involved to share some codebases and to chat with us about them. We asked them what were they afraid to touch and where did they have problems? With that we started to look into what the code itself could tell us.</p>
 
-<p>As I got access to more codebases I tuned up my techniques and added new data to my catalogue. I also sampled each codebase to get a feel for the code in detail, using the data to drive my reading. Knowing the percentage of comments in a codebase has value, but reading the code can start to tell the story of why.</p>
+<p>With the first codebases in hand, I used some basic tools to get a feel of what I was looking at. <em>wc</em> and <em>grep</em> helped me identify file types, counts, lengths and raw Lines of Code (LOC). I also took a first pass at identifying any automated test code.</p>
+
+<p>As I saw more codebases I tuned up my techniques and added new data to my catalogue. I also sampled each codebase to get a feel for the code in detail, using the data to drive my reading. Knowing the percentage of comments in a codebase has value, but reading the code can start to tell the story of why they are there. Often describing some complexity in the code.</p>
 
 <h3>Digging in</h3>
 
-<p>With these simple metrics, I gained some insight, but it wasn’t enough. Needing some options on where to go next I reached out to my team and other experts in ThoughtWorks. We picked out Source Monitor as a tool that could analyse Java, C# and C++ code, allowing us to capture metrics across many of the codebases.</p>
+<p>With these simple metrics I gained some insight, but it wasn’t enough. Needing options on where to go next I reached out to my team and other experts in ThoughtWorks. We picked out Source Monitor as a tool that could analyse Java, C# and C++ code &ndash; allowing us to capture metrics across many of the codebases.</p>
 
 <p>The metrics gave me more insight into the codebases. I tried visualisations and could slice and dice into the data, highlighting interesting areas to dig into.</p>
 
 <h3>Apples and oranges</h3>
 
-<p>I’d looked at about 15 repositories and 10 million lines of code. I could see good and bad things about each codebase, but I needed clarity. What was it about the data I had gathered that was important at the scale required? Comparing the codebases didn’t seem the right thing to do, this wasn’t a contest, it was about delivering features and improvements faster.</p>
+<p>I’d looked at about 15 repositories and 10 million lines of code. I could see good and bad things about each codebase, but I needed more clarity. What was it about the data I had gathered that was important at the scale they required? Comparing the codebases didn’t seem the right thing to do. This wasn’t a contest. It was about delivering features and improvements faster.</p>
 
-<p>Setting an artificial bar didn’t seem right either. Everyone has different expectations of ‘good enough’. In the real world it’s easy to find reasons and mitigations and have the bar dismissed as chasing perfection &ndash; dismissible in the real world.</p>
+<p>Setting an artificial bar didn’t seem right either. Everyone has different expectations of ‘good enough’. In the real world it’s easy to find reasons and mitigations and have the bar dismissed as chasing perfection &ndash; easily dismissible in the real world.</p>
 
 <p>I needed something that would give the data meaning; to help to drive clear thoughts and be a call to action.</p>
 
 <h3>Open Source as Control Data</h3>
 
-<p>I thought more about comparisons. Someone on the team asked what would everyone agree on as a measurement for a good enough codebase. The answer was a revelation to me &ndash; open source projects that were popular and well used. Code that had been reviewed, developed and deployed by many teams in the real world.</p>
+<p>I thought more about comparisons. Someone on the team asked,</p>
+
+<p><em>&ldquo;what would everyone agree on as a measurement for a good enough codebase?&rdquo;</em></p>
+
+<p>The answer was a revelation to me &ndash; open source projects that were popular and well used. Code that had been reviewed, developed and deployed by many teams in the real world.</p>
 
 <blockquote><blockquote><p>“The question became: what can be learnt when we compare the complexity measurements of the codebases?”</p></blockquote></blockquote>
 
-<p>Selecting four open source projects that could give me good insight, I performed the same analysis and compiled the results, based on language and purpose.</p>
+<p>Selecting four open source projects that could give me good insight, I performed the same analysis and compiled the results based on language and purpose.</p>
 
 <p>The question became: what can be learnt when we compare the complexity measurements of the codebases? Do we see potential weaknesses that need further examination or successes we can celebrate?</p>
 
@@ -180,9 +186,9 @@
 
 <p style="text-align:center;"> ⁂</p>
 
-<p>One of the most powerful indications was the amount of code in comparison to the control codebases. We were able to highlight where there was too little testing and how it connected to overly complex and coupled code. We also highlighted high levels of commenting &ndash; sometimes replacing version control or tests.</p>
+<p>One of the most powerful indications was the amount of code we had. Particularly in comparison to the control codebases. We were able to highlight areas with too few tests and how that related to overly complex and coupled code. We also highlighted high levels of commenting &ndash; often replacing better patterns like version control or tests.</p>
 
-<p>We asked if these areas were those they were struggling with, and if the absence of modern Extreme Programming style practises in some codebases and teams were contributing. Did the bar need raising and should some codebases be considered legacy?</p>
+<p>We asked if these were the areas they were struggling with. And if the absence of modern Extreme Programming (XP) practises were contributing. Was it time to raise the bar and consider some codebases legacy?</p>
 </div>
     <aside class="left-column clearfix">
    <div class="author">

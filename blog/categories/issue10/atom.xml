@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue10 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue10/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-03-30T20:12:10-04:00</updated>
+  <updated>2014-03-31T21:27:21-04:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -43,9 +43,22 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Puzzle]]></title>
+    <title type="html"><![CDATA[March Puzzle Answer]]></title>
     <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
     <updated>2014-04-07T00:00:00-04:00</updated>
+    <id>http://thoughtworks.github.io/p2/issue10/puzzle-answer</id>
+    <content type="html"><![CDATA[<p>We went through two iterations of the last puzzle, Garbage collection. We received two good responses from Atabek Akbalaev &amp; Fiona Coath.</p>
+
+<p>Atabek&rsquo;s solution provided a means for &ldquo;marking&rdquo; the bins in the city in one pass &amp; using that as the reference map for the future. Fiona&rsquo;s solution tackled the problem of verifying emptying of bins with weighing-measures on the arms of the apparatus that lifts the bins to empty them. Any solution with a need to install/apply something to the bins is  a candidate for operational concerns, especially if the number of bins grew significantly and/or the risk of theft/damage of the probe (RFID, QR-Code, etc.). The problem dearly missed solutions for tackling the zone-emptied-first requirement though Atabek&rsquo;s solution could be extended to address that.</p>
+
+<p>For providing part of the solution, both Atabek &amp; Fiona receive&hellip;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[April Puzzle]]></title>
+    <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
+    <updated>2014-04-06T00:00:00-04:00</updated>
     <id>http://thoughtworks.github.io/p2/issue10/puzzle</id>
     <content type="html"><![CDATA[<p>This months puzzle comes from the analytical mind of David Johnston…</p>
 
@@ -73,20 +86,7 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 
 <p>At this point tempers flare and both draw their revolvers and aim at each other. You, Sonny Bayes, are the gang leader. You gotta straighten this out, decide what to do and convince your two partners! Should you switch or not and why? What would true professionals do?</p>
 
-<p><em>*Please submit your response to the P2 Magazine team at <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#111;&#x3a;&#x70;&#50;&#x40;&#116;&#104;&#111;&#117;&#x67;&#x68;&#116;&#119;&#x6f;&#114;&#x6b;&#x73;&#x2e;&#99;&#x6f;&#109;">&#112;&#x32;&#x40;&#116;&#x68;&#111;&#x75;&#x67;&#104;&#x74;&#x77;&#111;&#114;&#x6b;&#x73;&#46;&#x63;&#x6f;&#109;</a> to be in a chance to win fabulous P2 prizes.</em></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Puzzle]]></title>
-    <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
-    <updated>2014-04-06T00:00:00-04:00</updated>
-    <id>http://thoughtworks.github.io/p2/issue10/puzzle-answer</id>
-    <content type="html"><![CDATA[<p>We went through two iterations of the last puzzle, Garbage collection. We received two good responses from Atabek Akbalaev &amp; Fiona Coath.</p>
-
-<p>Atabek&rsquo;s solution provided a means for &ldquo;marking&rdquo; the bins in the city in one pass &amp; using that as the reference map for the future. Fiona&rsquo;s solution tackled the problem of verifying emptying of bins with weighing-measures on the arms of the apparatus that lifts the bins to empty them. Any solution with a need to install/apply something to the bins is  a candidate for operational concerns, especially if the number of bins grew significantly and/or the risk of theft/damage of the probe (RFID, QR-Code, etc.). The problem dearly missed solutions for tackling the zone-emptied-first requirement though Atabek&rsquo;s solution could be extended to address that.</p>
-
-<p>For providing part of the solution, both Atabek &amp; Fiona receive&hellip;</p>
+<p><em>*Please submit your response to the P2 Magazine team at <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x70;&#50;&#64;&#x74;&#x68;&#111;&#x75;&#x67;&#x68;&#116;&#119;&#111;&#x72;&#x6b;&#x73;&#46;&#x63;&#111;&#x6d;">&#x70;&#50;&#64;&#x74;&#x68;&#x6f;&#117;&#103;&#104;&#116;&#x77;&#111;&#x72;&#x6b;&#115;&#46;&#99;&#111;&#x6d;</a> to be in a chance to win fabulous P2 prizes.</em></p>
 ]]></content>
   </entry>
   
@@ -95,15 +95,15 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
     <link href="http://thoughtworks.github.io/p2/issue010/billion-lins-of-code"/>
     <updated>2014-04-05T00:00:00-04:00</updated>
     <id>http://thoughtworks.github.io/p2/issue010/billion-lines-of-code</id>
-    <content type="html"><![CDATA[<p><em>A client wanted us to quickly tell them the state their code was in. So they could improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
+    <content type="html"><![CDATA[<p><em>A client wanted us to quickly tell them the state their code was in. They wanted to improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
 
 <h3>The situation</h3>
 
-<p>The client were often hitting stumbling blocks shipping their software, releases were pushed back or failed to happen at all. They wanted to release more consistently. They asked Thoughtworks to examine the situation and advise on how to release often and well &ndash; getting new features to customers fast. We had 3 weeks.</p>
+<p>The client were often hitting stumbling blocks shipping their software, releases were pushed back or failed to happen at all. They wanted to release more consistently. They asked Thoughtworks to examine the situation and advise them on how to release more often and well. They wanted to get to customers fast. We had 3 weeks.</p>
 
 <h3>The challenge</h3>
 
-<p>My role was to assess the state of the codebase to determine what was holding them back. I was asked to examine the code that made up their core platform, a system that collected, processed and surfaced data, plus the main application that interfaced with it.</p>
+<p>My role was to assess the state of the codebase to determine what was holding them back. I was asked to examine the code that made up their core platform. It was a system that collected, processed and surfaced data. And the main application that interfaced with it.</p>
 
 <blockquote><blockquote><p>“A lot of languages, a lot of freedom, and a lot of code.“</p></blockquote></blockquote>
 
@@ -111,41 +111,47 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 
 <h3>Acknowledging the scale</h3>
 
-<p>The client had provided visibility of about 1500 repositories &ndash; around one billion lines of code. I could see C#, C++ and Java were used widely. There were also usages of ASP.NET, VBScript, Javascript, and C as well as a smattering of other languages.</p>
+<p>The client had provided visibility of about 1500 repositories &ndash; around one billion lines of code. C#, C++ and Java were used widely. There was also ASP.NET, VBScript, Javascript, and C &ndash; plus a smattering of other languages.</p>
 
-<p>Hand me a codebase and a little time, and I can give you an opinion on what makes it hard to understand or to change. Give me some time with the team who uses it, I can paint a picture of what’s working for them, and the value of the patterns in use.</p>
+<p>Hand me a codebase and a little time, and I can give you an opinion on what makes it hard to understand or even to change. Give me some time with the team who uses it and I can paint a picture of what’s working for them and the value of the patterns in use.</p>
 
-<p>But here, I couldn’t look at everything. It wasn’t going to be possible to tell an accurate and complete story. I decided a few flyovers or satellite imagery of a terrain might provide an initial context for an exploration. I could then see what trends were visible at a high level, and use on-the-ground visits into detail to be able to paint a fuller picture.</p>
+<p>But here, I couldn’t look at everything. It wasn’t going to be possible to tell an accurate and complete story.</p>
 
 <h3>Keeping it simple, keeping it broad</h3>
 
-<p>The first step was reaching out and making contact with the guardians of the code repositories to gather initial data. We asked each of the technology groups involved to share some codebases and to chat with us about them. We asked them, what were they afraid to touch, where did they have problems?  With that information started to look into what the code itself could tell us.</p>
+<p>I decided a few flyovers or satellite imagery of <em>a</em> terrain might provide an initial context for exploration. I could see what trends were visible at a high level and use on-the-ground visits into the detail to be able to paint a fuller picture.</p>
 
-<p>With the first codebases in hand, I used some basic tools to get a feel of what I was looking at. wc and grep helped me identify file types, counts, lengths and raw Lines of Code. I also took a first pass at identifying automated test code.</p>
+<p>The first step was reaching out and making contact with the guardians of the code repositories. I needed to gather initial data. We asked each of the technology groups involved to share some codebases and to chat with us about them. We asked them what were they afraid to touch and where did they have problems? With that we started to look into what the code itself could tell us.</p>
 
-<p>As I got access to more codebases I tuned up my techniques and added new data to my catalogue. I also sampled each codebase to get a feel for the code in detail, using the data to drive my reading. Knowing the percentage of comments in a codebase has value, but reading the code can start to tell the story of why.</p>
+<p>With the first codebases in hand, I used some basic tools to get a feel of what I was looking at. <em>wc</em> and <em>grep</em> helped me identify file types, counts, lengths and raw Lines of Code (LOC). I also took a first pass at identifying any automated test code.</p>
+
+<p>As I saw more codebases I tuned up my techniques and added new data to my catalogue. I also sampled each codebase to get a feel for the code in detail, using the data to drive my reading. Knowing the percentage of comments in a codebase has value, but reading the code can start to tell the story of why they are there. Often describing some complexity in the code.</p>
 
 <h3>Digging in</h3>
 
-<p>With these simple metrics, I gained some insight, but it wasn’t enough. Needing some options on where to go next I reached out to my team and other experts in ThoughtWorks. We picked out Source Monitor as a tool that could analyse Java, C# and C++ code, allowing us to capture metrics across many of the codebases.</p>
+<p>With these simple metrics I gained some insight, but it wasn’t enough. Needing options on where to go next I reached out to my team and other experts in ThoughtWorks. We picked out Source Monitor as a tool that could analyse Java, C# and C++ code &ndash; allowing us to capture metrics across many of the codebases.</p>
 
 <p>The metrics gave me more insight into the codebases. I tried visualisations and could slice and dice into the data, highlighting interesting areas to dig into.</p>
 
 <h3>Apples and oranges</h3>
 
-<p>I’d looked at about 15 repositories and 10 million lines of code. I could see good and bad things about each codebase, but I needed clarity. What was it about the data I had gathered that was important at the scale required? Comparing the codebases didn’t seem the right thing to do, this wasn’t a contest, it was about delivering features and improvements faster.</p>
+<p>I’d looked at about 15 repositories and 10 million lines of code. I could see good and bad things about each codebase, but I needed more clarity. What was it about the data I had gathered that was important at the scale they required? Comparing the codebases didn’t seem the right thing to do. This wasn’t a contest. It was about delivering features and improvements faster.</p>
 
-<p>Setting an artificial bar didn’t seem right either. Everyone has different expectations of ‘good enough’. In the real world it’s easy to find reasons and mitigations and have the bar dismissed as chasing perfection &ndash; dismissible in the real world.</p>
+<p>Setting an artificial bar didn’t seem right either. Everyone has different expectations of ‘good enough’. In the real world it’s easy to find reasons and mitigations and have the bar dismissed as chasing perfection &ndash; easily dismissible in the real world.</p>
 
 <p>I needed something that would give the data meaning; to help to drive clear thoughts and be a call to action.</p>
 
 <h3>Open Source as Control Data</h3>
 
-<p>I thought more about comparisons. Someone on the team asked what would everyone agree on as a measurement for a good enough codebase. The answer was a revelation to me &ndash; open source projects that were popular and well used. Code that had been reviewed, developed and deployed by many teams in the real world.</p>
+<p>I thought more about comparisons. Someone on the team asked,</p>
+
+<p><em>&ldquo;what would everyone agree on as a measurement for a good enough codebase?&rdquo;</em></p>
+
+<p>The answer was a revelation to me &ndash; open source projects that were popular and well used. Code that had been reviewed, developed and deployed by many teams in the real world.</p>
 
 <blockquote><blockquote><p>“The question became: what can be learnt when we compare the complexity measurements of the codebases?”</p></blockquote></blockquote>
 
-<p>Selecting four open source projects that could give me good insight, I performed the same analysis and compiled the results, based on language and purpose.</p>
+<p>Selecting four open source projects that could give me good insight, I performed the same analysis and compiled the results based on language and purpose.</p>
 
 <p>The question became: what can be learnt when we compare the complexity measurements of the codebases? Do we see potential weaknesses that need further examination or successes we can celebrate?</p>
 
@@ -155,9 +161,9 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 
 <p style="text-align:center;"> ⁂</p>
 
-<p>One of the most powerful indications was the amount of code in comparison to the control codebases. We were able to highlight where there was too little testing and how it connected to overly complex and coupled code. We also highlighted high levels of commenting &ndash; sometimes replacing version control or tests.</p>
+<p>One of the most powerful indications was the amount of code we had. Particularly in comparison to the control codebases. We were able to highlight areas with too few tests and how that related to overly complex and coupled code. We also highlighted high levels of commenting &ndash; often replacing better patterns like version control or tests.</p>
 
-<p>We asked if these areas were those they were struggling with, and if the absence of modern Extreme Programming style practises in some codebases and teams were contributing. Did the bar need raising and should some codebases be considered legacy?</p>
+<p>We asked if these were the areas they were struggling with. And if the absence of modern Extreme Programming (XP) practises were contributing. Was it time to raise the bar and consider some codebases legacy?</p>
 ]]></content>
   </entry>
   
@@ -166,39 +172,39 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
     <link href="http://thoughtworks.github.io/p2/issue10/arduino"/>
     <updated>2014-04-04T00:00:00-04:00</updated>
     <id>http://thoughtworks.github.io/p2/issue10/wireless-arduino</id>
-    <content type="html"><![CDATA[<p>Imagine a home automation system where you can have sensors to measure movement, temperature, and ambient light. All these sensors need to be plugged into an Arduino board, along with the connections to tubelights, fans, and the thermostat. You take your program that makes the interaction to work and upload it to the board. Now you have it all working you mount the board on the wall and connect with the rest of the circuitry. Hardware hacking success!</p>
+    <content type="html"><![CDATA[<p>Imagine a home automation system where you can have sensors to measure movement, temperature, and ambient light. All these sensors need to be plugged into an Arduino board, along with the connections to tubelights, fans, and a thermostat. You take your program that makes the interaction work and upload it to the board. Now you have it all working, you mount the board on the wall and connect the rest of the circuitry. Hardware hacking success!</p>
 
 <blockquote><blockquote><p>“I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly… reeks of automation opportunity.”</p></blockquote></blockquote>
 
-<p>But, as with any project, you want to start simply with just one or two requirements and then keep adding more during the course of time, once you have something working. In the world of hardware this translates to adding more sensors and output components, and then changing your program and uploading the changes it to the board. But to do this you have to take the board off the wall and upload the changes. Meh.</p>
+<p>But, as with any project, you want to start simply with just one or two requirements. And then keep adding more during the course of time once you have something working. In the world of hardware this translates to adding more sensors and output components, and then changing your program and uploading the changes it to the board. But to do this you have to take the board off the wall and upload the changes. Meh.</p>
 
-<p>I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly I consider to be “painstaking” and reeks of automation opportunity. For me it is way too much effort to unmount my board every time I want read a new sensor value or use a new GPIO pin for output.</p>
+<p>I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly I consider to be “painstaking” and it reeks of automation opportunity. For me it is way too much effort to unmount the board every time I want read a new sensor value or use a new GPIO pin for output.</p>
 
 <p><img src="/p2/images/arduino.jpg" alt="arduino" /></p>
 
-<p>Throughout our hardware experiments in ThoughtWorks Bangalore we have been using Arduino hardware. Arduino’s are the most popular hardware for prototyping today. Arduino itself is not just hardware, it is an open-source prototyping platform that can receive input from sensors and affect its surroundings by controlling actuators like lights, motors, etc. The typical workflow for hardware prototyping using Arduino involves three steps:</p>
+<p>Throughout our hardware experiments at ThoughtWorks in Bangalore we have been using Arduino hardware. Arduino’s are the most popular hardware for prototyping today. Arduino itself is not just hardware, it is an open-source prototyping platform that can receive input from sensors and affect its surroundings by controlling actuators like lights, motors, etc. The typical workflow for hardware prototyping using Arduino involves three steps:</p>
 
 <ul>
 <li><p><strong>1:</strong> Build the board by wiring the electronic components together. You can buy these pre-assembled but what would be the fun in that?</p></li>
-<li><p><strong>2:</strong> Write a program to read command values from sensors. Arduino has it’s own programming language and development environment (IDE) to program the microcontroller on the board.</p></li>
+<li><p><strong>2:</strong> Write a program to read command values from sensors. Arduino has it’s own programming language and Integrated Development Environment (IDE) to program the microcontroller on the board.</p></li>
 <li><p><strong>3:</strong> React to the commands. This is where you can get your actuators to do cool stuff!</p></li>
 </ul>
 
 
-<p>An example of this could be, if you want to switch on an LED when somebody walks into the room, you will use a motion sensor and then your program will monitor its input and set the LED to on/off accordingly.</p>
+<p>An example of this could be if you want to switch on an LED when somebody walks into the room, you will use a motion sensor and then your program will monitor its input and set the LED to on or off accordingly.</p>
 
-<p>To get all this stuff working together you need to upload a program to the Arduino by connecting it to a computer through USB and then use the Arduino IDE. All sounds great right? Except the unmounting and mounting of your Arduino!</p>
+<p>To get all this working together you need to upload a program to the Arduino by connecting it to a computer through USB and then use the Arduino IDE. All sounds great right? Except the unmounting and mounting of your Arduino!</p>
 
-<p>To do away with the need of disconnecting the Arduino from the circuit and connect it to the computer, I wrote an Arduino program (also known as a sketch) which does not hardcode the input and output pins. Instead, it waits and accepts this configuration over a wireless channel created using cheap nRF24l01 modules. All you need is one module attached to the Arduino (receiver) and another module attached to either another Arduino or a Raspberry Pi (sender). The sender can then send configuration strings as commands like this:</p>
+<p>To do away with the need of disconnecting the Arduino from the circuit and connecting it to the computer, I wrote an Arduino program (also known as a sketch) which does not hardcode the input and output pins. Instead, it waits and accepts this configuration over a wireless channel created using cheap nRF24l01 modules. All you need is one module attached to the Arduino (receiver) and another module attached to either another Arduino or a Raspberry Pi (sender). The sender can then send configuration strings as commands like this:</p>
 
 <ul>
 <li><strong>2,3:4,5</strong></li>
 </ul>
 
 
-<p>This command tells the Arduino to make pins 2 and 3 as input and 4 and 5 output. The Arduino will keep sending back periodic readings from pins 2 and 3.</p>
+<p>This command tells the Arduino to make pins 2 and 3 the input and 4 and 5 the output. The Arduino will keep sending back periodic readings from pins 2 and 3.</p>
 
-<p>Now, lets say we have an LED connected to pin 4 of the Arduino, we can send the following command to set HIGH output to pin 4-</p>
+<p>Now, lets say we have an LED connected to pin 4 of the Arduino, we can send the following command to set HIGH output to pin 4.</p>
 
 <ul>
 <li><strong>4,1</strong></li>
@@ -207,11 +213,11 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 
 <p>Where 4 is the pin number and 1 means HIGH. Similarly, to turn off the LED one can send 4,0 to send a LOW signal.</p>
 
-<p>This way you can configure new sensors and/or make new pins to output signals without having to re-write the program. All this without disturbing your Arduino sitting in a complex configuration even if it is in another room!</p>
+<p>This way you can configure new sensors and/or make new pins to output signals, without having to re-write the program. All this without disturbing your Arduino sitting in a complex configuration &ndash; even if it is in another room!</p>
 
 <h3>The code</h3>
 
-<p>All you need to do is to grab the repo at <a href="https://github.com/shaan7/arduino-sensor">https://github.com/shaan7/arduino-sensor</a> and follow the instructions. You will need one nRF24l01 module each for Arduino and the Raspberry Pi which is actually going to configure and control the Arduino board.</p>
+<p>Grab the repo at <a href="https://github.com/shaan7/arduino-sensor">https://github.com/shaan7/arduino-sensor</a> and follow the instructions. You will need one nRF24l01 module each for Arduino and the Raspberry Pi which is actually going to configure and control the Arduino board.</p>
 ]]></content>
   </entry>
   

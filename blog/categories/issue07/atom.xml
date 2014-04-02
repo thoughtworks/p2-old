@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue07 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue07/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-03T00:01:19+11:00</updated>
+  <updated>2014-04-02T21:03:51+05:30</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits / About]]></title>
     <link href="http://thoughtworks.github.io/p2/issue07/credits/"/>
-    <updated>2013-12-09T00:00:00+11:00</updated>
+    <updated>2013-12-09T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue07/credits</id>
     <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
 
@@ -49,7 +49,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue07/puzzle/"/>
-    <updated>2013-12-08T00:00:00+11:00</updated>
+    <updated>2013-12-08T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue07/puzzle</id>
     <content type="html"><![CDATA[<p>Last month we had a puzzle where we looked at how we could remove the uncertainty of intersections when the light goes orange and the driver isn’t at that perfect distance where it’s hard to know whether one should keep going or brake.</p>
 
@@ -66,7 +66,7 @@
   <entry>
     <title type="html"><![CDATA[Experiences Changing Programming Languages]]></title>
     <link href="http://thoughtworks.github.io/p2/issue07/experiences"/>
-    <updated>2013-12-07T00:00:00+11:00</updated>
+    <updated>2013-12-07T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue07/experiences</id>
     <content type="html"><![CDATA[<p>In this series we ask ThoughtWorkers to talk about a challenging time for them. A time when learning a new programming language challenged and then changed the way they thought.</p>
 
@@ -83,7 +83,7 @@
   <entry>
     <title type="html"><![CDATA[At your service]]></title>
     <link href="http://thoughtworks.github.io/p2/issue07/test-martini"/>
-    <updated>2013-12-06T00:00:00+11:00</updated>
+    <updated>2013-12-06T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue07/test-martini</id>
     <content type="html"><![CDATA[<p>UI tests! They suck the life out of me. Maintaining them takes longer than setting up or writing them. It felt like my life was being spent getting tests to go green. It almost drove me insane.</p>
 
@@ -120,7 +120,7 @@ We should have separate tests elsewhere that add books to cart and navigate to a
   <entry>
     <title type="html"><![CDATA[Virus VI - Malware 2.0]]></title>
     <link href="http://thoughtworks.github.io/p2/issue07/virus-six"/>
-    <updated>2013-12-05T00:00:00+11:00</updated>
+    <updated>2013-12-05T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue07/virus-six</id>
     <content type="html"><![CDATA[<p>Last month, we met Z0mbie, the Soviet genius who created the polymorphic Zmist virus. The ultimate stealth weapon.</p>
 

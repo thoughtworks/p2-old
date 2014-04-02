@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue10 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue10/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-03T00:01:19+11:00</updated>
+  <updated>2014-04-02T21:03:51+05:30</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits / About]]></title>
     <link href="http://thoughtworks.github.io/p2/issue10/credits/"/>
-    <updated>2014-04-08T00:00:00+10:00</updated>
+    <updated>2014-04-08T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue10/credits</id>
     <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
 
@@ -45,7 +45,7 @@
   <entry>
     <title type="html"><![CDATA[March Puzzle Answer]]></title>
     <link href="http://thoughtworks.github.io/p2/issue10/march-puzzle/"/>
-    <updated>2014-04-07T00:00:00+10:00</updated>
+    <updated>2014-04-07T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue10/puzzle-answer</id>
     <content type="html"><![CDATA[<p>We went through two iterations of the last puzzle, Garbage collection. We received two good responses from Atabek Akbalaev &amp; Fiona Coath.</p>
 
@@ -58,7 +58,7 @@
   <entry>
     <title type="html"><![CDATA[April Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue10/april-puzzle/"/>
-    <updated>2014-04-06T00:00:00+11:00</updated>
+    <updated>2014-04-06T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue10/puzzle</id>
     <content type="html"><![CDATA[<p>This months puzzle comes from the analytical mind of David Johnston…</p>
 
@@ -86,14 +86,14 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 
 <p>At this point tempers flare and both draw their revolvers and aim at each other. You, Sonny Bayes, are the gang leader. You gotta straighten this out, decide what to do and convince your two partners! Should you switch or not and why? What would true professionals do?</p>
 
-<p><em>*Please submit your response to the P2 Magazine team at <a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#112;&#50;&#x40;&#x74;&#104;&#111;&#x75;&#x67;&#x68;&#x74;&#x77;&#111;&#114;&#107;&#x73;&#46;&#x63;&#x6f;&#x6d;">&#x70;&#x32;&#x40;&#x74;&#104;&#111;&#117;&#103;&#x68;&#x74;&#x77;&#111;&#114;&#107;&#115;&#x2e;&#99;&#111;&#x6d;</a> to be in a chance to win fabulous P2 prizes.</em></p>
+<p><em>*Please submit your response to the P2 Magazine team at <a href="&#109;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#x70;&#50;&#x40;&#116;&#104;&#x6f;&#117;&#x67;&#104;&#x74;&#119;&#111;&#114;&#107;&#115;&#x2e;&#99;&#x6f;&#109;">&#112;&#50;&#64;&#x74;&#x68;&#x6f;&#x75;&#x67;&#x68;&#x74;&#x77;&#111;&#114;&#x6b;&#x73;&#x2e;&#x63;&#111;&#x6d;</a> to be in a chance to win fabulous P2 prizes.</em></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Getting a flavour of one billion lines of code]]></title>
     <link href="http://thoughtworks.github.io/p2/issue010/billion-lins-of-code"/>
-    <updated>2014-04-05T00:00:00+11:00</updated>
+    <updated>2014-04-05T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue010/billion-lines-of-code</id>
     <content type="html"><![CDATA[<p><em>A client wanted us to quickly tell them the state their code was in. They wanted to improve their speed of delivery. I had access to more code than I could possibly look at. I was challenged to find the art of the possible whilst trying to avoid over-focusing or worse, panicking.</em></p>
 
@@ -170,9 +170,11 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
   <entry>
     <title type="html"><![CDATA[Wireless Arduino automation]]></title>
     <link href="http://thoughtworks.github.io/p2/issue10/arduino"/>
-    <updated>2014-04-04T00:00:00+11:00</updated>
+    <updated>2014-04-04T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue10/wireless-arduino</id>
-    <content type="html"><![CDATA[<p>Imagine a home automation system where you can have sensors to measure movement, temperature, and ambient light. All these sensors need to be plugged into an Arduino board, along with the connections to tubelights, fans, and a thermostat. You take your program that makes the interaction work and upload it to the board. Now you have it all working, you mount the board on the wall and connect the rest of the circuitry. Hardware hacking success!</p>
+    <content type="html"><![CDATA[<p><img src="/p2/images/arduino_uno.jpg" alt="Arduino Uno" /></p>
+
+<p>Imagine a home automation system where you can have sensors to measure movement, temperature, and ambient light. All these sensors need to be plugged into an Arduino board, along with the connections to tubelights, fans, and a thermostat. You take your program that makes the interaction work and upload it to the board. Now you have it all working, you mount the board on the wall and connect the rest of the circuitry. Hardware hacking success!</p>
 
 <blockquote><blockquote><p>“I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly… reeks of automation opportunity.”</p></blockquote></blockquote>
 

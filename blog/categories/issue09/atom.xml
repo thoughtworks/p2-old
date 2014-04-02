@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue09 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue09/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-03T00:01:19+11:00</updated>
+  <updated>2014-04-02T21:03:51+05:30</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits / About]]></title>
     <link href="http://thoughtworks.github.io/p2/issue09/credits/"/>
-    <updated>2014-03-07T00:00:00+11:00</updated>
+    <updated>2014-03-07T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue09/credits</id>
     <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
 
@@ -49,11 +49,11 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue09/puzzle/"/>
-    <updated>2014-03-06T00:00:00+11:00</updated>
+    <updated>2014-03-06T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue09/puzzle</id>
     <content type="html"><![CDATA[<p>We didn’t get any correct answers to last month&rsquo;s puzzle, but the responses we did receive provided great feedback* on how to improve it. So, in the spirit of agile, we are going to iterate and improve. We have taken your comments and reworded the puzzle to hopefully make it more clear.</p>
 
-<p>Please send your answers to <a href="&#x6d;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#112;&#x32;&#64;&#x74;&#x68;&#111;&#117;&#x67;&#104;&#x74;&#x77;&#x6f;&#x72;&#x6b;&#x73;&#x2e;&#99;&#x6f;&#x6d;">&#112;&#50;&#x40;&#x74;&#x68;&#111;&#x75;&#x67;&#104;&#116;&#119;&#x6f;&#114;&#x6b;&#115;&#46;&#99;&#111;&#109;</a> and the best answer will win a P2 related prize!</p>
+<p>Please send your answers to <a href="&#x6d;&#97;&#105;&#108;&#116;&#x6f;&#58;&#x70;&#50;&#64;&#116;&#x68;&#111;&#x75;&#103;&#x68;&#116;&#x77;&#x6f;&#x72;&#x6b;&#115;&#46;&#99;&#x6f;&#109;">&#x70;&#50;&#x40;&#x74;&#x68;&#x6f;&#117;&#x67;&#x68;&#116;&#119;&#111;&#x72;&#x6b;&#115;&#x2e;&#99;&#x6f;&#109;</a> and the best answer will win a P2 related prize!</p>
 
 <p>A city is divided into zones (shown in red, green, orange, lilac and blue in the picture below) by the municipal corporation. Each zone has a few garbage bins within its bounds (spread out as evenly as possible). Each zone (except the grey one) has a garbage collection truck assigned to it. This truck plies the designated zone and empties the bins therein. Each truck has the capacity of 9 bins. Surrounding the brightly coloured zones is a special zone (bounded by the black line &amp; outside all the other zones) &ndash; this is a &ldquo;common-zone&rdquo;. Any truck can empty bins in this zone, but only when it has collected all the garbage in its designated zone. No truck is assigned the grey zone.</p>
 
@@ -72,7 +72,7 @@
   <entry>
     <title type="html"><![CDATA[Two months early. 300k under budget]]></title>
     <link href="http://thoughtworks.github.io/p2/issue09/two-months-early"/>
-    <updated>2014-03-05T00:00:00+11:00</updated>
+    <updated>2014-03-05T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue09/two-months-early</id>
     <content type="html"><![CDATA[<p><em>It was a sunny Thursday afternoon. An intrigued, but slightly dubious Technical Architect, Dan, left our ThoughtWorks presentation.</em></p>
 
@@ -137,7 +137,7 @@
   <entry>
     <title type="html"><![CDATA[Isolation and Automation with Vagrant]]></title>
     <link href="http://thoughtworks.github.io/p2/issue09/vagrant"/>
-    <updated>2014-03-04T00:00:00+11:00</updated>
+    <updated>2014-03-04T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue09/vagrant</id>
     <content type="html"><![CDATA[<p>Anyone who has gone from developing on Unix to Windows can tell you the pain of crossing technical stacks. In spite of this, disparate tech stacks are common in many organisations. Even on the same team, developers, testers and operations can have different machine setups and tool choices. Sometimes it’s just down to personal choice. But it’s not necessarily a bad thing. Having consistency can cause innovation to stagnate and sometimes one tool really is better suited to a purpose than another. But what if you need your teams to cross-pollinate or merge together?</p>
 
@@ -202,7 +202,7 @@
   <entry>
     <title type="html"><![CDATA[Why you should hire a Polyglot Programmer]]></title>
     <link href="http://thoughtworks.github.io/p2/issue08/hire-polyglot"/>
-    <updated>2014-03-03T00:00:00+11:00</updated>
+    <updated>2014-03-03T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue08/hire-polyglot</id>
     <content type="html"><![CDATA[<p>It’s common for people to be sceptical of software developers with varied coding experience. We&rsquo;re used to seeing, “5 years C# experience” on the CV in front of us, so when we see a CV that says: “2 years of Ruby, 1 year of Python and 2 years of Java”, we might be concerned that the person doesn&rsquo;t have the depth of experience we need.  Although this reaction is natural, it’s misguided.</p>
 

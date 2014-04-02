@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue05 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue05/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-03T00:01:19+11:00</updated>
+  <updated>2014-04-02T21:03:51+05:30</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits]]></title>
     <link href="http://thoughtworks.github.io/p2/issue05/credits/"/>
-    <updated>2013-10-09T00:00:00+11:00</updated>
+    <updated>2013-10-09T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue05/credits</id>
     <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
 
@@ -47,7 +47,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue05/puzzle/"/>
-    <updated>2013-10-08T00:00:00+11:00</updated>
+    <updated>2013-10-08T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue05/puzzle</id>
     <content type="html"><![CDATA[<p>No new puzzle this month. Let’s get straight into the answer from last month. Judging from the answers, this one wasn’t as explained as well as it could have been. So, we’ll go through what was in our brains when we wrote it.</p>
 
@@ -142,7 +142,7 @@
   <entry>
     <title type="html"><![CDATA[BDD and Legacy Systems]]></title>
     <link href="http://thoughtworks.github.io/p2/issue05/bdd-on-legacy/"/>
-    <updated>2013-10-07T00:00:00+11:00</updated>
+    <updated>2013-10-07T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue05/legacy-on-bdd</id>
     <content type="html"><![CDATA[<p>I often see or hear the complaint that behaviour driven development (BDD) results in tests that are slow, brittle or both. This is especially the case if the testing tool uses a Gherkin based syntax.</p>
 
@@ -165,7 +165,7 @@
   <entry>
     <title type="html"><![CDATA[Pattern Fun Facts: Decorator]]></title>
     <link href="http://thoughtworks.github.io/p2/issue05/pattern-fun-fact-decorator"/>
-    <updated>2013-10-06T00:00:00+10:00</updated>
+    <updated>2013-10-06T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue05/pattern-fun-fact-decorator</id>
     <content type="html"><![CDATA[<p>The decorator pattern is a nifty way of adding behaviour to existing objects. Let’s say you have a class that is responsible for sending messages over the network.</p>
 
@@ -184,14 +184,14 @@
 
 <p>One thing you may note is that the implementation of <span class='inline-code'>MessageCopier</span> is quite thin. It only has a new bit of behaviour in it. Everything that isn’t relevant is elsewhere; a separation of concerns. As the consumers of the <span class='inline-code'>MessageSender</span> interface get their implementations from a factory you can now add in new behaviour incrementally with minimal rework. As the behaviour is constrained you can test behaviour in isolation, more easily.</p>
 
-<p><em>That was this month’s pattern fun fact. Do you have a pattern fun fact you would like to share? Send it to us at <a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#112;&#x32;&#x40;&#x74;&#x68;&#111;&#117;&#103;&#104;&#116;&#119;&#111;&#114;&#x6b;&#x73;&#46;&#x63;&#x6f;&#109;">&#x70;&#x32;&#64;&#116;&#x68;&#111;&#117;&#103;&#x68;&#116;&#x77;&#x6f;&#114;&#107;&#115;&#x2e;&#x63;&#111;&#x6d;</a> and we’ll publish it.</em></p>
+<p><em>That was this month’s pattern fun fact. Do you have a pattern fun fact you would like to share? Send it to us at <a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#112;&#50;&#x40;&#116;&#104;&#x6f;&#117;&#103;&#104;&#x74;&#x77;&#x6f;&#x72;&#107;&#x73;&#x2e;&#99;&#x6f;&#x6d;">&#112;&#x32;&#64;&#116;&#104;&#x6f;&#117;&#x67;&#x68;&#116;&#x77;&#x6f;&#x72;&#x6b;&#x73;&#x2e;&#x63;&#111;&#x6d;</a> and we’ll publish it.</em></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Hiding in Plain Sight: Stealth]]></title>
     <link href="http://thoughtworks.github.io/p2/issue05/virus-four"/>
-    <updated>2013-10-05T00:00:00+10:00</updated>
+    <updated>2013-10-05T00:00:00+05:30</updated>
     <id>http://thoughtworks.github.io/p2/issue05/virus-four</id>
     <content type="html"><![CDATA[<p>In November 1988,  the US admitted it had been designing and building stealth aircraft, and the world saw the freakish shape of the F-117 for the first time. And just one year after these aircraft made their first marks on the open sky, the malware makers came out with their own stealth weapons.</p>
 

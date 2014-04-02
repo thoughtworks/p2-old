@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue08 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue08/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-01T20:17:58-04:00</updated>
+  <updated>2014-04-02T23:42:22+11:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits / About]]></title>
     <link href="http://thoughtworks.github.io/p2/issue08/credits/"/>
-    <updated>2014-02-07T00:00:00-05:00</updated>
+    <updated>2014-02-07T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue08/credits</id>
     <content type="html"><![CDATA[<p><strong>What is P2 Magazine?</strong></p>
 
@@ -49,7 +49,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue08/puzzle/"/>
-    <updated>2014-02-06T00:00:00-05:00</updated>
+    <updated>2014-02-06T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue08/puzzle</id>
     <content type="html"><![CDATA[<p>Welcome to the first puzzle for 2014. This it is brought to you by Anand Krishnaswamy.</p>
 
@@ -66,7 +66,7 @@
   <entry>
     <title type="html"><![CDATA[Coding your workstation with Babushka]]></title>
     <link href="http://thoughtworks.github.io/p2/issue08/babushka"/>
-    <updated>2014-02-05T00:00:00-05:00</updated>
+    <updated>2014-02-05T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue08/babushka</id>
     <content type="html"><![CDATA[<h2>Your Workstation Sucks</h2>
 
@@ -212,7 +212,7 @@ For example, if a machine is named <span class='inline-code'>cape-town</span>, c
   <entry>
     <title type="html"><![CDATA[Continuous Delivery on Windows, Part III: Infrastructure Automation]]></title>
     <link href="http://thoughtworks.github.io/p2/issue08/cd-in-windows-part-3"/>
-    <updated>2014-02-04T00:00:00-05:00</updated>
+    <updated>2014-02-04T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue08/cd-in-windows-part-3</id>
     <content type="html"><![CDATA[<p>And now we’re onto the really tough problem of automating the creation and updates to your infrastructure on Windows. What we want is to be able to create any environment at the touch of a button and using automation this environment magically appears before our eyes ready to deploy our software to. This allows us to do things like parallel testing and scaling of your infrastructure. The best way to do this at present is through virtualisation.</p>
 
@@ -269,7 +269,7 @@ For example, if a machine is named <span class='inline-code'>cape-town</span>, c
   <entry>
     <title type="html"><![CDATA[SVN to Git, Making Technical Changes at Scale]]></title>
     <link href="http://thoughtworks.github.io/p2/issue08/svn-git"/>
-    <updated>2014-02-03T00:00:00-05:00</updated>
+    <updated>2014-02-03T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue08/svn-git</id>
     <content type="html"><![CDATA[<p>No one likes change. It’s uncomfortable, difficult, and sometimes down-right painful. But in order to improve and be more effective at our jobs we often need to change. In this industry especially, change happens in technologies and practices at an alarming rate. That might lead you to believe that those who work in this industry happily embrace change and see it as par for the course. In my experience this is often not the case.</p>
 

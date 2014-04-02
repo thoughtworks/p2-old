@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue02 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue02/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-01T20:17:58-04:00</updated>
+  <updated>2014-04-02T23:42:22+11:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits]]></title>
     <link href="http://thoughtworks.github.io/p2/issue02/credits/"/>
-    <updated>2013-07-08T00:00:00-04:00</updated>
+    <updated>2013-07-08T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue02/credits</id>
     <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
 
@@ -47,7 +47,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue02/puzzle/"/>
-    <updated>2013-07-07T00:00:00-04:00</updated>
+    <updated>2013-07-07T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue02/puzzle</id>
     <content type="html"><![CDATA[<p>Consider a city where there train network has two zones. Zones impact the cost of a journey. The more zones crossed the more the journey costs. Each passenger has to swipe their ticket to indicate the end of their journey. Within this network there is a station that gets quite busy at the end of the day.</p>
 
@@ -82,7 +82,7 @@
   <entry>
     <title type="html"><![CDATA[Improve This]]></title>
     <link href="http://thoughtworks.github.io/p2/issue02/improve-this/"/>
-    <updated>2013-07-06T00:00:00-04:00</updated>
+    <updated>2013-07-06T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue02/improve-this</id>
     <content type="html"><![CDATA[<p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
 
@@ -157,7 +157,7 @@ Finally, we update <span class='inline-code'>track_current_user</span>:</p>
 
 <p>The tests pass! That means it works, right? ;&ndash;)</p>
 
-<p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#58;&#x70;&#x32;&#x40;&#x74;&#x68;&#x6f;&#x75;&#103;&#104;&#x74;&#x77;&#x6f;&#114;&#x6b;&#115;&#x2e;&#x63;&#111;&#x6d;">&#112;&#x32;&#64;&#x74;&#x68;&#x6f;&#117;&#x67;&#104;&#x74;&#119;&#111;&#114;&#107;&#x73;&#46;&#x63;&#111;&#x6d;</a></a>.</em></p>
+<p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#x6d;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#x70;&#50;&#x40;&#116;&#104;&#111;&#x75;&#x67;&#104;&#x74;&#x77;&#111;&#114;&#107;&#x73;&#46;&#99;&#111;&#109;">&#112;&#x32;&#64;&#116;&#104;&#x6f;&#117;&#x67;&#x68;&#116;&#119;&#111;&#x72;&#107;&#x73;&#46;&#99;&#x6f;&#x6d;</a></a>.</em></p>
 
 <div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
 
@@ -167,7 +167,7 @@ Finally, we update <span class='inline-code'>track_current_user</span>:</p>
   <entry>
     <title type="html"><![CDATA[Continuous Design and the NoPSD Movement]]></title>
     <link href="http://thoughtworks.github.io/p2/issue02/continuous-design/"/>
-    <updated>2013-07-05T00:00:00-04:00</updated>
+    <updated>2013-07-05T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue02/continuous-design</id>
     <content type="html"><![CDATA[<p>I&rsquo;m skyping with Andrew Carr when tells me about the NoPSD movement. A quick Google yields zero results. I could be onto something new here, or he could be another crackpot pushing GNU Hurd. This movement is using the pinnacle of graphics editing programs to push a new agenda in software design. Lately, Andrew finds that most of the styling he would normally do in Photoshop can be done using CSS3. It&rsquo;s not the file format that&rsquo;s the problem but what it represents: change is hard, so get it right the first time.</p>
 
@@ -210,7 +210,7 @@ Finally, we update <span class='inline-code'>track_current_user</span>:</p>
   <entry>
     <title type="html"><![CDATA[Honey, I think I Just Made a Factory in JS]]></title>
     <link href="http://thoughtworks.github.io/p2/issue02/factory/"/>
-    <updated>2013-07-04T00:00:00-04:00</updated>
+    <updated>2013-07-04T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue02/factory</id>
     <content type="html"><![CDATA[<p>Alexander furtively enters the room. He takes the seat beside me and fiddles with a pen. &ldquo;Ryan&rdquo; he starts, and I can tell he&rsquo;s really uncomfortable now. &ldquo;Ryan, I think I just made a factory in JavaScript&rdquo;. He cringes when he says JavaScript.</p>
 

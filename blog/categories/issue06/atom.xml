@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue06 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue06/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-01T20:17:58-04:00</updated>
+  <updated>2014-04-02T23:42:22+11:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits]]></title>
     <link href="http://thoughtworks.github.io/p2/issue06/credits/"/>
-    <updated>2013-11-12T00:00:00-05:00</updated>
+    <updated>2013-11-12T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue06/credits</id>
     <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
 
@@ -47,7 +47,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue06/puzzle/"/>
-    <updated>2013-11-11T00:00:00-05:00</updated>
+    <updated>2013-11-11T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue06/puzzle</id>
     <content type="html"><![CDATA[<p>Welcome to the final puzzle for 2013. Consider this four-way intersection with a set of traffic lights. The speed limit on all roads shown is 80km/h (or 50 mph).</p>
 
@@ -62,7 +62,7 @@
   <entry>
     <title type="html"><![CDATA[Improve This]]></title>
     <link href="http://thoughtworks.github.io/p2/issue06/improve-this/"/>
-    <updated>2013-11-10T00:00:00-05:00</updated>
+    <updated>2013-11-10T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue06/improve-this</id>
     <content type="html"><![CDATA[<p><em>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</em></p>
 
@@ -128,7 +128,7 @@
   <entry>
     <title type="html"><![CDATA[CD and DevOps: Partners in Crime]]></title>
     <link href="http://thoughtworks.github.io/p2/issue06/cd-and-devops"/>
-    <updated>2013-11-09T00:00:00-05:00</updated>
+    <updated>2013-11-09T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue06/cd-and-devops</id>
     <content type="html"><![CDATA[<p>A team working well is one where the developers not only build the code, but also the automation for deploying the software and the ability to monitor and support it. Done right this means the team is doing DevOps <strong>and</strong> Continuous Delivery. Right from day one they are building out Continuous Integration, coding the deployment mechanisms and setting up dashboards and alerts for the deployed code. When they showcase code, it is code that <strong>has</strong> been deployed to a realistic environment, so if required that code really could be deployed.</p>
 
@@ -192,7 +192,7 @@
   <entry>
     <title type="html"><![CDATA[Build Gripes, Part II]]></title>
     <link href="http://thoughtworks.github.io/p2/issue06/build-gripes"/>
-    <updated>2013-11-08T00:00:00-05:00</updated>
+    <updated>2013-11-08T00:00:00+11:00</updated>
     <id>http://thoughtworks.github.io/p2/issue06/build-gripes</id>
     <content type="html"><![CDATA[<p><strong><em>build system (noun)</em></strong>: <em>something hundreds of thousands of people spend 40 hours a week in fear of causing. See also: sin, punishment.</em></p>
 

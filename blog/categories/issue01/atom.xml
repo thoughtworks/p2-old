@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue01 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue01/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-01T20:17:58-04:00</updated>
+  <updated>2014-04-02T23:42:22+11:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Credits]]></title>
     <link href="http://thoughtworks.github.io/p2/issue01/credits/"/>
-    <updated>2013-06-07T00:00:00-04:00</updated>
+    <updated>2013-06-07T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue01/credits</id>
     <content type="html"><![CDATA[<p><strong>Editorial Committee</strong></p>
 
@@ -47,7 +47,7 @@
   <entry>
     <title type="html"><![CDATA[Puzzle]]></title>
     <link href="http://thoughtworks.github.io/p2/issue01/puzzle/"/>
-    <updated>2013-06-06T00:00:00-04:00</updated>
+    <updated>2013-06-06T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue01/puzzle</id>
     <content type="html"><![CDATA[<p>This month&rsquo;s coding challenge visits us from the land of Java. What we have is a question of execution order. The first person to respond with the correct answer and why gets their name in the winners circle for next issue.</p>
 
@@ -61,7 +61,7 @@
 <div class='normal-gist'><script src='https://gist.github.com/distributedlife/5692369.js'></script></div>
 
 
-<p>Send your answers to <a href=\"mailto:p2@thoughtworks.com\"><a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x70;&#50;&#x40;&#116;&#x68;&#111;&#x75;&#103;&#x68;&#x74;&#119;&#111;&#x72;&#x6b;&#x73;&#x2e;&#x63;&#111;&#x6d;">&#112;&#50;&#64;&#116;&#x68;&#111;&#117;&#x67;&#x68;&#x74;&#119;&#111;&#x72;&#107;&#x73;&#x2e;&#x63;&#x6f;&#x6d;</a></a></p>
+<p>Send your answers to <a href=\"mailto:p2@thoughtworks.com\"><a href="&#x6d;&#x61;&#x69;&#108;&#116;&#x6f;&#x3a;&#112;&#x32;&#x40;&#116;&#x68;&#111;&#117;&#x67;&#x68;&#x74;&#119;&#x6f;&#114;&#107;&#x73;&#x2e;&#99;&#111;&#x6d;">&#112;&#x32;&#64;&#x74;&#104;&#111;&#x75;&#x67;&#104;&#x74;&#x77;&#111;&#x72;&#107;&#x73;&#46;&#x63;&#x6f;&#109;</a></a></p>
 
 <div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
 
@@ -71,7 +71,7 @@
   <entry>
     <title type="html"><![CDATA[Improve This]]></title>
     <link href="http://thoughtworks.github.io/p2/issue01/improve-this/"/>
-    <updated>2013-06-05T00:00:00-04:00</updated>
+    <updated>2013-06-05T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue01/improve-this</id>
     <content type="html"><![CDATA[<p>In improve this we take a look at a reader submitted test, user interface, story or block of code and we try and improve it, without context, explaining what we did as we went.</p>
 
@@ -178,7 +178,7 @@
 
 <p>We’ve made a lot of assumptions about how this system works and how the cucumber file is used. We’ve ignored how the cucumber file got to where it is today and followed a simple rule: if someone can’t understand how it works from reading it, then it needs improvement.</p>
 
-<p>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#x6d;&#97;&#105;&#108;&#x74;&#x6f;&#x3a;&#112;&#50;&#64;&#116;&#x68;&#x6f;&#117;&#103;&#x68;&#x74;&#119;&#x6f;&#114;&#x6b;&#x73;&#46;&#x63;&#111;&#109;">&#112;&#x32;&#x40;&#x74;&#104;&#111;&#x75;&#103;&#104;&#116;&#x77;&#111;&#114;&#x6b;&#115;&#46;&#x63;&#x6f;&#109;</a></a>.</p>
+<p>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#x6d;&#x61;&#x69;&#x6c;&#116;&#x6f;&#x3a;&#x70;&#x32;&#x40;&#x74;&#104;&#111;&#x75;&#x67;&#x68;&#x74;&#x77;&#111;&#114;&#x6b;&#x73;&#x2e;&#x63;&#x6f;&#x6d;">&#x70;&#x32;&#x40;&#116;&#x68;&#111;&#x75;&#x67;&#x68;&#x74;&#119;&#111;&#x72;&#x6b;&#115;&#46;&#99;&#111;&#x6d;</a></a>.</p>
 
 <div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
 
@@ -188,7 +188,7 @@
   <entry>
     <title type="html"><![CDATA[The King Is Dead, Long Live The King]]></title>
     <link href="http://thoughtworks.github.io/p2/issue01/the-king-is-dead/"/>
-    <updated>2013-06-04T00:00:00-04:00</updated>
+    <updated>2013-06-04T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue01/the-king-is-dead</id>
     <content type="html"><![CDATA[<p>I stood in front of the board, asking unpopular questions. &ldquo;When was the last time we stopped offering a service that was losing money? Do we even know which ones make money?”   I could see confusion and anger on the faces of the board members. It&rsquo;s not a pleasant feeling standing in a hostile room telling people that they should stop offering services that now, because of me, no longer exist.</p>
 
@@ -251,7 +251,7 @@
   <entry>
     <title type="html"><![CDATA[Big Data Ain't So Big]]></title>
     <link href="http://thoughtworks.github.io/p2/issue01/big-data/"/>
-    <updated>2013-06-03T00:00:00-04:00</updated>
+    <updated>2013-06-03T00:00:00+10:00</updated>
     <id>http://thoughtworks.github.io/p2/issue01/big-data</id>
     <content type="html"><![CDATA[<blockquote><p>I went to a conference and heard &ldquo;We&rsquo;re making a significant shift towards more fact-based decision making. And I was kind of like, what do people usually use? Horoscopes?&rdquo; There&rsquo;s now a big drive to be more data-analytical.</p></blockquote>
 

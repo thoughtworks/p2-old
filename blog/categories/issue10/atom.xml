@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue10 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue10/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-03-31T21:27:21-04:00</updated>
+  <updated>2014-04-01T20:03:02-04:00</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -44,20 +44,20 @@
   
   <entry>
     <title type="html"><![CDATA[March Puzzle Answer]]></title>
-    <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
+    <link href="http://thoughtworks.github.io/p2/issue10/march-puzzle/"/>
     <updated>2014-04-07T00:00:00-04:00</updated>
     <id>http://thoughtworks.github.io/p2/issue10/puzzle-answer</id>
     <content type="html"><![CDATA[<p>We went through two iterations of the last puzzle, Garbage collection. We received two good responses from Atabek Akbalaev &amp; Fiona Coath.</p>
 
 <p>Atabek&rsquo;s solution provided a means for &ldquo;marking&rdquo; the bins in the city in one pass &amp; using that as the reference map for the future. Fiona&rsquo;s solution tackled the problem of verifying emptying of bins with weighing-measures on the arms of the apparatus that lifts the bins to empty them. Any solution with a need to install/apply something to the bins is  a candidate for operational concerns, especially if the number of bins grew significantly and/or the risk of theft/damage of the probe (RFID, QR-Code, etc.). The problem dearly missed solutions for tackling the zone-emptied-first requirement though Atabek&rsquo;s solution could be extended to address that.</p>
 
-<p>For providing part of the solution, both Atabek &amp; Fiona receive&hellip;</p>
+<p>For providing part of the solution, both Atabek &amp; Fiona receive a book of their choice by a current or prior ThoughtWorker.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[April Puzzle]]></title>
-    <link href="http://thoughtworks.github.io/p2/issue10/puzzle/"/>
+    <link href="http://thoughtworks.github.io/p2/issue10/april-puzzle/"/>
     <updated>2014-04-06T00:00:00-04:00</updated>
     <id>http://thoughtworks.github.io/p2/issue10/puzzle</id>
     <content type="html"><![CDATA[<p>This months puzzle comes from the analytical mind of David Johnston…</p>
@@ -86,7 +86,7 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 
 <p>At this point tempers flare and both draw their revolvers and aim at each other. You, Sonny Bayes, are the gang leader. You gotta straighten this out, decide what to do and convince your two partners! Should you switch or not and why? What would true professionals do?</p>
 
-<p><em>*Please submit your response to the P2 Magazine team at <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#111;&#58;&#x70;&#50;&#64;&#x74;&#x68;&#111;&#x75;&#x67;&#x68;&#116;&#119;&#111;&#x72;&#x6b;&#x73;&#46;&#x63;&#111;&#x6d;">&#x70;&#50;&#64;&#x74;&#x68;&#x6f;&#117;&#103;&#104;&#116;&#x77;&#111;&#x72;&#x6b;&#115;&#46;&#99;&#111;&#x6d;</a> to be in a chance to win fabulous P2 prizes.</em></p>
+<p><em>*Please submit your response to the P2 Magazine team at <a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#111;&#58;&#x70;&#x32;&#64;&#x74;&#104;&#x6f;&#x75;&#x67;&#104;&#x74;&#x77;&#x6f;&#114;&#107;&#115;&#x2e;&#99;&#x6f;&#109;">&#112;&#x32;&#64;&#x74;&#104;&#x6f;&#x75;&#x67;&#x68;&#116;&#x77;&#x6f;&#x72;&#107;&#115;&#x2e;&#99;&#x6f;&#109;</a> to be in a chance to win fabulous P2 prizes.</em></p>
 ]]></content>
   </entry>
   
@@ -168,7 +168,7 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Wireless Arduino Automation]]></title>
+    <title type="html"><![CDATA[Wireless Arduino automation]]></title>
     <link href="http://thoughtworks.github.io/p2/issue10/arduino"/>
     <updated>2014-04-04T00:00:00-04:00</updated>
     <id>http://thoughtworks.github.io/p2/issue10/wireless-arduino</id>
@@ -179,8 +179,6 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 <p>But, as with any project, you want to start simply with just one or two requirements. And then keep adding more during the course of time once you have something working. In the world of hardware this translates to adding more sensors and output components, and then changing your program and uploading the changes it to the board. But to do this you have to take the board off the wall and upload the changes. Meh.</p>
 
 <p>I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly I consider to be “painstaking” and it reeks of automation opportunity. For me it is way too much effort to unmount the board every time I want read a new sensor value or use a new GPIO pin for output.</p>
-
-<p><img src="/p2/images/arduino.jpg" alt="arduino" /></p>
 
 <p>Throughout our hardware experiments at ThoughtWorks in Bangalore we have been using Arduino hardware. Arduino’s are the most popular hardware for prototyping today. Arduino itself is not just hardware, it is an open-source prototyping platform that can receive input from sensors and affect its surroundings by controlling actuators like lights, motors, etc. The typical workflow for hardware prototyping using Arduino involves three steps:</p>
 
@@ -194,6 +192,8 @@ are going to make (5+20)/2. That&rsquo;s 12.5 which is more than 10.&rdquo;</p>
 <p>An example of this could be if you want to switch on an LED when somebody walks into the room, you will use a motion sensor and then your program will monitor its input and set the LED to on or off accordingly.</p>
 
 <p>To get all this working together you need to upload a program to the Arduino by connecting it to a computer through USB and then use the Arduino IDE. All sounds great right? Except the unmounting and mounting of your Arduino!</p>
+
+<blockquote><blockquote><p>&ldquo;you can configure new sensors&hellip; without having to re-write the program. All this without disturbing your Arduino sitting&hellip; in another room!</p></blockquote></blockquote>
 
 <p>To do away with the need of disconnecting the Arduino from the circuit and connecting it to the computer, I wrote an Arduino program (also known as a sketch) which does not hardcode the input and output pins. Instead, it waits and accepts this configuration over a wireless channel created using cheap nRF24l01 modules. All you need is one module attached to the Arduino (receiver) and another module attached to either another Arduino or a Raspberry Pi (sender). The sender can then send configuration strings as commands like this:</p>
 

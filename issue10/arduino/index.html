@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-<title>Magazine | Wireless Arduino Automation</title>
+<title>Magazine | Wireless Arduino automation</title>
 
 <link rel="shortcut icon" type="image/png" href="/p2/favicon.png" />
 <link href="/p2/stylesheets/screen.css" rel="stylesheet" type="text/css" media="all"/>
@@ -114,7 +114,7 @@
 
     <article>
     <header>
-        <h1>Wireless Arduino Automation</h1>
+        <h1>Wireless Arduino automation</h1>
         <h3></h3>
         <p class="byline">
         Words and Music by Shatanu Tushar
@@ -128,8 +128,6 @@
 
 <p>I subscribe to the “lazy programmer” guild. Any process that I have to do repeatedly I consider to be “painstaking” and it reeks of automation opportunity. For me it is way too much effort to unmount the board every time I want read a new sensor value or use a new GPIO pin for output.</p>
 
-<p><img src="/p2/images/arduino.jpg" alt="arduino" /></p>
-
 <p>Throughout our hardware experiments at ThoughtWorks in Bangalore we have been using Arduino hardware. Arduino’s are the most popular hardware for prototyping today. Arduino itself is not just hardware, it is an open-source prototyping platform that can receive input from sensors and affect its surroundings by controlling actuators like lights, motors, etc. The typical workflow for hardware prototyping using Arduino involves three steps:</p>
 
 <ul>
@@ -142,6 +140,8 @@
 <p>An example of this could be if you want to switch on an LED when somebody walks into the room, you will use a motion sensor and then your program will monitor its input and set the LED to on or off accordingly.</p>
 
 <p>To get all this working together you need to upload a program to the Arduino by connecting it to a computer through USB and then use the Arduino IDE. All sounds great right? Except the unmounting and mounting of your Arduino!</p>
+
+<blockquote><blockquote><p>&ldquo;you can configure new sensors&hellip; without having to re-write the program. All this without disturbing your Arduino sitting&hellip; in another room!</p></blockquote></blockquote>
 
 <p>To do away with the need of disconnecting the Arduino from the circuit and connecting it to the computer, I wrote an Arduino program (also known as a sketch) which does not hardcode the input and output pins. Instead, it waits and accepts this configuration over a wireless channel created using cheap nRF24l01 modules. All you need is one module attached to the Arduino (receiver) and another module attached to either another Arduino or a Raspberry Pi (sender). The sender can then send configuration strings as commands like this:</p>
 
@@ -174,7 +174,9 @@
          <a href="#">
             <img class="author-avatar" src="/p2/images/shantanu-tushar.jpg"/>
          </a>
-         <div>Shatanu Tushar</div>
+         <div>Shantanu Tushar</div>
+         
+         <a href="http://twitter.com/shantanutushar">@shantanutushar</a>
          
       </div>
       

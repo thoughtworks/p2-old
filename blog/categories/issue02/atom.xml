@@ -4,7 +4,7 @@
   <title><![CDATA[Category: issue02 | P2 Magazine]]></title>
   <link href="http://thoughtworks.github.io/p2/blog/categories/issue02/atom.xml" rel="self"/>
   <link href="http://thoughtworks.github.io/p2/"/>
-  <updated>2014-04-03T00:41:18+05:30</updated>
+  <updated>2014-04-03T23:46:41+05:30</updated>
   <id>http://thoughtworks.github.io/p2/</id>
   <author>
     <name><![CDATA[The P2 Elves]]></name>
@@ -157,7 +157,7 @@ Finally, we update <span class='inline-code'>track_current_user</span>:</p>
 
 <p>The tests pass! That means it works, right? ;&ndash;)</p>
 
-<p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#109;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#x70;&#x32;&#x40;&#116;&#104;&#111;&#117;&#103;&#x68;&#x74;&#119;&#111;&#114;&#107;&#x73;&#x2e;&#99;&#111;&#109;">&#112;&#50;&#64;&#116;&#104;&#111;&#117;&#103;&#x68;&#x74;&#119;&#111;&#114;&#x6b;&#x73;&#x2e;&#99;&#x6f;&#x6d;</a></a>.</em></p>
+<p><em>Do you have something you want improved? Send it to <a href='mailto:p2@thoughtworks.com'><a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#112;&#50;&#64;&#116;&#x68;&#111;&#117;&#103;&#x68;&#x74;&#x77;&#111;&#x72;&#107;&#x73;&#46;&#x63;&#111;&#x6d;">&#x70;&#x32;&#x40;&#x74;&#104;&#x6f;&#117;&#x67;&#104;&#116;&#x77;&#111;&#114;&#x6b;&#115;&#x2e;&#x63;&#x6f;&#x6d;</a></a>.</em></p>
 
 <div class='byline'>All Gists brought to you by <a href='http://github.com/'>GitHub</a></div>
 
